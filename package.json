@@ -1,7 +1,7 @@
 {
-  "name": "wexcms",
+  "name": "wcms",
   "version": "0.0.1",
-  "description": "WEX - Simple CMS",
+  "description": "WEX Simple CMS",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --open --mode development --config build/webpack.dev.conf.js",
@@ -11,7 +11,7 @@
   "author": "https://github.com/vedees",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wexcms/wex.git"
+    "url": "git+https://github.com/wexcms/wcms.git"
   },
   "license": "MIT",
   "homepage": "https://github.com/wexcms/documentation#readme",
@@ -20,7 +20,7 @@
     "last 3 versions"
   ],
   "bugs": {
-    "url": "https://github.com/wexcms/wex/issues"
+    "url": "https://github.com/wexcms/wcms/issues"
   },
   "dependencies": {
     "uimini": "^1.1.0",
