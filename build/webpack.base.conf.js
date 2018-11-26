@@ -1,6 +1,16 @@
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+//! autoprefixer ??
 const autoprefixer = require('autoprefixer');
+
+/**
+ * Vue-loader v15 has major breaking changes.
+ * If your vue-loader version is 15 and above,
+ * you should add VueLoaderPlugin like this in your webpack config.
+ * https://github.com/vuejs/vue-loader/tree/next
+*/
+const { VueLoaderPlugin } = require('vue-loader')
+
 
 module.exports = {
   // Entry main JS
@@ -20,6 +30,9 @@ module.exports = {
   },
   module: {
     rules: [{
+        test: /\.vue$/,
+        loader: 'vue-loader',
+      },{
         /* Babel */
         test: /\.js$/,
         loader: 'babel-loader',
@@ -36,6 +49,8 @@ module.exports = {
   // Plugins
   plugins: [
     // Extract css
-    new ExtractTextPlugin("styles.css")
+    new ExtractTextPlugin("styles.css"),
+    // vue-loader version is 15 and above
+    new VueLoaderPlugin()
   ]
 }

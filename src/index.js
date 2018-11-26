@@ -5,6 +5,8 @@
  */
 
 import stylus from './stylus/main.styl'
+import js from './js/main.js'
+
 import Vue from 'vue/dist/vue.js'
 
 /**
@@ -12,6 +14,8 @@ import Vue from 'vue/dist/vue.js'
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
+Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 const app = new Vue({
     el: '#app',
