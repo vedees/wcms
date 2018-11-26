@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --open --mode development --config build/webpack.dev.conf.js",
     "build": "webpack --mode production --config build/webpack.build.conf.js",
-    "test": "test"
+    "test": "webpack --mode production --config build/webpack.build.conf.js"
   },
   "author": "https://github.com/vedees",
   "repository": {
