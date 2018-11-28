@@ -19,9 +19,13 @@ module.exports = {
   },
   // Output main JS
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, '../dist'),
-    publicPath: '/dist'
+    //TODO Fix js/
+    filename: 'js/main.js',
+    path: path.resolve(__dirname, '../wcms/wex/static'),
+    //! Server fix
+    publicPath: 'http://localhost:8080/wcms/wex/static'
+    // To deploy
+    // publicPath: '/wcms/wex/static/js'
   },
   // Server
   devServer: {
@@ -54,7 +58,8 @@ module.exports = {
   // Plugins
   plugins: [
     // Extract css
-    new ExtractTextPlugin("styles.css"),
+    //TODO fix css/
+    new ExtractTextPlugin('css/main.css'),
     // vue-loader version is 15 and above
     new VueLoaderPlugin()
   ]

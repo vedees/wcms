@@ -11,7 +11,7 @@
  * point when building robust, powerful web applications using Vue and WCMS.
  */
 
- window.Vue = require('vue');
+window.Vue = require('vue');
 
 import stylus from './stylus/main.styl'
 import js from './js/main.js'
