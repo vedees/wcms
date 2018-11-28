@@ -1,10 +1,12 @@
 <template>
-  <div class="container">
-    <div class="card-header">
-      Example Component
-    </div>
-    <div class="card-body">
-      I'm an example component
+  <div class="section">
+    <div class="container">
+      <div class="card-header">
+        Example Component
+      </div>
+      <div class="card-body">
+        I'm an example component
+      </div>
     </div>
   </div>
 </template>
