@@ -11,10 +11,10 @@
  * point when building robust, powerful web applications using Vue and WCMS.
  */
 
+ window.Vue = require('vue');
+
 import stylus from './stylus/main.styl'
 import js from './js/main.js'
-
-import Vue from 'vue/dist/vue.js'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -22,7 +22,7 @@ import Vue from 'vue/dist/vue.js'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 const app = new Vue({
     el: '#app',

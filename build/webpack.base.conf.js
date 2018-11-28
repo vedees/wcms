@@ -46,6 +46,11 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.js'
+    }
+  },
   // Plugins
   plugins: [
     // Extract css
