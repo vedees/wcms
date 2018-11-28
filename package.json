@@ -11,16 +11,16 @@
   "author": "https://github.com/vedees",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wexcms/wcms.git"
+    "url": "git+https://github.com/vedees/wcms.git"
   },
   "license": "MIT",
-  "homepage": "https://github.com/wexcms/documentation#readme",
+  "homepage": "https://github.com/vedees/wcms-doc#readme",
   "browserslist": [
     "> 1%",
     "last 3 versions"
   ],
   "bugs": {
-    "url": "https://github.com/wexcms/wcms/issues"
+    "url": "https://github.com/vedees/wcms/issues"
   },
   "dependencies": {
     "uimini": "^1.1.0",
