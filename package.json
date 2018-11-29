@@ -23,7 +23,7 @@
     "url": "https://github.com/vedees/wcms/issues"
   },
   "dependencies": {
-    "uimini": "^1.1.0",
+    "uimini": "^1.1.3",
     "vue": "^2.5.17"
   },
   "devDependencies": {

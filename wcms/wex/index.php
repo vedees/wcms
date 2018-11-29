@@ -8,7 +8,9 @@
 
 require 'initialize.php'; ?>
 
-<?php $page_title = 'WEX CMS - Dashboard' ?>
+<?php $page_title = 'WEX CMS - Dashboard';
+      $page = 'dashboard';?>
+
 <?php include('includes/header.php') ?>
 
 <section>

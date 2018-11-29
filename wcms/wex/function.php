@@ -26,6 +26,7 @@ function get_html_name () {
   // Template set page name
   return $template = file_get_contents($pagename);
 }
+
 function get_html_select () {
   $html_list = glob("../*.html");
   $html_selected='';
@@ -37,4 +38,9 @@ function get_html_select () {
     };
   };
   return $html_selected;
+}
+
+// nav active
+function nav_is_active ($page, $name) {
+  if ($page == $name) return true;
 }
