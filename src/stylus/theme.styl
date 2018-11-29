@@ -14,9 +14,17 @@ body
 .header-logo,
 .ui-text-small, .ui-text-regular,
 .sidebar-item, .sidebar-link,
-.ui-title-1, .ui-title-2, .ui-title-3, .ui-title-4, select,
+.ui-title-1, .ui-title-2, .ui-title-3, .ui-title-4,
+select, input,
 .navbar-item, .navbar-link
   color #ffffff
+
+input
+  background-color rgba(255, 255, 255, 0.1)!important
+  &::placeholder
+    color #ffffff
+select, input
+  border-color: rgba(255, 255, 255, 0.4)!important
 
 .sidebar-item,
 .navbar-item
@@ -34,7 +42,7 @@ select
 // Table
 .ui-table
   background-color rgba(255, 255, 255, 0.2)
-  border-radius 16px
+  border-radius 12px
   tbody
     tr
       &:hover
