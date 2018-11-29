@@ -1,0 +1,34 @@
+body
+  color #fff
+  background-color: #ff6360;
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 0%,color-stop(0, rgb(255, 64, 115)),color-stop(1, rgb(255, 133, 76)));
+
+.navbar
+  background-color rgba(255, 255, 255, 0.09);
+  border-bottom none
+
+.sidebar
+  background-color rgba(255, 255, 255, 0.04);
+
+// Total Reset
+.header-logo,
+.ui-text-small,
+.sidebar-item, .sidebar-link,
+.ui-title-1, .ui-title-2, .ui-title-3, .ui-title-4, select,
+.navbar-item, .navbar-link
+  color #ffffff
+
+.sidebar-item,
+.navbar-item
+  //TODO Uimini add
+  &:hover
+    color #444ce0
+    .sidebar-link,
+    .navbar-link
+      color #444ce0
+
+
+
+select
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='14' viewBox='0 0 29 14' width='29'><path fill='rgb(255, 255, 255, .8)' d='M9.37727 3.625l5.08154 6.93523L19.54036 3.625'/></svg>") 100% no-repeat
+  border-radius: 16px

@@ -9,13 +9,14 @@
 require 'core/initialize.php'; ?>
 
 <?php $page_title = 'WEX CMS - Dashboard';
-      $page = 'dashboard';?>
+      $page = 'settings';?>
 
 <?php include('includes/header.php') ?>
 
 <section>
   <div class="container">
-    <h1 class="ui-title-1"> <?php echo $lang['dashboard'] ?> </h1>
+    <h1 class="ui-title-1">Settings</h1>
+    <?php echo 'lang ' . $_SESSION['lang']; ?>
   </div>
 </section>
 

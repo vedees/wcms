@@ -7,5 +7,6 @@
  */
 
 session_start();
-require '../config.php';
-require 'function.php';
+require_once dirname(dirname(dirname(__FILE__))) . '/config.php';  //x3 folder
+require_once dirname(dirname(__FILE__)) . '/function.php';         //x2 folder
+require_once 'language.php';
