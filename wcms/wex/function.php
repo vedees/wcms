@@ -11,7 +11,7 @@
 	header('Location: ' . $url);
 	exit;
 }
-
+//TODO global get class
 //* Get html file to editing
 function get_html_name () {
   if (isset($_POST['pagename'])) {
@@ -40,7 +40,24 @@ function get_html_select () {
   return $html_selected;
 }
 
-// nav active
+//! nav active
 function nav_is_active ($page, $name) {
   if ($page == $name) return true;
+}
+
+//! text
+function get_text () {
+  $content=preg_replace('/<[^>]+>/', '^', get_html_name() );
+  return $text = explode('^', $content);
+}
+
+function get_text_all () {
+  // Text list
+  $text_all = array();
+  // Text single
+  $text = get_text();
+  for ($i=0; $i< count($text); $i++) {
+    if (strlen(trim($text[$i])) > 1) $text_all[] = (trim($text[$i]));
+  };
+  return $text_all;
 }

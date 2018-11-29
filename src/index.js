@@ -14,7 +14,7 @@
 window.Vue = require('vue');
 
 import stylus from './stylus/main.styl'
-import js from './js/main.js'
+import js from './js'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -23,6 +23,7 @@ import js from './js/main.js'
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('text-component', require('./components/Text.vue').default);
 
 const app = new Vue({
     el: '#app',
