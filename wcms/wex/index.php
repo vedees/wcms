@@ -3,7 +3,7 @@
  * WCMS - WEX Simple CMS
  * https://github.com/wexcms/wcms
  * Copyright (C) 2018 Evgenii Vedegis <vedegis@gmail.com>
- * https://github.com/wexcms/wcms/master/LICENSE
+ * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
 require 'initialize.php'; ?>
@@ -13,7 +13,7 @@ require 'initialize.php'; ?>
 
 <section>
   <div class="container">
-    <h1>WCMS</h1>
+    <h1 class="ui-title-1">Dashboard</h1>
   </div>
 </section>
 
