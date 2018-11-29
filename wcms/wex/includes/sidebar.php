@@ -1,9 +1,21 @@
+<?php
+  get_html_name ();
+  $select = get_html_select();
+?>
+
 <!-- Sidebar Button  -->
 <div class="sidebar-open-button"> <div class="button-burger"><span class="line line-1"></span><span class="line line-2"></span><span class="line line-3"></span></div> </div>
 
 <div class="sidebar">
   <div class="container">
     <div class="sidebar-content">
+      <p class="ui-text-small" style="margin:16px 0 px 0;">Pages:</p>
+      <form  id="htmlLinkMenu" method="POST">
+        <div class="sidebar-list">
+          <?php echo('<select name="pagename">' . $select . '</select>'); ?>
+          <button class="button button--round button-primary" type="submit"> Editing </button>
+        </div>
+      </form>
       <p class="ui-text-small" style="margin:30px 0 6px 0;">Basic:</p>
       <ul class="sidebar-list">
         <li class="sidebar-item icon-wrapper">
