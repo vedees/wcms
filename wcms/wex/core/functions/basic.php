@@ -6,7 +6,13 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-session_start();
-require_once dirname(dirname(dirname(__FILE__))) . '/config.php';  //x3 folder
-require_once 'function.php';
-require_once 'language.php';
+// Redirect
+function redirect_to ($url) {
+	header('Location: ' . $url);
+	exit;
+}
+// Sidebar active class
+function nav_is_active ($page, $name) {
+  if ($page == $name) return true;
+}
+

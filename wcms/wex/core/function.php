@@ -1,3 +1,4 @@
+<?php
 /**
  * WCMS - WEX Simple CMS
  * https://github.com/vedees/wcms
@@ -5,5 +6,6 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-// UImini
-@import "/node_modules/uimini/dist/css/uimini.min.css"
+require_once 'functions/basic.php';
+require_once 'functions/get_html.php';
+require_once 'functions/text.php';

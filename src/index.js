@@ -1,5 +1,5 @@
 /*!
- * WCMS v0.0.3 - WEX Simple CMS
+ * WCMS - WEX Simple CMS
  * https://github.com/vedees/wcms
  * Copyright (C) 2018 Evgenii Vedegis <vedegis@gmail.com>
  * https://github.com/vedees/wcms/blob/master/LICENSE
