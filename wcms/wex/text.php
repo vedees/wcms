@@ -6,13 +6,28 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-require 'core/initialize.php'; ?>
+require 'core/initialize.php';
+include('includes/header.php'); ?>
 
 <?php $page_title = 'WEX CMS - Text Editing';
       $page = 'text';
-      $text_all = get_text_all(); ?>
+      $text_all = get_text_all();
+      // Get data
+    	$subject = file_get_contents($pagename);
 
-<?php include('includes/header.php') ?>
+  // Find GET request
+  if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $text_edit = $text_all[$id]->title;
+    $text_output = str_replace_nth($text_edit, $_POST['textareaForText'], $subject, 0);
+    // Output
+    file_put_contents($pagename, $text_output);
+    echo "<meta http-equiv=\"refresh\" content=\"0;URL=text.php\">";
+  }
+?>
+
+
+
 
 <section>
   <div class="container">

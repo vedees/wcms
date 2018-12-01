@@ -16,24 +16,37 @@
         <tr>
           <th><span>ID</span></th>
           <th><span>Field</span></th>
-          <th><span></span></th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(item, index) in textFilter"
           :key="index">
-          <td><span class="ui-text-regular"> {{ index }} </span></td>
-          <td><span class="ui-text-regular" @click="editPopup(index, item)"> {{ item }} </span></td>
-          <td><span class="ui-text-regular" @click="editPopup(index, item)"> Edit </span></td>
+          <td><span class="ui-text-regular"> {{ item.id }} </span></td>
+          <td class="td--center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="16 3 21 8 8 21 3 21 3 16 16 3"></polygon></svg>
+            <span class="ui-text-regular" @click="editModal(item.id, item.title)"> {{ item.title }} </span>
+          </td>
         </tr>
-
       </tbody>
     </table>
+
+    <Modal
+      v-if="showModal"
+      @close="showModal = false"
+      :id="textId"
+      :title="textTitle"
+      >
+    </Modal>
+
   </div>
 </template>
 
 <script>
+import Modal from './TextModal.vue'
 export default {
+  components: {
+    Modal
+  },
   props: {
     text: {
       type: Array,
@@ -43,7 +56,9 @@ export default {
   data () {
     return {
       search: '',
-      textt: this.text
+      showModal: false,
+      textId: null,
+      textTitle: null
     }
   },
   computed: {
@@ -56,17 +71,19 @@ export default {
       search = search.trim().toLowerCase();
       // Filter
       textArray = textArray.filter(function(item){
-          if(item.toLowerCase().indexOf(search) !== -1){
-              return item;
-          }
+        if (item.title.toLowerCase().indexOf(search) !== -1) {
+          return item;
+        }
       })
       // Filter Array
       return textArray;
     }
   },
   methods: {
-    editPopup (index, item) {
-      console.log(index, item)
+    editModal (id, title) {
+      this.textId = id
+      this.textTitle = title
+      this.showModal = !this.showModal
     }
   }
 }

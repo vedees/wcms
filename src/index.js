@@ -24,6 +24,7 @@ import js from './js'
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('text-component', require('./components/Text.vue').default);
+Vue.component('modal-component', require('./components/UI/Modal.vue').default);
 
 const app = new Vue({
     el: '#app',

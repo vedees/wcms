@@ -7,7 +7,7 @@
  */
 
 //* Basic functions
- function redirect_to($url) {
+function redirect_to ($url) {
 	header('Location: ' . $url);
 	exit;
 }
@@ -47,17 +47,32 @@ function nav_is_active ($page, $name) {
 
 //! text
 function get_text () {
-  $content=preg_replace('/<[^>]+>/', '^', get_html_name() );
+  $content = preg_replace('/<[^>]+>/', '^', get_html_name() );
   return $text = explode('^', $content);
 }
 
 function get_text_all () {
   // Text list
+  $id = 0;
   $text_all = array();
   // Text single
   $text = get_text();
   for ($i=0; $i< count($text); $i++) {
-    if (strlen(trim($text[$i])) > 1) $text_all[] = (trim($text[$i]));
+    if (strlen(trim($text[$i])) > 1) {
+      $object = new stdClass();
+      $object->title = (trim($text[$i]));;
+      $object->id = $id;
+      $id++;
+      $text_all[] = $object;
+    }
   };
   return $text_all;
 }
+
+function str_replace_nth($search, $replace, $subject, $nth) {
+  $found = preg_match_all('/'.preg_quote($search).'/', $subject, $matches, PREG_OFFSET_CAPTURE);
+  if (false !== $found && $found > $nth) {
+    return substr_replace($subject, $replace, $matches[0][$nth][1], strlen($search));
+  }
+  return $subject;
+};
