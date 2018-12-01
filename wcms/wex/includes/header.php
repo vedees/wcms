@@ -7,7 +7,7 @@
  */
 
  //! Page Name ($template)
- get_html_name();
+ $template = get_html_name();
  $pagename = $_SESSION['pagename']; ?>
 
 <!DOCTYPE html>

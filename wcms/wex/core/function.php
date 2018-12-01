@@ -9,3 +9,4 @@
 require_once 'functions/basic.php';
 require_once 'functions/get_html.php';
 require_once 'functions/text.php';
+require_once 'functions/get_image.php';
