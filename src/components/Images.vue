@@ -1,17 +1,42 @@
 <template>
-  <div class="image_wrapper">
-    <div class="ui-card ui-card--shadow">
-      <img src="">
-      <p class="ui-title-4">ID: </p>
-      <p class="ui-text-small">Size: </p>
-      <p class="ui-text-small">Path: </p>
-      <!-- <button class="button button--round button-primary" @click='imageModal(<?php echo json_encode($test_array2) ?>)'>Edit</button> -->
+  <div class="image_list">
+    <div class="image_wrapper">
+      <div class="ui-card ui-card--shadow"
+        v-for="image in images"
+        :key="image.id"
+      >
+        <div class="img__wrapper">
+          <img
+            :src="image.path"
+          >
+        </div>
+        <div class="content">
+          <p class="ui-title-4">ID: {{ image.id }}</p>
+          <p class="ui-text-small">Name: {{ image.title }}</p>
+          <p class="ui-text-small">Width: {{ image.sizeW }} Height: {{ image.sizeH }}</p>
+        </div>
+        <button class="button button--round button-primary"
+          @click="editModal(image.id, image.title, image.path, image.sizeW, image.sizeH)">Edit</button>
+      </div>
     </div>
+
+    <Modal
+      v-if="showModal"
+      @close="showModal = false"
+      :id="imageId"
+      :title="imageTitle"
+      :path="imagePath"
+      :width="imageWidth"
+      :height="imageHeight"
+      >
+    </Modal>
+
   </div>
 </template>
 
 <script>
-import Modal from './TextModal.vue'
+//TODO VUELIDATE
+import Modal from './ImagesModal.vue'
 export default {
   components: {
     Modal
@@ -26,8 +51,12 @@ export default {
     return {
       search: '',
       showModal: false,
-      textId: null,
-      textTitle: null
+      imageId: null,
+      imageTitle: null,
+      imagePath: null,
+      imageWidth: null,
+      imageHeight: null
+      //TODO size
     }
   },
   computed: {
@@ -49,13 +78,15 @@ export default {
     }
   },
   methods: {
-    editModal (id, title) {
-      this.textId = id
-      this.textTitle = title
+    editModal (id, title, path, width, height) {
+      this.imageId = id
+      this.imageTitle = title
+      this.imagePath = path
+      this.imageWidth = width
+      this.imageHeight = height
+      // console.log({id, title, width, height})
       this.showModal = !this.showModal
     }
   }
 }
 </script>
-
-//TODO Style

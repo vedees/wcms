@@ -6,6 +6,7 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
+//! TODO ADD CSS IMAGES
 require 'core/initialize.php'; ?>
 
 <?php $page_title = 'Image editing - WEX CMS';
@@ -15,8 +16,12 @@ require 'core/initialize.php'; ?>
 <?php $get_image = new Image();
       $images = $get_image->image_filter();
 
-      print_r(json_encode($images));
-
+// Check get request
+if (isset($_GET['img'])) {
+  $imgname=$_GET['img'];
+  // Change image
+  move_uploaded_file($_FILES['inputForImages']['tmp_name'], $imgname);
+}
 ?>
 
 <section>

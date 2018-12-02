@@ -44,7 +44,7 @@ module.exports = {
         exclude: '/node_modules/'
       }, {
         /* Stylus */
-        test: /\.(css|styl)$/,
+        test: /\.(styl)$/,
         // loader: ExtractTextPlugin.extract(['css-loader', 'stylus-loader'])
         loader: ExtractTextPlugin.extract(['css-loader?sourceMap', 'postcss-loader', 'stylus-loader?sourceMap'])
       }

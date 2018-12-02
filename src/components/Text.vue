@@ -19,6 +19,7 @@
         </tr>
       </thead>
       <tbody>
+        // TODO FIX INDEX
         <tr v-for="(item, index) in textFilter"
           :key="index">
           <td><span class="ui-text-regular"> {{ item.id }} </span></td>
