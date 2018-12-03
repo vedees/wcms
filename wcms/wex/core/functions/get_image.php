@@ -24,6 +24,7 @@ class Image {
       $object->sizeH = $img_size[0];
       $object->sizeW = $img_size[1];
       $object->id = $i;
+      // Push
       $imgmas_all[] = $object;
     }
     // All img
