@@ -14,7 +14,7 @@ require 'core/initialize.php'; ?>
 <?php include('includes/header.php') ?>
 <?php $get_file = new CssJs();
       $css = $get_file->all_css();
-      // print_r($css)
+      print_r($css)
 ?>
 
 <section id="cssjsEdit">
