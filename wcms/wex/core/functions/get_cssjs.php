@@ -7,33 +7,53 @@
  */
 
 class CssJs {
+  //* All CSS
   public function all_css () {
+    //TODO global
     $template = get_html_name();
-    // Css
-    $css = array();
+    // Name - js or css
+    $name = 'css';
     // Find all css files
     $cssreg = "/[\"']((.*\\/\\/|)([\\/a-z0-9_%]+\\.(css)))[\"']/";
-    preg_match_all($cssreg, $template, $cssmas);
+    // Template search
+    preg_match_all($cssreg, $template, $mask);
+    // Get css array
+    $css = $this->file_finder($mask, $name);
+    return $css;
+  }
+  //* All JS
+  public function all_js () {
+    $template = get_html_name();
+    // Name - js or css
+    $name = 'js';
+    // Find all js files
+    $jsreg = "/[\"']((.*\\/\\/|)([\\/a-z0-9_%]+\\.(js)))[\"']/";
+    preg_match_all($jsreg, $template, $mask);
 
-    for ($i=0; $i < count($cssmas[1]); $i++) {
-      $css_name = trim($cssmas[1][$i]);
-      $css_path = '../' . $css_name;
+    $js = $this->file_finder($mask, $name);
+    return $js;
+  }
+
+  private function file_finder ($mask, $name) {
+    $files = array();
+    for ($i=0; $i < count($mask[1]); $i++) {
+      $file_name = trim($mask[1][$i]);
+      $file_path = '../' . $file_name;
       // Size (bytes)
-      $css_size = filesize($css_path);
-      $css_edit_time = date("m:d:Y H:i", filectime($css_path));
+      $file_size = filesize($file_path);
+      $file_edit_time = date("m:d:Y H:i", filectime($file_path));
       // Info
       $object = new stdClass();
       $object->id = $i;
-      $object->type = 'css';
-      $object->title = $css_name;
-      $object->path = $css_path;
-      $object->size = $css_size;
-      $object->editTime = $css_edit_time;
+      $object->type = $name;
+      $object->title = $file_name;
+      $object->path = $file_path;
+      $object->size = $file_size;
+      $object->editTime = $file_edit_time;
       // Push
-      $css[] = $object;
+      $files[] = $object;
     };
-    // All img
-    return $css;
+    return $files;
   }
 
 }

@@ -14,14 +14,29 @@ require 'core/initialize.php'; ?>
 <?php include('includes/header.php') ?>
 <?php $get_file = new CssJs();
       $css = $get_file->all_css();
-      print_r($css)
+      $js = $get_file->all_js();
 ?>
-
-<section id="cssjsEdit">
+<section id="cssjsEditInfo">
   <div class="container">
-    <code-component
-      :css='<?php echo json_encode($css) ?>'>
-    </code-component>
+    <h1 class="ui-title-1">CSS and JS editing</h1>
+    <p>Here you can edit yours css/js files</p>
+  </div>
+</section>
+<section id="cssEdit">
+  <div class="container">
+    <h2 class="ui-title-2">CSS files</h2>
+    <code-list-component
+      :files='<?php echo json_encode($css) ?>'>
+    </code-list-component>
+  </div>
+</section>
+
+<section id="jsEdit">
+  <div class="container">
+    <h2 class="ui-title-2">JS files</h2>
+    <code-list-component
+      :files='<?php echo json_encode($js) ?>'>
+    </code-list-component>
   </div>
 </section>
 

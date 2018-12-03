@@ -11,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="file in css"
+        <tr v-for="file in files"
           :key="file.id">
           <td><span class="ui-text-regular"> {{ file.id }} </span></td>
           <td><span class="ui-text-regular"> {{ file.type }} </span></td>
@@ -26,14 +26,6 @@
       </tbody>
     </table>
 
-    <Modal
-      v-if="showModal"
-      @close="showModal = false"
-      :id="textId"
-      :title="textTitle"
-      >
-    </Modal>
-
   </div>
 </template>
 
@@ -45,7 +37,7 @@ export default {
     Modal
   },
   props: {
-    css: {
+    files: {
       type: Array,
       required: true
     }
