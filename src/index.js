@@ -11,6 +11,14 @@
  * point when building robust, powerful web applications using Vue and WCMS.
  */
 
+// CodeMirror
+// import CodeMirror from 'codemirror/lib/codemirror.js'
+// Mode:
+import 'codemirror/mode/javascript/javascript.js'
+// Theme css in libs.styl
+
+window.CodeMirror = require('codemirror/lib/codemirror.js');
+
 window.Vue = require('vue');
 
 /**
@@ -19,11 +27,11 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('text-component', require('./components/Text.vue').default);
 Vue.component('modal-component', require('./components/UI/Modal.vue').default);
 Vue.component('images-component', require('./components/Images.vue').default);
 Vue.component('code-list-component', require('./components/CodeList.vue').default);
+Vue.component('code-editor-component', require('./components/CodeEditor.vue').default);
 
 const app = new Vue({
     el: '#app',
@@ -33,13 +41,7 @@ const app = new Vue({
  * Import another Libs
  */
 
-// CodeMirror
-import CodeMirror from 'codemirror'
-// Mode:
-import 'codemirror/mode/xml/xml.js'
-// Theme css in libs.styl
 
-window.CodeMirror = CodeMirror
 
 
 // Import common main files

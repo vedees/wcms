@@ -19,6 +19,4 @@ require 'core/initialize.php'; ?>
   </div>
 </section>
 
-<example-component></example-component>
-
 <?php include('includes/footer.php') ?>

@@ -16,9 +16,18 @@ require 'core/initialize.php'; ?>
       $css = $get_file->all_css();
       $js = $get_file->all_js();
 
-  // Find GET request
-  if (!isset($_GET['path'])) {
+// Find GET request
+$html_from_template = '';
+if (isset($_GET['path'])) {
+  $path = $_GET['path'];
+  $html_from_template = htmlspecialchars(file_get_contents($path));
 ?>
+<!-- Code Editor -->
+<code-editor-component
+    :code='<?php echo json_encode($html_from_template); ?>'>
+</code-editor-component>
+
+<?php } else { ?>
 
 <section id="cssjsEditInfo">
   <div class="container">
@@ -26,6 +35,7 @@ require 'core/initialize.php'; ?>
     <p>Here you can edit yours css/js files</p>
   </div>
 </section>
+
 <section id="cssEdit">
   <div class="container">
     <h2 class="ui-title-2">CSS files</h2>
@@ -44,19 +54,5 @@ require 'core/initialize.php'; ?>
   </div>
 </section>
 
-
-
-<?php
-include('includes/footer.php');
-}
-// Find GET request
-else if (isset($_GET['path'])) {
-  $path = $_GET['path'];
-?>
-
-<?php // TODO FIX script
-      //! footer.php in editor
-      include('editor-new.php');
-}
-
-?>
+<?php } ?>
+<?php include('includes/footer.php'); ?>

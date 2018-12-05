@@ -53,8 +53,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      vue: 'vue/dist/vue.js',
-      codemirror: './src/codemirror.js',
+      vue: 'vue/dist/vue.js'
     }
   },
   // Plugins
@@ -64,9 +63,10 @@ module.exports = {
     new ExtractTextPlugin('css/main.css'),
     // vue-loader version is 15 and above
     new VueLoaderPlugin(),
-    // For req
-    new webpack.DefinePlugin({
-      'require.specified': 'require.resolve'
-    })
+    // Fix codemirror
+    new webpack.IgnorePlugin(/^codemirror$/)
+    // new webpack.DefinePlugin({
+      // 'require.specified': 'require.resolve'
+    // })
   ]
 }
