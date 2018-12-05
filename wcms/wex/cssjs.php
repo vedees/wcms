@@ -15,7 +15,11 @@ require 'core/initialize.php'; ?>
 <?php $get_file = new CssJs();
       $css = $get_file->all_css();
       $js = $get_file->all_js();
+
+  // Find GET request
+  if (!isset($_GET['path'])) {
 ?>
+
 <section id="cssjsEditInfo">
   <div class="container">
     <h1 class="ui-title-1">CSS and JS editing</h1>
@@ -40,4 +44,19 @@ require 'core/initialize.php'; ?>
   </div>
 </section>
 
-<?php include('includes/footer.php') ?>
+
+
+<?php
+include('includes/footer.php');
+}
+// Find GET request
+else if (isset($_GET['path'])) {
+  $path = $_GET['path'];
+?>
+
+<?php // TODO FIX script
+      //! footer.php in editor
+      include('editor-new.php');
+}
+
+?>

@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 //! autoprefixer ??
 const autoprefixer = require('autoprefixer');
@@ -52,7 +53,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      vue: 'vue/dist/vue.js'
+      vue: 'vue/dist/vue.js',
+      codemirror: './src/codemirror.js',
     }
   },
   // Plugins
@@ -61,6 +63,10 @@ module.exports = {
     //TODO fix css/
     new ExtractTextPlugin('css/main.css'),
     // vue-loader version is 15 and above
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    // For req
+    new webpack.DefinePlugin({
+      'require.specified': 'require.resolve'
+    })
   ]
 }

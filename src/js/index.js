@@ -5,5 +5,7 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-import text from './text.js'
+// No errors no problem :)
+// console.clear();
+
 
