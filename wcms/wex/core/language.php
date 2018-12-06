@@ -6,7 +6,8 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-  // Default
+  $lang_choices = ['en', 'ru'];
+   // Default
   if (!isset($_SESSION['lang'])) {
     $_SESSION['lang'] = 'en';
   // GET

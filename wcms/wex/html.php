@@ -29,5 +29,4 @@ if (isset($_GET['finish'])) {
     path='<?php echo $pagename; ?>'>
 </code-editor-component>
 
-
 <?php include('includes/footer.php'); ?>

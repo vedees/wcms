@@ -9,4 +9,5 @@
 session_start();
 require_once dirname(dirname(dirname(__FILE__))) . '/config.php';  //x3 folder
 require_once 'function.php';
+require_once 'theme.php';
 require_once 'language.php';

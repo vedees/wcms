@@ -10,7 +10,7 @@
 require 'core/initialize.php'; ?>
 
 <?php $page_title = 'Image editing - WEX CMS';
-      $page = 'image';?>
+      $page = 'images';?>
 
 <?php include('includes/header.php') ?>
 <?php $get_image = new Image();
