@@ -21,7 +21,7 @@ require 'core/initialize.php'; ?>
 </section>
 
 <section>
-  <div class="container">
+  <div class="container container--small">
     <form class="settings__form" action='settings.php' method="GET">
       <!-- Language -->
       <div class="setting__wrapper">
