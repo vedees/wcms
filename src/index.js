@@ -12,12 +12,10 @@
  */
 
 // CodeMirror
-// import CodeMirror from 'codemirror/lib/codemirror.js'
-// Mode:
-import 'codemirror/mode/javascript/javascript.js'
-// Theme css in libs.styl
-
 window.CodeMirror = require('codemirror/lib/codemirror.js');
+// Mode:
+import 'codemirror/mode/htmlmixed/htmlmixed.js'
+// Theme css in libs.styl
 
 window.Vue = require('vue');
 

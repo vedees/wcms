@@ -19,7 +19,7 @@
             <td><span class="ui-text-regular"> {{ file.type }} </span></td>
             <a :href="'cssjs.php?path='+file.path"> <td><span class="ui-text-regular" > {{ file.title }} </span></td> </a>
             <!-- TODO kb to mb -->
-            <td><span class="ui-text-regular"> {{ file.size }} </span></td>
+            <td><span class="ui-text-regular"> {{ file.size }} kb </span></td>
             <td><span class="ui-text-regular"> {{ file.editTime }} </span></td>
         </tr>
       </tbody>

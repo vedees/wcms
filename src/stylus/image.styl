@@ -1,35 +1,31 @@
-.image_wrapper
+.image_list
   width 100%
-  display: flex;
-  flex-wrap: wrap;
-  justify-content flex-start
+  display: flex
+  flex-wrap: wrap
+  justify-content space-between
+
 .ui-card
   padding 0
-  width 47%
-  margin-right: 8px
+  width 49.4%
   margin-bottom 20px
-.image_list
-
-
 
 //TODO scoped
 .img__wrapper
   width 100%
   height auto
-  max-height 400px
+  padding: 18px
   // overflow hidden
   img
-    width 100%
     height 100%
     // FIX resize
     display flex
-    margin: 0 auto;
-    max-height: 200px;
+    margin: 0 auto
+    max-height: 240px
+    min-height: 240px
+    border-radius 8px
     //! TODO Only theme
     opacity .8
     background-size: cover;
-    border-top-left-radius: 8px
-    border-top-right-radius: 8px
 
 .content
   padding: 20px

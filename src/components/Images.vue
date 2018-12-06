@@ -1,35 +1,33 @@
 <template>
   <div class="image_list">
-    <div class="image_wrapper">
-      <div class="ui-card ui-card--shadow"
-        v-for="image in images"
-        :key="image.id"
-      >
-        <div class="img__wrapper">
-          <img
-            :src="image.path"
-          >
-        </div>
-        <div class="content">
-          <p class="ui-title-4">ID: {{ image.id }}</p>
-          <p class="ui-text-small">Name: {{ image.title }}</p>
-          <p class="ui-text-small">Width: {{ image.sizeW }} Height: {{ image.sizeH }}</p>
-        </div>
-        <button class="button button--round button-primary"
-          @click="editModal(image.id, image.title, image.path, image.sizeW, image.sizeH)">Edit</button>
+    <div class="ui-card ui-card--shadow"
+      v-for="image in images"
+      :key="image.id"
+    >
+      <div class="img__wrapper">
+        <img
+          :src="image.path"
+        >
       </div>
-    </div>
+      <div class="content">
+        <p class="ui-title-4">ID: {{ image.id }}</p>
+        <p class="ui-text-small">Name: {{ image.title }}</p>
+        <p class="ui-text-small">Width: {{ image.sizeW }}px; Height: {{ image.sizeH }}px;</p>
+      </div>
+      <button class="button button--round button-primary"
+        @click="editModal(image.id, image.title, image.path, image.sizeW, image.sizeH)">Edit</button>
+  </div>
 
-    <Modal
-      v-if="showModal"
-      @close="showModal = false"
-      :id="imageId"
-      :title="imageTitle"
-      :path="imagePath"
-      :width="imageWidth"
-      :height="imageHeight"
-      >
-    </Modal>
+  <Modal
+    v-if="showModal"
+    @close="showModal = false"
+    :id="imageId"
+    :title="imageTitle"
+    :path="imagePath"
+    :width="imageWidth"
+    :height="imageHeight"
+    >
+  </Modal>
 
   </div>
 </template>

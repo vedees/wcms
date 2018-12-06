@@ -16,7 +16,14 @@ require 'core/initialize.php'; ?>
       $css = $get_file->all_css();
       $js = $get_file->all_js();
 
-// Find GET request
+// Finish editing
+if (isset($_GET['finish'])) {
+  $path = $_GET['finish'];
+  file_put_contents($path, $_POST['textAreaCode']);
+}
+
+
+// GET CSS & JS file
 $html_from_template = '';
 if (isset($_GET['path'])) {
   $path = $_GET['path'];
@@ -24,7 +31,9 @@ if (isset($_GET['path'])) {
 ?>
 <!-- Code Editor -->
 <code-editor-component
-    :code='<?php echo json_encode($html_from_template); ?>'>
+    action='cssjs.php'
+    :code='<?php echo json_encode($html_from_template); ?>'
+    :path='<?php echo json_encode($path); ?>'>
 </code-editor-component>
 
 <?php } else { ?>

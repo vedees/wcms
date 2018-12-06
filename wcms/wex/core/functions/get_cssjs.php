@@ -41,7 +41,7 @@ class CssJs {
       $file_path = '../' . $file_name;
       // Size (bytes)
       $file_size = filesize($file_path);
-      $file_edit_time = date("m:d:Y H:i", filectime($file_path));
+      $file_edit_time = date("d-m-Y", filectime($file_path));
       // Info
       $object = new stdClass();
       $object->id = $i;

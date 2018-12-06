@@ -1,40 +1,36 @@
 <template>
-<section id="codeEditing">
-  <div class="container">
-    <h2 class="ui-title-2">Code Editor</h2>
-    <div class="code__wrapper">
-      <form method="POST" action="cssjs.php">
-        <label class="radio"><input type="radio" name="html" checked onclick="setHtml('something')"><span>HTML</span></label>
-        <label class="radio"><input type="radio" name="html" ><span>Draft First</span></label>
-        <label class="radio"><input type="radio" name="html" ><span>Draft Second</span></label>
+  <section id="codeEditing">
+    <div class="container">
+      <h2 class="ui-title-2">Code Editor</h2>
+      <div class="code__wrapper">
+        <form method="POST"
+          :action="action + '?finish=' + path">
+          <!-- The code editor -->
+          <textarea v-model="code" name="textAreaCode" id="codeEditor">
+          </textarea>
 
-        <!-- The code editor -->
-        <textarea v-model="code" @change="otputHtml" id="codeEditor">
-        </textarea>
-
-        <!-- The preview window -->
-        <h5>Preview</h5>
-        <div v-html="code">
-        </div>
-
-        <button class="button button--round button-primary" type="submit" name="codeEditor">Save</button>
-      </form>
+          <button class="button button--round button-primary" type="submit" name="codeEditor">Save</button>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 </template>
+
 <script>
 // TODO codemirror-vue
-import Modal from './TextModal.vue'
 export default {
-  components: {
-    Modal
-  },
   props: {
     code: {
       type: String,
       required: false
+    },
+    path: {
+      type: String,
+      required: true
+    },
+    action: {
+      type: String,
+      required: true
     }
   },
   data () {
@@ -45,7 +41,13 @@ export default {
   },
   mounted () {
     this.editor = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
-      lineNumbers: true,
+      lineNumbers     : true,
+      lineWrapping    : true,
+      mode            : "htmlmixed",
+      htmlMode        : true,
+      theme           : "twilight",
+      tabSize         : 4,
+      indentUnit      : 4
     })
     // this.getOutput =  this.editor.getValue()
   }
