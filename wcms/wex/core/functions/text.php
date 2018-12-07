@@ -18,8 +18,8 @@ class Text {
     for ($i=0; $i< count($text); $i++) {
       if (strlen(trim($text[$i])) > 1) {
         $object = new stdClass();
-        $object->title = (trim($text[$i]));;
         $object->id = $id;
+        $object->title = (trim($text[$i]));
         $id++;
         $text_all[] = $object;
       }
