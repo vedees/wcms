@@ -34,10 +34,8 @@ class Image {
 
   // Search all Images
   private function get_images () {
-    //TODO fix template to global
-    $template = get_html_name();
     $imgreg = "/[\"|\(']((.*\\/\\/|)([\\/a-z0-9_%]+\\.(jpg|JPG|jpeg|JPEG|png|PNG|gif)))[\"|\)']/";
-    preg_match_all($imgreg, $template, $imgmas);
+    preg_match_all($imgreg, $GLOBALS['template'], $imgmas);
     return $imgmas;
   }
 

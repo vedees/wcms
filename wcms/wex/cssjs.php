@@ -12,7 +12,7 @@ require 'core/initialize.php'; ?>
       $page = 'cssjs';?>
 
 <?php include('includes/header.php') ?>
-<?php $get_file = new CssJs();
+<?php $get_file = new Files();
       $css = $get_file->all_css();
       $js = $get_file->all_js();
 

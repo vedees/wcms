@@ -6,7 +6,7 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-$select = get_html_select(); ?>
+ ?>
 
 <!-- Sidebar Button  -->
 <div class="sidebar-open-button"> <div class="button-burger"><span class="line line-1"></span><span class="line line-2"></span><span class="line line-3"></span></div> </div>
@@ -17,7 +17,17 @@ $select = get_html_select(); ?>
       <p class="ui-text-small" style="margin:16px 0 px 0;"> <?php echo $lang['pages'] ?>:</p>
       <form id="htmlLinkMenu" method="POST">
         <div class="sidebar-list">
-          <?php echo('<select name="pagename">' . $select . '</select>'); ?>
+          <select name="pagename">
+            <?php
+              foreach ($GLOBALS['html_list'] as $page) {
+                echo "<option value=\"{$page}\"";
+                if ($GLOBALS['pagename'] == $page) {
+                  echo " selected";
+                }
+                echo ">{$page}</option>";
+              }
+            ?>
+          </select>
           <button class="button button--round button-primary" type="submit"> Editing </button>
         </div>
       </form>

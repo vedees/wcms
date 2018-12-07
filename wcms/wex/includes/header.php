@@ -6,9 +6,9 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
- //! Page Name ($template)
- $template = get_html_name();
- $pagename = $_SESSION['pagename']; ?>
+//  //! Page Name ($template)
+//  $template = get_html_name();
+//  $pagename = $_SESSION['pagename']; ?>
 
 <!DOCTYPE html>
 <html lang="en">

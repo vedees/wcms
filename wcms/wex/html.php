@@ -12,7 +12,7 @@ require 'core/initialize.php'; ?>
       $page = 'html';?>
 
 <?php include('includes/header.php');
-      $html_from_template = htmlspecialchars(file_get_contents($pagename));
+      $html_from_template = htmlspecialchars(file_get_contents($GLOBALS['pagename']));
 
 // Find GET Finish editing
 if (isset($_GET['finish'])) {
@@ -48,7 +48,7 @@ if (isset($_GET['finish'])) {
 <code-editor-component
     action='html.php'
     code='<?php echo print_r($html_from_template); ?>'
-    path='<?php echo $pagename; ?>'
+    path='<?php echo $GLOBALS['pagename']; ?>'
     theme='<?php echo $_SESSION['editor_theme']?> '>
 </code-editor-component>
 

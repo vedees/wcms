@@ -28,7 +28,7 @@ class Text {
   }
 
   private function get_text () {
-    $content = preg_replace('/<[^>]+>/', '^', get_html_name() );
+    $content = preg_replace('/<[^>]+>/', '^', $GLOBALS['template']);
     return $text = explode('^', $content);
   }
 

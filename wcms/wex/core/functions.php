@@ -11,8 +11,8 @@ function redirect_to ($url) {
 	header('Location: ' . $url);
 	exit;
 }
+
 // Sidebar active class
 function nav_is_active ($page, $name) {
   if ($page == $name) return true;
 }
-
