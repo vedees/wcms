@@ -1,7 +1,6 @@
 <template>
   <section id="codeEditing">
     <div class="container">
-      <h2 class="ui-title-2">Code Editor</h2>
       <div class="code__wrapper">
         <form method="POST"
           :action="action + '?finish=' + path">
@@ -9,7 +8,9 @@
           <textarea v-model="code" name="textAreaCode" id="codeEditor">
           </textarea>
 
-          <button class="button button--round button-primary" type="submit" name="codeEditor">Save</button>
+          <div class="button-list">
+            <button class="button button--round button-primary" type="submit" name="codeEditor">Save</button>
+          </div>
         </form>
       </div>
     </div>
@@ -31,6 +32,10 @@ export default {
     action: {
       type: String,
       required: true
+    },
+    theme: {
+      type: String,
+      required: false
     }
   },
   data () {
@@ -45,7 +50,7 @@ export default {
       lineWrapping    : true,
       mode            : "htmlmixed",
       htmlMode        : true,
-      theme           : "twilight",
+      theme           : this.theme,
       tabSize         : 4,
       indentUnit      : 4
     })

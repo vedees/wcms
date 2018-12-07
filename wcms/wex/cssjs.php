@@ -29,11 +29,33 @@ if (isset($_GET['path'])) {
   $path = $_GET['path'];
   $html_from_template = htmlspecialchars(file_get_contents($path));
 ?>
+<section>
+  <div class="container">
+    <div class="common-header__center">
+      <h2 class="ui-title-2" style="margin-bottom:0;">Code Editor</h2>
+      <form method="GET" style="width:30%;" class="common-form__center">
+        <select name="editor_theme" style="margin-bottom:0; margin-right: 16px">
+          <?php
+            foreach ($editor_theme_choices as $editor_theme_choice) {
+              echo "<option value=\"{$editor_theme_choice}\"";
+              if ($_SESSION['editor_theme'] == $editor_theme_choice) {
+                echo " selected";
+              }
+              echo ">{$editor_theme_choice}</option>";
+            }
+          ?>
+        </select>
+        <button class="button button-default button--round" type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+</section>
 <!-- Code Editor -->
 <code-editor-component
     action='cssjs.php'
     :code='<?php echo json_encode($html_from_template); ?>'
-    :path='<?php echo json_encode($path); ?>'>
+    :path='<?php echo json_encode($path); ?>'
+    theme='<?php echo $_SESSION['editor_theme']?> '>
 </code-editor-component>
 
 <?php } else { ?>

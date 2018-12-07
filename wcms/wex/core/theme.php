@@ -23,23 +23,17 @@
   }
 
   //! Code Editor Theme
-  $editor_theme_choices = ['default', 'monkai', 'dracula', 'twilight'];
+  $editor_theme_choices = ['elegant', 'twilight'];
   // Default
   if (!isset($_SESSION['editor_theme'])) {
-    $_SESSION['editor_theme'] = 'default';
+    $_SESSION['editor_theme'] = 'elegant';
   // GET
   } else if (isset($_GET['editor_theme']) && $_SESSION['editor_theme'] != $_GET['editor_theme'] && !empty($_GET['editor_theme'])) {
-      // default
-      if ($_GET['editor_theme'] == 'default') {
-        $_SESSION['editor_theme'] = 'default';
-      // monkai
-      } else if ($_GET['editor_theme'] == 'monkai') {
-        $_SESSION['editor_theme'] = 'monkai';
-      // dracula
-      } else if ($_GET['editor_theme'] == 'dracula') {
-        $_SESSION['editor_theme'] = 'dracula';
-      // twilight
-      } else if ($_GET['editor_theme'] == 'twilight') {
-      $_SESSION['editor_theme'] = 'twilight';
+      // Dark
+      if ($_GET['editor_theme'] == 'twilight') {
+        $_SESSION['editor_theme'] = 'twilight';
+      // Light
+      } else if ($_GET['editor_theme'] == 'elegant') {
+      $_SESSION['editor_theme'] = 'elegant';
       }
   }
