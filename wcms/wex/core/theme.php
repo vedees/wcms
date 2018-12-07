@@ -6,20 +6,19 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-
   //! WCMS Theme
-  $theme_choices = ['white', 'red'];
+  $theme_choices = ['White', 'Black'];
   // Default
   if (!isset($_SESSION['theme'])) {
-    $_SESSION['theme'] = 'red';
+    $_SESSION['theme'] = 'White';
   // GET
   } else if (isset($_GET['theme']) && $_SESSION['theme'] != $_GET['theme'] && !empty($_GET['theme'])) {
-      //* Red
-      if ($_GET['theme'] == 'red') {
-        $_SESSION['theme'] = 'red';
+      //* Black
+      if ($_GET['theme'] == 'Black') {
+        $_SESSION['theme'] = 'Black';
       //* White
-      } else if ($_GET['theme'] == 'white') {
-        $_SESSION['theme'] = 'white';
+      } else if ($_GET['theme'] == 'White') {
+        $_SESSION['theme'] = 'White';
       }
   }
 

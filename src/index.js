@@ -17,6 +17,7 @@ window.CodeMirror = require('codemirror/lib/codemirror.js');
 import 'codemirror/mode/htmlmixed/htmlmixed.js'
 // Theme css in libs.styl
 
+// Vue
 window.Vue = require('vue');
 
 /**
@@ -35,13 +36,6 @@ const app = new Vue({
     el: '#app',
 });
 
-/**
- * Import another Libs
- */
-
-
-
-
-// Import common main files
+//! Import common main files
 import stylus from './stylus/main.styl'
 import js from './js'

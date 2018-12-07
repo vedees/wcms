@@ -1,8 +1,6 @@
 const path = require('path');
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-//! autoprefixer ??
-const autoprefixer = require('autoprefixer');
 
 /**
  * Vue-loader v15 has major breaking changes.
@@ -12,25 +10,26 @@ const autoprefixer = require('autoprefixer');
 */
 const { VueLoaderPlugin } = require('vue-loader')
 
+const mainSTYL = new ExtractTextPlugin('css/main.css');
+const themeCSS = new ExtractTextPlugin('css/black.css');
 
 module.exports = {
   // Entry main JS
-  entry: {
-    app: './src/index.js'
-  },
+  entry: [
+     './src/index.js',
+     './src/stylus/theme/black.css',
+  ],
   // Output main JS
   output: {
-    //TODO Fix js/
     filename: 'js/main.js',
-    path: path.resolve(__dirname, '../wcms/wex/static'),
+    path: path.resolve(__dirname, '../static'),
     //! Server fix
     publicPath: 'http://localhost:8080/wcms/wex/static'
-    // To deploy
+    //* To deploy
     // publicPath: '/wcms/wex/static/js'
   },
   // Server
   devServer: {
-    // Help message !!!
     overlay: true
   },
   module: {
@@ -45,9 +44,41 @@ module.exports = {
         exclude: '/node_modules/'
       }, {
         /* Stylus */
-        test: /\.(styl)$/,
-        // loader: ExtractTextPlugin.extract(['css-loader', 'stylus-loader'])
-        loader: ExtractTextPlugin.extract(['css-loader?sourceMap', 'postcss-loader', 'stylus-loader?sourceMap'])
+        test: /\.styl$/,
+        use: mainSTYL.extract({
+          use: [{
+              //TODO FIX MODULES
+              loader: 'css-loader'
+            }, {
+              loader: 'postcss-loader',
+              options: {
+                config: {
+                  path: 'src/js/postcss.config.js'
+                }
+              },
+            }, {
+              loader: 'stylus-loader',
+              options: {
+                'include css': true,
+                preferPathResolver: 'webpack',
+              },
+          }]
+        })
+      }, {
+        // For other library
+        test: /\.css$/,
+        use: themeCSS.extract({
+          use: [{
+            loader: 'css-loader'
+          }, {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: 'src/js/postcss.config.js'
+              }
+            },
+          }]
+        })
       }
     ]
   },
@@ -59,12 +90,14 @@ module.exports = {
   // Plugins
   plugins: [
     // Extract css
-    //TODO fix css/
-    new ExtractTextPlugin('css/main.css'),
+    // new ExtractTextPlugin('css/[name].css'),
+    mainSTYL,
+    themeCSS,
     // vue-loader version is 15 and above
     new VueLoaderPlugin(),
     // Fix codemirror
     new webpack.IgnorePlugin(/^codemirror$/)
+
     // new webpack.DefinePlugin({
       // 'require.specified': 'require.resolve'
     // })

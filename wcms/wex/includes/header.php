@@ -18,8 +18,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title><?php echo $page_title; ?></title>
 
+  <!-- Theme -->
+  <?php if ($_SESSION['theme'] == 'Black') echo '<link rel="stylesheet" href="http://localhost:8080/wcms/wex/static/css/black.css">' ?>
+
   <!-- Server fix -->
   <link rel="stylesheet" href="http://localhost:8080/wcms/wex/static/css/main.css">
+
+  <!-- To deploy -->
   <!-- WARRING '/' -->
   <!-- <link rel="stylesheet" href="/wcms/wex/static/css/main.css"> -->
 </head>
