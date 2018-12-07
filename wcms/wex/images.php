@@ -21,6 +21,7 @@ if (isset($_GET['img'])) {
   $imgname=$_GET['img'];
   // Change image
   move_uploaded_file($_FILES['inputForImages']['tmp_name'], $imgname);
+  echo "<meta http-equiv=\"refresh\" content=\"0;URL=images.php\">";
 }
 ?>
 

@@ -3,37 +3,49 @@
     <span
       slot="messageBox-title"
       style="color: #333333">
-      Filed ID: {{ id }}
+      Image ID: {{ id }}
     </span>
     <div slot="body">
-      <img :src="path">
+      <!-- Images -->
+      <div class="img__wrapper"><img :src="path"></div>
+      <!-- Form -->
       <form
         method="POST"
         enctype="multipart/form-data"
         :action="'images.php?img='+path">
 
-      <span style="color: #333;">Image: {{ title }}</span>
-      <!-- Image info -->
-      <p class="ui-text-smaller"
-        style="color: #333;"
-        v-if="!imgProcessCompleted"
+      <!-- Content -->
+      <div class="content">
+        <span style="color: #333;">{{ title }}</span>
+        <!-- Image info before -->
+        <p class="ui-text-smaller"
+          style="color: #333;"
+          v-if="!imgProcessCompleted"
         > Width: {{ width }} , Height: {{ height }}</p>
-      <p style="color: #333;"
-        v-if="imgProcessCompleted"
-        v-html="textTitle"
-        >ERROR!!!</p>
-      <label class="button button-primary"  for="imageFile"> {{ textImageTest }} </label>
-      <input
-        id='imageFile'
-        name="inputForImages"
-        type="file"
-        required
-        style="display: none;"
-        @change="processFile($event)"
-        >
+        <!-- Image info after -->
+        <p style="color: #333;"
+          v-if="imgProcessCompleted"
+          v-html="textTitle"
+        >Somthig Wrong!</p>
+      </div>
 
-      <button class="button button-primary" name="text_submit" type="submit">Save</button>
-
+      <!-- Buttons -->
+      <div class="button-list button-list--center" style="padding 10px">
+        <div class="load" v-show="!imgProcessCompleted">
+          <label class="button button-primary"  for="imageFile"> {{ textImageTest }} </label>
+          <input
+            id='imageFile'
+            name="inputForImages"
+            type="file"
+            required
+            style="display: none;"
+            @change="processFile($event)"
+            >
+        </div>
+        <div class="save" v-show="imgProcessCompleted">
+          <button class="button button-success button--round" name="text_submit" type="submit">Save</button>
+        </div>
+      </div>
       </form>
     </div>
     <div slot="footer">
@@ -72,7 +84,6 @@ export default {
   },
   data () {
     return {
-      showModal: true,
       imgProcessCompleted: false,
 
       textTitle: '',
@@ -97,10 +108,10 @@ export default {
       this.textImageTest = name
       //TODO es6 + center items
       this.textTitle =
-        '<span>' + 'Change ' + '</span>'
-        + '<span style="color: #26de81;">' + '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg> ' + name + '</span>'
+        '<span style="color: #26de81;">' + 'Completed '
+        + '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg> ' + name + '</span>'
         + '<p>' + 'Type: ' + type + '</p>'
-        + '<p>' + 'Size: ' + size + ' Mb' + sizeCheck + '</p>'
+        + '<p>' + 'Size: ' + size + ' Mb - <span style="color: #26de81;">' + sizeCheck + '</span> </p>'
       // Completed
       this.imgProcessCompleted = true
     }

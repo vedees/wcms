@@ -13,7 +13,9 @@
             name="textareaForText"
             v-model="titleEditing"
             ></textarea>
-          <button class="button button-primary" name="text_submit" type="submit">Save</button>
+          <div class="button-list">
+            <button class="button button-success button--round" name="text_submit" type="submit">Save</button>
+          </div>
       </form>
     </div>
     <div slot="footer">

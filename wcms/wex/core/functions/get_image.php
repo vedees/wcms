@@ -15,15 +15,16 @@ class Image {
       $img_name = trim($imgmas[1][$i]);
       $img_path = '../' . $img_name;
       $img_size = getimagesize($img_path);
+      $img_edit_time = date("d-m-Y", filectime($img_path));
+
       // Create object
       $object = new stdClass();
+      $object->id = $i;
       $object->title = $img_name;
-      // ???
       $object->path = $img_path;
-      //TODO size to obj
       $object->sizeH = $img_size[0];
       $object->sizeW = $img_size[1];
-      $object->id = $i;
+      $object->editTime = $img_edit_time;
       // Push
       $imgmas_all[] = $object;
     }

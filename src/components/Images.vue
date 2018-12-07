@@ -13,9 +13,12 @@
         <p class="ui-title-4">ID: {{ image.id }}</p>
         <p class="ui-text-small">Name: {{ image.title }}</p>
         <p class="ui-text-small">Width: {{ image.sizeW }}px; Height: {{ image.sizeH }}px;</p>
+        <p class="ui-text-small">Last Edut: {{ image.editTime }}</p>
       </div>
-      <button class="button button--round button-primary"
-        @click="editModal(image.id, image.title, image.path, image.sizeW, image.sizeH)">Edit</button>
+      <div class="button-list" style="padding: 20px;">
+        <button class="button button--round button-primary"
+          @click="editModal(image.id, image.title, image.path, image.sizeW, image.sizeH)">Edit</button>
+      </div>
   </div>
 
   <Modal
