@@ -32,10 +32,15 @@ Vue.component('images-component', require('./components/Images.vue').default);
 Vue.component('code-list-component', require('./components/CodeList.vue').default);
 Vue.component('code-editor-component', require('./components/CodeEditor.vue').default);
 
+// Vue initial data
 const app = new Vue({
     el: '#app',
 });
 
 //! Import common main files
-import stylus from './stylus/main.styl'
-import js from './js'
+// Main stylus
+import './stylus/main.styl'
+// Black Theme
+import './stylus/theme/black.styl'
+// Index.js
+import './js'

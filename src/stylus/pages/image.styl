@@ -5,30 +5,31 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-.image_list
+.image__list
   width 100%
   display: flex
   flex-wrap: wrap
   justify-content space-between
 
 .ui-card
-  padding 0
+  //TODO relative to uimini
+  position relative
   width 49.4%
+  max-height 600px
+  padding 0
   margin-bottom 20px
 
-//TODO scoped
 .img__wrapper
-  width 100%
-  height auto
+  // width 100%
+  // height auto
   padding: 18px
   // overflow hidden
   img
-    height 100%
     // FIX resize
     display flex
     margin: 0 auto
-    max-height: 240px
-    min-height: 240px
+    width auto
+    height: 240px
     // Common style
     cursor pointer
     border-radius 8px
@@ -39,9 +40,5 @@
   img
     cursor default
 
-.content
+.messageBox__info
   padding: 20px
-
-.title__wrapper
-  display flex
-  align-items: center

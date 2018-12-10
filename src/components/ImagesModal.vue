@@ -14,38 +14,41 @@
         enctype="multipart/form-data"
         :action="'images.php?img='+path">
 
-      <!-- Content -->
-      <div class="content">
-        <h4 class="ui-title-4">{{ title }}</h4>
-        <!-- Image info before -->
-        <p class="ui-text-smaller"
-          style="color: #333;"
-          v-if="!imgProcessCompleted"
-        > Width: {{ width }} , Height: {{ height }}</p>
-        <!-- Image info after -->
-        <p style="color: #333;"
-          v-if="imgProcessCompleted"
-          v-html="textTitle"
-        >Somthig Wrong!</p>
-      </div>
+        <!-- Content -->
+        <div class="messageBox__content">
+          <!-- Info -->
+          <div class="messageBox__info">
+            <h4 class="ui-title-4">{{ title }}</h4>
+            <!-- Image info before -->
+            <p class="ui-text-smaller"
+              style="color: #333;"
+              v-if="!imgProcessCompleted"
+            > Width: {{ width }} , Height: {{ height }}</p>
+            <!-- Image info after -->
+            <p style="color: #333;"
+              v-if="imgProcessCompleted"
+              v-html="textTitle">
+            Somthig Wrong!</p>
+          </div>
 
-      <!-- Buttons -->
-      <div class="button-list button-list--center" style="padding 10px">
-        <div class="load" v-show="!imgProcessCompleted">
-          <label class="button button-primary"  for="imageFile"> {{ textImageTest }} </label>
-          <input
-            id='imageFile'
-            name="inputForImages"
-            type="file"
-            required
-            style="display: none;"
-            @change="processFile($event)"
-            >
+          <!-- Buttons -->
+          <div class="button-list button-list--center" style="padding 10px">
+            <div class="load" v-show="!imgProcessCompleted">
+              <label class="button button-primary"  for="imageFile"> {{ textImageTest }} </label>
+              <input
+                id='imageFile'
+                name="inputForImages"
+                type="file"
+                required
+                style="display: none;"
+                @change="processFile($event)"
+                >
+            </div>
+            <div class="save" v-show="imgProcessCompleted">
+              <button class="button button-success button--round" name="text_submit" type="submit">Save</button>
+            </div>
+          </div>
         </div>
-        <div class="save" v-show="imgProcessCompleted">
-          <button class="button button-success button--round" name="text_submit" type="submit">Save</button>
-        </div>
-      </div>
       </form>
     </div>
     <div slot="footer">

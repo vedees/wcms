@@ -58,5 +58,3 @@ export default {
   }
 }
 </script>
-
-//TODO Style

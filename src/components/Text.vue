@@ -22,7 +22,7 @@
         <tr v-for="text in textFilter"
           :key="text.id">
           <td><span class="ui-text-regular"> {{ text.id }} </span></td>
-          <td class="common-td__text" @click="editModal(text.id, text.title)" >
+          <td class="center" @click="editModal(text.id, text.title)" >
             <svg  xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="16 3 21 8 8 21 3 21 3 16 16 3"></polygon></svg>
             <span class="ui-text-regular"> {{ text.title }} </span>
           </td>
@@ -89,4 +89,41 @@ export default {
 }
 </script>
 
-//TODO Style
+<style scoped>
+
+/* Search */
+.table-search__wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+.search {
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+}
+.search--icon {
+  height: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  align-items: center;
+  display: flex;
+}
+.search--input {
+  padding: 16px 16px 16px 56px !important;
+  margin-bottom: 0px;
+  border-radius: 12px;
+  font-size: 16px;
+  height: unset !important;
+}
+
+/* Table */
+.center {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.center svg {
+  margin-right: 8px;
+}
+</style>

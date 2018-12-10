@@ -1,5 +1,5 @@
 <template>
-  <div class="image_list">
+  <div class="image__list">
     <div class="ui-card ui-card--shadow"
       v-for="image in images"
       :key="image.id"
@@ -10,16 +10,18 @@
           :src="image.path"
         >
       </div>
-      <div class="content">
-        <p class="ui-title-4">ID: {{ image.id }}</p>
-        <p class="ui-text-small">Name: {{ image.title }}</p>
-        <p class="ui-text-small">Size: {{ image.fileSize }}</p>
-        <p class="ui-text-small">Width: {{ image.sizeW }}px; Height: {{ image.sizeH }}px;</p>
-        <p class="ui-text-small">Last Edut: {{ image.editTime }}</p>
-      </div>
-      <div class="button-list" style="padding: 20px;">
-        <button class="button button--round button-primary"
-          @click="editModal(image.id, image.title, image.path, image.sizeW, image.sizeH)">Edit</button>
+      <div class="messageBox__content">
+        <div class="messageBox__info">
+          <p class="ui-title-4">ID: {{ image.id }}</p>
+          <p class="ui-text-small">Name: {{ image.title }}</p>
+          <p class="ui-text-small">Size: {{ image.fileSize }}</p>
+          <p class="ui-text-small">Width: {{ image.sizeW }}px; Height: {{ image.sizeH }}px;</p>
+          <p class="ui-text-small">Last Edit: {{ image.editTime }}</p>
+        </div>
+        <div class="button-list" style="padding: 20px;">
+          <button class="button button--round button-primary"
+            @click="editModal(image.id, image.title, image.path, image.sizeW, image.sizeH)">Edit</button>
+        </div>
       </div>
   </div>
 

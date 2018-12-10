@@ -17,7 +17,6 @@ module.exports = {
   // Entry main JS
   entry: [
      './src/index.js',
-     './src/stylus/theme/black.css',
   ],
   // Output main JS
   output: {
@@ -34,49 +33,57 @@ module.exports = {
   },
   module: {
     rules: [{
+        //! VUE
         test: /\.vue$/,
         loader: 'vue-loader',
+        options: {
+          loaders: {
+            stylus: 'vue-style-loader!stylus-loader', // <style lang="stylus">
+            // sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
+          }
+        }
       },{
-        /* Babel */
+        //! ALL JS
         test: /\.js$/,
         loader: 'babel-loader',
-        // Prevent node_modules !!!
         exclude: '/node_modules/'
       }, {
-        /* Stylus */
-        test: /\.styl$/,
+        //! MAIN stylus
+        test: /main\.styl$/,
         use: mainSTYL.extract({
           use: [{
-              //TODO FIX MODULES
               loader: 'css-loader'
             }, {
               loader: 'postcss-loader',
-              options: {
-                config: {
-                  path: 'src/js/postcss.config.js'
-                }
-              },
+              options: { config: { path: 'src/js/postcss.config.js'} },
             }, {
               loader: 'stylus-loader',
-              options: {
-                'include css': true,
-                preferPathResolver: 'webpack',
-              },
+              options: { 'include css': true, preferPathResolver: 'webpack', },
           }]
         })
       }, {
-        // For other library
-        test: /\.css$/,
+        //! BLACK Theme
+        test: /black\.styl$/,
         use: themeCSS.extract({
+          use: [{
+              loader: 'css-loader'
+            }, {
+              loader: 'postcss-loader',
+              options: { config: { path: 'src/js/postcss.config.js' } },
+            }, {
+              loader: 'stylus-loader',
+              options: { 'include css': true, preferPathResolver: 'webpack', },
+          }]
+        })
+      }, {
+        //! Other library & vue
+        test: /\.css$/,
+        use: mainSTYL.extract({
           use: [{
             loader: 'css-loader'
           }, {
             loader: 'postcss-loader',
-            options: {
-              config: {
-                path: 'src/js/postcss.config.js'
-              }
-            },
+            options: { config: { path: 'src/js/postcss.config.js' } },
           }]
         })
       }
