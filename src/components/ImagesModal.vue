@@ -16,7 +16,7 @@
 
       <!-- Content -->
       <div class="content">
-        <span style="color: #333;">{{ title }}</span>
+        <h4 class="ui-title-4">{{ title }}</h4>
         <!-- Image info before -->
         <p class="ui-text-smaller"
           style="color: #333;"

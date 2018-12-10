@@ -21,7 +21,7 @@ class Finder {
       $object->type = $name;
       $object->title = $file_name;
       $object->path = $file_path;
-      $object->size = $file_size;
+      $object->size = formatBytes($file_size);
       $object->editTime = $file_edit_time;
       // Push
       $files[] = $object;

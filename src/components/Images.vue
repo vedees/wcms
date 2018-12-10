@@ -6,12 +6,14 @@
     >
       <div class="img__wrapper">
         <img
+          @click="editModal(image.id, image.title, image.path, image.sizeW, image.sizeH)"
           :src="image.path"
         >
       </div>
       <div class="content">
         <p class="ui-title-4">ID: {{ image.id }}</p>
         <p class="ui-text-small">Name: {{ image.title }}</p>
+        <p class="ui-text-small">Size: {{ image.fileSize }}</p>
         <p class="ui-text-small">Width: {{ image.sizeW }}px; Height: {{ image.sizeH }}px;</p>
         <p class="ui-text-small">Last Edut: {{ image.editTime }}</p>
       </div>

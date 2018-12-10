@@ -16,3 +16,10 @@ function redirect_to ($url) {
 function nav_is_active ($page, $name) {
   if ($page == $name) return true;
 }
+
+// Size Formater
+function formatBytes ($size, $precision = 2) {
+	$base = log($size, 1024);
+	$suffixes = array('', 'Kb', 'Mb', 'G', 'T');
+	return round(pow(1024, $base - floor($base)), $precision) .' '. $suffixes[floor($base)];
+}
