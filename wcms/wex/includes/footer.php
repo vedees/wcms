@@ -9,8 +9,6 @@
 <!-- Close .wrapper -->
 </div>
 
-
-
 <!-- Server fix -->
 <script src="http://localhost:8080/wcms/wex/static/js/main.js"></script>
 <!-- WARRING '/' -->

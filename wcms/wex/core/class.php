@@ -14,4 +14,5 @@ require_once 'classes/file_finder.php';
 require_once 'classes/get_text.php';
 // Images
 require_once 'classes/get_image.php';
-
+// Counter
+require_once 'classes/counter.php';

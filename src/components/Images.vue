@@ -95,3 +95,13 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.ui-card {
+  position: relative;
+  width: 49.4%;
+  max-height: 600px;
+  padding: 0;
+  margin-bottom: 20px;
+}
+</style>
