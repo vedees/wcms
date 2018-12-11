@@ -12,6 +12,26 @@ function redirect_to ($url) {
 	exit;
 }
 
+// Empty Check
+function is_blank($value) {
+	return !isset($value) || trim($value) === '';
+}
+
+// Show Errors
+function display_errors ($errors=array()) {
+  $output = '';
+  if(!empty($errors)) {
+    $output .= "<div class=\"errors\">";
+    $output .= "<ul>";
+    foreach($errors as $error) {
+      $output .= "<li>" . $error . "</li>";
+    }
+    $output .= "</ul>";
+    $output .= "</div>";
+  }
+  return $output;
+}
+
 // Sidebar active class
 function nav_is_active ($page, $name) {
   if ($page == $name) return true;
@@ -23,3 +43,4 @@ function formatBytes ($size, $precision = 2) {
 	$suffixes = array('', 'Kb', 'Mb', 'G', 'T');
 	return round(pow(1024, $base - floor($base)), $precision) .' '. $suffixes[floor($base)];
 }
+

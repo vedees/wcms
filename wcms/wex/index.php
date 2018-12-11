@@ -6,7 +6,8 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-require 'core/initialize.php'; ?>
+require 'core/initialize.php';
+require_login(); ?>
 
 <?php $page_title = 'Dashboard - WEX CMS';
       $page = 'dashboard';
