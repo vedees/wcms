@@ -15,22 +15,10 @@
   <div class="container">
     <div class="sidebar-content">
       <p class="ui-text-small" style="margin:16px 0 px 0;"> <?php echo $lang['pages'] ?>:</p>
-      <form id="htmlLinkMenu" method="POST">
-        <div class="sidebar-list">
-          <select name="pagename">
-            <?php
-              foreach ($GLOBALS['html_list'] as $page) {
-                echo "<option value=\"{$page}\"";
-                if ($GLOBALS['pagename'] == $page) {
-                  echo " selected";
-                }
-                echo ">{$page}</option>";
-              }
-            ?>
-          </select>
-          <button class="button button--round button-primary" type="submit"> Editing </button>
-        </div>
-      </form>
+
+      <!-- ! PAGE SELECTOR -->
+      <?php require 'page_select.php'; ?>
+
       <p class="ui-text-small" style="margin:30px 0 6px 0;"> <?php echo $lang['basic'] ?>:</p>
       <ul class="sidebar-list">
         <li class="sidebar-item <?php if(nav_is_active($page, 'dashboard')) echo 'active';?> icon-wrapper">
