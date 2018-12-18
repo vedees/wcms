@@ -11,8 +11,6 @@ session_start();
 require_once dirname(dirname(dirname(__FILE__))) . '/config.php';  //x3 folder
 // All Functions
 require_once 'functions.php';
-// Auth
-require_once 'auth.php';
 // Get Page
 require_once 'get_page.php';
 // All Classes

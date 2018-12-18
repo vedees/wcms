@@ -7,7 +7,8 @@
  */
 
 require 'core/initialize.php';
-require_login(); ?>
+$user = new Login;
+$user->require_login(); ?>
 
 <?php $page_title = 'Dashboard - WEX CMS';
       $page = 'dashboard';

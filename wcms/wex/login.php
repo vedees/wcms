@@ -5,8 +5,10 @@
  * Copyright (C) 2018 Evgenii Vedegis <vedegis@gmail.com>
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
-
 require 'core/initialize.php'; ?>
+
+<?php $user = new Login();
+      $user->check_login();?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +17,7 @@ require 'core/initialize.php'; ?>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Login - WEX CMS</title>
-  <!-- dev server not working here -->
+  <!-- dev server not working in this page -->
   <link rel="stylesheet" href="static/css/main.css">
 
   <!-- Common style -->

@@ -14,11 +14,12 @@
     $GLOBALS['pagename'] = $_SESSION['pagename'];
   } else {
     // POST Error
-    $GLOBALS['pagename']= '../index.html';
+    // TODO create page var in config
+    $GLOBALS['pagename'] = '../index.html';
   };
-  $GLOBALS['pagename'] = $_SESSION['pagename'];
 
   // Get template (from pagename)
+  // TODO FIX - to get
   $GLOBALS['template'] = file_get_contents($GLOBALS['pagename']);
 
   // Get HTML list
