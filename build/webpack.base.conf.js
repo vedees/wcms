@@ -23,7 +23,7 @@ module.exports = {
     filename: 'js/main.js',
     path: path.resolve(__dirname, '../static'),
     //! Server fix
-    publicPath: 'http://localhost:8080/wcms/wex/static'
+    publicPath: 'static'
     //* To deploy
     // publicPath: '/wcms/wex/static/js'
   },
@@ -61,21 +61,7 @@ module.exports = {
               options: { 'include css': true, preferPathResolver: 'webpack', },
           }]
         })
-      }, {
-        //! BLACK Theme
-        test: /black\.styl$/,
-        use: themeCSS.extract({
-          use: [{
-              loader: 'css-loader'
-            }, {
-              loader: 'postcss-loader',
-              options: { config: { path: 'src/js/postcss.config.js' } },
-            }, {
-              loader: 'stylus-loader',
-              options: { 'include css': true, preferPathResolver: 'webpack', },
-          }]
-        })
-      }, {
+      },{
         //! Other library & vue
         test: /\.css$/,
         use: mainSTYL.extract({

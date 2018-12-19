@@ -11,12 +11,6 @@
  * point when building robust, powerful web applications using Vue and WCMS.
  */
 
-// CodeMirror
-window.CodeMirror = require('codemirror/lib/codemirror.js');
-// Mode:
-import 'codemirror/mode/htmlmixed/htmlmixed.js'
-// Theme css in libs.styl
-
 // Vue
 window.Vue = require('vue');
 
@@ -26,12 +20,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('text-component', require('./components/Text.vue').default);
-Vue.component('modal-component', require('./components/UI/Modal.vue').default);
-Vue.component('images-component', require('./components/Images.vue').default);
-Vue.component('code-list-component', require('./components/CodeList.vue').default);
-Vue.component('code-editor-component', require('./components/CodeEditor.vue').default);
-Vue.component('chart-component', require('./components/dashboard/Chart.vue').default);
+Vue.component('example-component', require('./components/Example.vue').default);
 
 // Vue initial data
 const app = new Vue({
@@ -41,7 +30,5 @@ const app = new Vue({
 //! Import common main files
 // Main stylus
 import './stylus/main.styl'
-// Black Theme
-import './stylus/theme/black.styl'
 // Index.js
 import './js'
