@@ -10,7 +10,8 @@ node_modules
 test
 scr/test
 dist
-static
+# Becouse gh
+# static
 
 # BD, logs
 *.log

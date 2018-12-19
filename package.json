@@ -25,6 +25,7 @@
   "dependencies": {
     "chart.js": "^2.7.3",
     "codemirror": "^5.42.0",
+    "medium-zoom": "^1.0.2",
     "uimini": "^1.1.3",
     "vue": "^2.5.17",
     "vue-chartjs": "^3.4.0"
