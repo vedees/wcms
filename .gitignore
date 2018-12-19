@@ -8,6 +8,7 @@ node_modules
 
 # Dist & test
 test
+scr/test
 dist
 static
 
