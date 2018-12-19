@@ -2,11 +2,13 @@
 .button-list
   padding 20px 0
 
+
 //! IMG SCREEN
 .screenshots__wrapper
   display flex
   align-items center
   position relative
+  margin-bottom screenshotsMarginBottom
 // code
 .code
   box-shadow 0 10px 20px 0 rgba(135, 113, 155, 0.5)
@@ -19,6 +21,20 @@
   img
     width auto
     max-height: 760px
+// Info
+.screenshots-info
+  position absolute
+  bottom: screenshotsMarginBottom - 170%
+  left: 50%
+  transform: translateX(-50%)
+  color: infoColor
 // nav screen
 .screen-arrow
   position absolute
+
+.screenshots__wrapper--first
+  .screen-arrow
+    width: 24%
+    top: 29.8%
+    left: 34.3%
+    transform: rotate(22.6deg)

@@ -1,0 +1,46 @@
+
+//! Service
+.service-title__descr
+  max-width 60%
+  margin-bottom 40px
+.service-list
+  display flex
+  justify-content space-between
+  align-items center
+  flex-wrap: wrap
+  margin 30px 0
+.service-item
+  width 32%
+// title
+.title-service
+  margin-bottom: 20px
+  &:before
+    display: block
+    width: 66px
+    height: 66px
+    margin-bottom: 18px
+// modificate
+.title-service--build
+  &:before
+    content: url("data:image/svg+xml;charset=utf-8,%3Csvg width='66' height='66' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Ccircle fill-opacity='.2' fill='#444CE0' cx='33' cy='33' r='33'/%3E%3Cpath d='M33 12c-11.545 0-21 9.455-21 21s9.455 21 21 21 21-9.455 21-21-9.455-21-21-21z' stroke='%23FFF' stroke-width='4'/%3E%3Cpath d='M33 12c-11.55 0-21 9.45-21 21s9.45 21 21 21 21-9.45 21-21-9.45-21-21-21z' stroke-opacity='.5' stroke='#444CE0' stroke-width='4' stroke-dasharray='38,150.7200012207031'/%3E%3Cpath d='M42.685 36.398l-7.223-6.168 5.142-5.714a1.494 1.494 0 0 0 .336-1.436A1.5 1.5 0 0 0 39.5 22H35a7.474 7.474 0 0 0-5.15 2.049L24.29 29.3a2.25 2.25 0 0 1-3.104 2.933l-.716.677a1.495 1.495 0 0 0-.03 2.15c2.121 2.122 2.378 2.38 4.5 4.5a1.496 1.496 0 0 0 2.175-.057l.64-.711a2.25 2.25 0 0 1 2.822-3.135l.055-.06.804-.895 5.963 6.983a3.75 3.75 0 1 0 5.287-5.287M33 8c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4z' fill='#444CE0'/%3E%3C/g%3E%3C/svg%3E")
+.title-service--mod
+  &:before
+    content: url("data:image/svg+xml;charset=utf-8,%3Csvg width='66' height='66' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Ccircle fill-opacity='.2' fill='#444CE0' cx='33' cy='33' r='33'/%3E%3Crect fill-opacity='.3' fill='#444CE0' x='15' y='15' width='36' height='36' rx='8'/%3E%3Crect fill='%23FFF' x='23' y='39' width='20' height='4' rx='2'/%3E%3Cpath d='M25 39h10v4H25a2 2 0 1 1 0-4z' fill='#444CE0'/%3E%3Cpath d='M35 37c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4z' fill='#444CE0'/%3E%3Crect fill='%23FFF' x='23' y='25' width='20' height='4' rx='2'/%3E%3Cpath d='M25 25h6v4h-6a2 2 0 1 1 0-4z' fill='#444CE0'/%3E%3Cpath d='M31 23c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4z' fill='#444CE0'/%3E%3C/g%3E%3C/svg%3E")
+.title-service--access
+  &:before
+    content: url("data:image/svg+xml;charset=utf-8,%3Csvg width='66' height='66' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Ccircle fill-opacity='.2' fill='#444CE0' cx='33' cy='33' r='33'/%3E%3Crect stroke='%23FFF' stroke-width='4' x='19' y='19' width='28' height='28' rx='4'/%3E%3Ccircle fill-opacity='.5' fill='#444CE0' cx='33' cy='33' r='4'/%3E%3Cpath d='M26.425 42.425A2.09 2.09 0 0 0 27 41c0-1.1-.9-2-2-2-.55 0-1.05.225-1.425.575-1.15 1.175-1.9 1.925-2.575 2.6V41c0-1.1-.9-2-2-2s-2 .9-2 2v6c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2s-.9-2-2-2h-1.175c.675-.675 1.425-1.425 2.6-2.575zM47 39c-1.1 0-2 .9-2 2v1.175a304.904 304.904 0 0 1-2.575-2.6A2.09 2.09 0 0 0 41 39c-1.1 0-2 .9-2 2 0 .55.225 1.05.575 1.425 1.175 1.15 1.925 1.9 2.6 2.575H41c-1.1 0-2 .9-2 2s.9 2 2 2h6c1.1 0 2-.9 2-2v-6c0-1.1-.9-2-2-2zm-6-22c-1.1 0-2 .9-2 2s.9 2 2 2h1.175c-.675.675-1.425 1.425-2.6 2.575A2.09 2.09 0 0 0 39 25c0 1.1.9 2 2 2 .55 0 1.05-.225 1.425-.575 1.15-1.175 1.9-1.925 2.575-2.6V25c0 1.1.9 2 2 2s2-.9 2-2v-6c0-1.1-.9-2-2-2h-6zm-14 2c0-1.1-.9-2-2-2h-6c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2s2-.9 2-2v-1.175c.675.675 1.425 1.425 2.575 2.6.375.35.875.575 1.425.575 1.1 0 2-.9 2-2 0-.55-.225-1.05-.575-1.425-1.175-1.15-1.925-1.9-2.6-2.575H25c1.1 0 2-.9 2-2z' fill='#444CE0'/%3E%3C/g%3E%3C/svg%3E")
+// Info
+.service-info
+  margin-bottom 30px
+.service-info__list
+  li
+    margin-bottom 16px
+    &:before
+      display: inline-block;
+      margin-right: 6px;
+      width: 18px;
+      height: 18px;
+      vertical-align: top;
+      content: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 18 18' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill-rule='evenodd' fill='#444CE0'%3E%3Ccircle fill-opacity='.2' cx='9' cy='9' r='9'/%3E%3Cpath d='M14 6c0 .275-.112.525-.287.713a1357.655 1357.655 0 0 0-6 6A1.045 1.045 0 0 1 7 13c-.275 0-.525-.112-.712-.287a339.415 339.415 0 0 0-3-3A1.045 1.045 0 0 1 3 9c0-.55.45-1 1-1 .275 0 .525.113.713.288C5.85 9.425 6.175 9.763 7 10.588 8.588 9 11.088 6.5 12.288 5.288 12.475 5.113 12.725 5 13 5c.55 0 1 .45 1 1z'/%3E%3C/g%3E%3C/svg%3E")
+    &:last-child
+      margin-bottom: 0
