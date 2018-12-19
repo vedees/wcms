@@ -11,7 +11,7 @@ class Logout {
   function logout_user(){
     unset($_SESSION['logged_user']);
     unset($_SESSION['logged_password']);
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=login.php\">";
+    redirect_to('/wex/login.php');
   }
 
 }

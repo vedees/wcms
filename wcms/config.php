@@ -6,8 +6,8 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-$admin_name = '123';
-$admin_password = '123';
-
+// Admin settings here
+// Login
 $GLOBALS['admin_name'] = '111';
+// Password
 $GLOBALS['admin_password'] = '222';

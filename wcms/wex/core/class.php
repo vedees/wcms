@@ -6,13 +6,6 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-
-// AUTH
-// Log in
-require_once 'classes/auth/login.php';
-// Log out
-require_once 'classes/auth/logout.php';
-
 // CSS & JS files
 require_once 'classes/get_file.php';
 // CSS & JS FINDER
@@ -23,3 +16,9 @@ require_once 'classes/get_text.php';
 require_once 'classes/get_image.php';
 // Counter
 require_once 'classes/counter.php';
+
+// Auth
+// Log in
+require_once 'classes/auth/login.php';
+// Log out
+require_once 'classes/auth/logout.php';

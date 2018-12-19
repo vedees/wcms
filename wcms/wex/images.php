@@ -5,15 +5,17 @@
  * Copyright (C) 2018 Evgenii Vedegis <vedegis@gmail.com>
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
-
-//! TODO ADD CSS IMAGES
-require 'core/initialize.php'; ?>
+require 'core/initialize.php';
+$user = new Login;
+$user->require_login();?>
 
 <?php $page_title = 'Image editing - WEX CMS';
       $page = 'images';?>
 
 <?php include('includes/header.php') ?>
-<?php $get_image = new Image();
+
+<?php //! TODO ADD CSS IMAGES (css)
+      $get_image = new Image();
       $images = $get_image->image_filter();
 
 // Check get request

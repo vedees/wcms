@@ -5,7 +5,8 @@
  * Copyright (C) 2018 Evgenii Vedegis <vedegis@gmail.com>
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
-require 'core/initialize.php'; ?>
+require 'core/initialize.php';
+?>
 
 <?php $user = new Login();
       $user->check_login();?>

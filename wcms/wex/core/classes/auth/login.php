@@ -32,8 +32,8 @@ class Login {
 
           //TODO - если не прошел редирект месседж о переходе
           echo 'hi ';
-          // redirect_to('/wex/index.php');
-          echo "<meta http-equiv=\"refresh\" content=\"0;URL=index.php\">";
+          redirect_to('/wex/index.php');
+          // echo "<meta http-equiv=\"refresh\" content=\"0;URL=index.php\">";
         // Error pass
         } else {
           $errors[] = 'Username or Password is not correct';
@@ -51,9 +51,8 @@ class Login {
   // Check require login
   public function require_login() {
     if(!$this->is_logged_in()) {
-      //TODO FIX redirect
-      // redirect_to('/wex/index.php');
-      echo "<meta http-equiv=\"refresh\" content=\"0;URL=login.php\">";
+      redirect_to('/wex/login.php');
+      // echo "<meta http-equiv=\"refresh\" content=\"0;URL=login.php\">";
     } else {
       // Do nothing, let the rest of the page proceed
     }
