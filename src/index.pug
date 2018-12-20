@@ -1,0 +1,19 @@
+extends layout/main
+
+block variables
+	- var pageClass        = 'index-page--en';
+	- var title            = 'WCMS - Simle CMS';
+	- var description      = 'Simple cms. Best solution for landing page';
+
+
+block content
+	include ./includes/promo.pug
+	include ./includes/service.pug
+	//TODO FIX screenshots
+	include ./includes/screenshots/text.pug
+	include ./includes/screenshots/img.pug
+	include ./includes/screenshots/html.pug
+	include ./includes/screenshots/cssjs.pug
+	include ./includes/install.pug
+block script
+	//- script(src='')

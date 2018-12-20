@@ -29,6 +29,6 @@ const app = new Vue({
 
 //! Import common main files
 // Main stylus
-import './stylus/main.styl'
+import './static/stylus/main.styl'
 // Index.js
 import './js'

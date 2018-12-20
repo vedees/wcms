@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 /**
  * Vue-loader v15 has major breaking changes.
@@ -72,6 +73,17 @@ module.exports = {
             options: { config: { path: 'src/js/postcss.config.js' } },
           }]
         })
+      },
+      //!  ???
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file-loader',
+        options: {
+            name: '[name].[ext]?[hash]',
+        },
+      },{
+        test: /\.pug$/,
+        use: ['html-loader?attrs=false', 'pug-html-loader']
       }
     ]
   },
@@ -89,7 +101,12 @@ module.exports = {
     // vue-loader version is 15 and above
     new VueLoaderPlugin(),
     // Fix codemirror
-    new webpack.IgnorePlugin(/^codemirror$/)
+    new webpack.IgnorePlugin(/^codemirror$/),
+
+    new CopyWebpackPlugin([{
+      from: './src/static/img',
+      to: './img'
+    }]),
 
     // new webpack.DefinePlugin({
       // 'require.specified': 'require.resolve'
