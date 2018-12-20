@@ -12,13 +12,17 @@
 // Vars
 @import './vars.styl'
 
+//! Modules
+@import './modules/*.styl'
+
 //! Pages
 // Index html
-@import './index.styl'
-
-// Common
-@import './common.styl'
+@import './index/*.styl'
 
 // TODO !!!! FIX UIMINI
 .wrapper
   max-width: unset
+
+// Fix btn list
+.button-list
+  padding 20px 0
