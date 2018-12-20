@@ -9,9 +9,7 @@ header
           span.line.line-3
         .navbar-list__wrapper
           ul.navbar-list
-            li.navbar-item
-              a.navbar-link(href='#') Documetation
-            li.navbar-item
-              a.navbar-link(target='_blank', href='https://github.com/vedees/wcms/releases') Changelog
+            +headerNavLink('/documetation', 'Documetation')
+            +headerNavLink('https://github.com/vedees/wcms/releases', 'Changelog')
             li.navbar-item
               a(href='https://vedees.ru/wex/wcms.zip').button.button--round.button-primary Download

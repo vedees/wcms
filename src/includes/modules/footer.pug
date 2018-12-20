@@ -1,25 +1,20 @@
 footer
-  .footer__wrapper
-    span.ui-title-3 WCMS
-    .footer-nav
-      span.ui-title-4 Learn
-      ul
-        li
-          a(href='/') Home
-        li
-          a(href='/#install') Install
-        li
-          a(href='https://vedees.ru/wex/wcms.zip') Download
-    .footer-nav
-      span.ui-title-4 Links
-      ul
-        li
-          a(href='/documentation') Documentation
-        li
-          a(href='https://github.com/vedees/wcms') GitHub
-        li
-          a(href='https://github.com/vedees/') Contact Me
-  .footer-copyright
-    span
-      | Copyright © 2018 
-      a(href='https://github.com/vedees/') Vedegis Evgenii
+  .container
+    .footer__wrapper
+      span.ui-title-3 WCMS
+      .footer-nav
+        span.ui-title-4 Learn
+        ul.footer-nav__list
+          +footerNavLink('/', 'Home')
+          +footerNavLink('/#install', 'Install')
+          +footerNavLink('https://vedees.ru/wex/wcms.zip', 'Download')
+      .footer-nav
+        span.ui-title-4 Links
+        ul.footer-nav__list
+          +footerNavLink('/documentation', 'Documentation')
+          +footerNavLink('https://github.com/vedees/wcms', 'GitHub')
+          +footerNavLink('https://github.com/vedees/', 'Contact Me')
+    .footer-copyright
+      span
+        | Copyright © 2018 
+        a(href='https://github.com/vedees/') Vedegis Evgenii
