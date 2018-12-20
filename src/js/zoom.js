@@ -1,12 +1,8 @@
 import mediumZoom from 'medium-zoom'
 
 const zoomDefault = mediumZoom('#zoom-default')
-const zoomMargin = mediumZoom('#zoom-margin', { margin: 48 })
-const zoomBackground = mediumZoom('#zoom-background--black', { background: '#212530' })
-const zoomScrollOffset = mediumZoom('#zoom-scrollOffset', {
-  scrollOffset: 0,
-  background: '#ffffff',
-})
+const zoomBackgroundBlack = mediumZoom('#zoom-background--black', { margin: 48,scrollOffset: 0, background: '#212530' })
+const zoomBackgroundWhite = mediumZoom('#zoom-background--white', { margin: 48,scrollOffset: 0, background: '#ffffff' })
 
 // Trigger the zoom when the button is clicked
 const zoomToTrigger = mediumZoom('#zoom-trigger')
@@ -20,11 +16,10 @@ zoomToDetach.on('closed', () => zoomToDetach.detach())
 // Observe zooms to write the history
 const observedZooms = [
   zoomDefault,
-  zoomMargin,
-  zoomBackground,
-  zoomScrollOffset,
+  zoomBackgroundBlack,
+  zoomBackgroundWhite,
   zoomToTrigger,
-  zoomToDetach,
+  zoomToDetach
 ]
 
 // Log all interactions in the history
