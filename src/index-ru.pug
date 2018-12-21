@@ -1,0 +1,33 @@
+extends layout/main
+
+block variables
+	- var lang             = 'ru'
+	- var pageClass        = 'index-page--ru';
+	- var title            = 'WCMS - Самая простая CMS';
+	- var description      = 'WCMS - Простая CMS. Лучшее решение для лендинг-пейдж';
+
+
+block content
+	include ./includes/promo.pug
+	+promo
+		.promo-banner
+			img#zoom-background--white(src='/static/img/dashboard.png', alt='CMS админ панель')
+			span.ui-text-smaller Главная панель
+
+	include ./includes/service.pug
+	//TODO FIX screenshots
+	include ./includes/screenshots/text.pug
+	include ./includes/screenshots/img.pug
+	include ./includes/screenshots/html.pug
+	include ./includes/screenshots/cssjs.pug
+	include ./includes/install.pug
+	+install
+		li
+			| 1. 
+			a(href='https://vedees.ru/wex/wcms.zip') Скачайте WCMS
+		li 2. Распакуйте архив в корень с сайтов
+		li 3. Измените логин и пароль в config.php
+		li 4. Перейдте на ваш-сайт.рф/wex/
+
+block script
+	//- script(src='')

@@ -1,6 +1,7 @@
 extends layout/main
 
 block variables
+	- var lang             = 'en'
 	- var pageClass        = 'index-page--en';
 	- var title            = 'WCMS - Simle CMS';
 	- var description      = 'Simple cms. Best solution for landing page';
@@ -8,6 +9,11 @@ block variables
 
 block content
 	include ./includes/promo.pug
+	+promo
+		.promo-banner
+			img#zoom-background--white(src='/static/img/dashboard.png', alt='CMS admin panel')
+			span.ui-text-smaller Main dashboard
+
 	include ./includes/service.pug
 	//TODO FIX screenshots
 	include ./includes/screenshots/text.pug
@@ -15,5 +21,12 @@ block content
 	include ./includes/screenshots/html.pug
 	include ./includes/screenshots/cssjs.pug
 	include ./includes/install.pug
+	+install
+		li
+			| 1. 
+			a(href='https://vedees.ru/wex/wcms.zip') Download WCMS
+		li 2. Extract zip to project root
+		li 3. Change login/password in config.php
+		li 4. Go to your-website.com/wex/
 block script
 	//- script(src='')

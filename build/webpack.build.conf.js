@@ -10,10 +10,19 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
   // Source map
   // devtool: 'eval-soucemap'
   plugins: [
+    //TODO FIX
+    // index en
     new HtmlWebpackPlugin({
       //* '../' - fix static folder for *.html files
       filename: '../index.html',
-      template: 'src/index.pug',
+      template: 'src/index-en.pug',
+      inject: false
+    }),
+    // index ru
+    new HtmlWebpackPlugin({
+      //* '../' - fix static folder for *.html files
+      filename: '../ru.html',
+      template: 'src/index-ru.pug',
       inject: false
     })
   ],

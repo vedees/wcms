@@ -1,13 +1,19 @@
-section#promo
-  .container
-    .promo__wrapper
-      .promo-content
-        span.ui-title-1 WCMS - Simle CMS
-        span.ui-title-4 Best solution for landing page
-        // buttons
-        .button-list
-          a(href="https://github.com/vedees/wcms" target="_blank").button.button--round.button--big.button-default(style='margin-right: 26px;') GitHub
-          a(href='https://vedees.ru/wex/wcms.zip').button.button--round.button--big.button-primary Download
-      .promo-banner
-        img#zoom-background--white(src='/static/img/dashboard.png', alt='CMS admin panel')
-        span.ui-text-smaller Main dashboard
+mixin promo(btnFirstTitle, btnSecondTitle)
+  section#promo
+    .container
+      .promo__wrapper
+        .promo-content
+          if (lang === 'en')
+            span.ui-title-1 WCMS - Simle CMS
+            span.ui-title-4 Best solution for landing page
+          else
+            span.ui-title-1 WCMS - Простая CMS
+            span.ui-title-4 Лучшее решение для лендинг-пейдж
+          // Buttons
+          .button-list
+            +buttonLink('GitHub', 'https://github.com/vedees/wcms', '_blank')(class="button-default" class="button--big")
+            if (lang === 'en')
+              +buttonLink('Download', 'https://vedees.ru/wex/wcms.zip')(class="button-primary" class="button--big")
+            else
+              +buttonLink('Скачать', 'https://vedees.ru/wex/wcms.zip')(class="button-primary" class="button--big")
+        block

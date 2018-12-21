@@ -1,9 +1,21 @@
-// header nav
+// Hader nav
 mixin headerNavLink(link,title)
 	li.navbar-item
 		a.navbar-link(href= link)= title
 
-// footer nav
+// Button Primary
+mixin buttonLink(title, link, blank='_self')
+	a(href=link target=blank)&attributes(attributes).button.button--round(style='margin-right: 26px;')= title
+
+// Service Item
+mixin serviceItem(className, title, descr)
+	.service-item
+		span(class=className).ui-title-3.title-service= title
+		p.service-info= descr
+			ul.service-info__list
+				block
+
+// Footer nav
 mixin footerNavLink(link,title)
 	li.footer-nav__item
 		a.footer-nav__link(href= link)= title

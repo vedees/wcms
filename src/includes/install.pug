@@ -1,23 +1,26 @@
-// install steps
-section#install
-  .container
-    .center
-      h2.ui-title-1 Install
-    .install__wrapper
-      .install-content
-        span.ui-title-2 4 Steps for start
-        ul.install-steps__list
-          li
-            | 1. 
-            a(href='https://vedees.ru/wex/wcms.zip') Download
-            |  WCMS
-          li 2. Extract zip to project root
-          li 3. Change login/password in config.php
-          li 4. Go to your-website.com/wex/
-        // buttons
-        .button-list
-          a(href="https://github.com/vedees/wcms" target="_blank").button.button--round.button--big.button-default(style='margin-right: 26px;') GitHub
-          a(href='https://vedees.ru/wex/wcms.zip').button.button--round.button--big.button-primary Download
-      .install-banner
-        // ?TODO video
-        img(src='/static/img/dashboard.png', alt='WCMS Admin Dashboard')
+mixin install()
+  section#install
+    .container
+      .center
+        if (lang === 'en')
+          h2.ui-title-1 Install
+        else
+          h2.ui-title-1 Установка
+      .install__wrapper
+        .install-content
+          if (lang === 'en')
+            span.ui-title-2 4 Steps for start
+          else
+            span.ui-title-2 4 Шага для старта
+          ul.install-steps__list
+            block
+          // buttons
+          .button-list
+            +buttonLink('GitHub', 'https://github.com/vedees/wcms', '_blank')(class="button-default")
+            if (lang === 'en')
+              +buttonLink('Download', 'https://vedees.ru/wex/wcms.zip')(class="button-primary")
+            else
+              +buttonLink('Скачать', 'https://vedees.ru/wex/wcms.zip')(class="button-primary")
+        .install-banner
+          //TODO video
+          img(src='/static/img/dashboard.png', alt='WCMS Admin Dashboard')
