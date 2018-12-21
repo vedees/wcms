@@ -1,34 +1,17 @@
 section#service
   .container
     // Header
-    if (lang === 'en')
+    if (lang === 'ru')
+      h2.ui-title-2 WCMS - Простая CMS
+      p.service-title__descr
+        | WCMS - это продвинутая система управления контентом, которая позволяет легко создавать качественные, красивые сайты для лендинг-пейдж, портфолио и других сайтов с использованием открытого веб-интерфейса.
+    else
       h2.ui-title-2 WCMS - Simple CMS
       p.service-title__descr
         | WCMS is an advanced cms that makes it easy to build performant, beautiful sites for the landing-page, portfolio and other websites using open web interface.
-    else
-    h2.ui-title-2 WCMS - Простая CMS
-    p.service-title__descr
-      | WCMS - это продвинутая система управления контентом, которая позволяет легко создавать качественные, красивые сайты для лендинг-пейдж, портфолио и других сайтов с использованием открытого веб-интерфейса.
     // Service List
     .service-list
-      if (lang === 'en')
-        +serviceItem( 'title-service--build', 'Build Faster',
-          'In developing the WCMS the first idea was in simplicity, the second in quickness')
-          li Quick and easy installation
-          li No database needed
-        +serviceItem( 'title-service--mod', 'Design',
-          'Minimal and modern desing')
-          li
-            a(target='_blank', href='https://uimini.vedees.ru/') UImini 
-            | framework
-          li Custom Theme WCMS
-          li Custom Theme Editor
-        +serviceItem('title-service--access', 'Scale',
-          'WCMS is OOP php style and fully adaptive')
-          li Responsive
-          li Lightweight
-          li Maintain
-      else
+      if (lang === 'ru')
         +serviceItem('title-service--build', 'Быстрая разработка',
           'При разработке WCMS первая идея была в простоте, вторая в быстроте')
           li Быстрая и простая установка
@@ -45,3 +28,21 @@ section#service
           'WCMS - написана в ООП стиле и полностью адаптивна')
           li Адаптивность
           li Весит всего 12мб
+      else
+        +serviceItem( 'title-service--build', 'Build Faster',
+          'In developing the WCMS the first idea was in simplicity, the second in quickness')
+          li Quick and easy installation
+          li No database needed
+        +serviceItem( 'title-service--mod', 'Design',
+          'Minimal and modern desing')
+          li
+            a(target='_blank', href='https://uimini.vedees.ru/') UImini 
+            | framework
+          li Custom Theme WCMS
+          li Custom Theme Editor
+        +serviceItem('title-service--access', 'Scale',
+          'WCMS is OOP php style and fully adaptive')
+          li Responsive
+          li Lightweight
+          li Maintain
+      

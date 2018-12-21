@@ -1,13 +1,14 @@
-// Hader nav
+// MAIN
+//-  Hader nav
 mixin headerNavLink(link,title)
 	li.navbar-item
 		a.navbar-link(href= link)= title
 
-// Button Primary
+//- Button Primary
 mixin buttonLink(title, link, blank='_self')
 	a(href=link target=blank)&attributes(attributes).button.button--round(style='margin-right: 26px;')= title
 
-// Service Item
+//- Service Item
 mixin serviceItem(className, title, descr)
 	.service-item
 		span(class=className).ui-title-3.title-service= title
@@ -15,7 +16,30 @@ mixin serviceItem(className, title, descr)
 			ul.service-info__list
 				block
 
-// Footer nav
+//- Footer nav
 mixin footerNavLink(link,title)
 	li.footer-nav__item
 		a.footer-nav__link(href= link)= title
+
+
+// OTHER SVG ICON
+//- arrow first
+mixin arrow
+	svg.screen-arrow(width='471px', height='186px', viewBox='0 0 471 186', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+		defs
+		g(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+			g(transform='translate(-530.000000, -730.000000)', fill-rule='nonzero', stroke='#6e75e0', stroke-width='2')
+				g(transform='translate(530.000000, 731.000000)')
+					circle(cx='4', cy='181', r='3')
+					path(d='M5.17877971,177.533605 C83.4974122,-12.289984 236.912026,-49.2308627 465.42262,66.7109693')
+					circle(cx='467', cy='68', r='3')
+//- arrow second
+mixin arrow2
+	svg.screen-arrow(width='674px', height='82px', viewBox='0 0 674 82', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+		defs
+		g(stroke='none', stroke-width='1', fill='none', fill-rule='evenodd')
+			g(transform='translate(-330.000000, -884.000000)', fill-rule='nonzero', stroke='#6e75e0', stroke-width='2')
+				g(transform='translate(330.000000, 884.000000)')
+					circle(cx='4', cy='78', r='3')
+					path(d='M6.82169412,78.7780289 C234.114302,78.7780289 454.287311,54.2254337 667.34072,5.12024348')
+					circle(cx='670', cy='4', r='3')

@@ -3,13 +3,12 @@ mixin promo(btnFirstTitle, btnSecondTitle)
     .container
       .promo__wrapper
         .promo-content
-          if (lang === 'en')
-            span.ui-title-1 WCMS - Simle CMS
-            span.ui-title-4 Best solution for landing page
-          else
+          if (lang === 'ru')
             span.ui-title-1 WCMS - Простая CMS
             span.ui-title-4 Лучшее решение для лендинг-пейдж
-          // Buttons
+          else
+            span.ui-title-1 WCMS - Simle CMS
+            span.ui-title-4 Best solution for landing page
           .button-list
             +buttonLink('GitHub', 'https://github.com/vedees/wcms', '_blank')(class="button-default" class="button--big")
             if (lang === 'en')

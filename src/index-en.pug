@@ -8,25 +8,59 @@ block variables
 
 
 block content
+
+	// Promo
 	include ./includes/promo.pug
 	+promo
 		.promo-banner
 			img#zoom-background--white(src='/static/img/dashboard.png', alt='CMS admin panel')
 			span.ui-text-smaller Main dashboard
 
+	// Serivce
 	include ./includes/service.pug
-	//TODO FIX screenshots
-	include ./includes/screenshots/text.pug
-	include ./includes/screenshots/img.pug
-	include ./includes/screenshots/html.pug
-	include ./includes/screenshots/cssjs.pug
+
+	// SCREENSHOTS
+	include ./includes/screenshot.pug
+
+	//- Text
+	+screenshot('screenshots-text', 'Simple Text Editing', 'Text editing')
+		.code
+			img#zoom-background--black(src='/static/img/textedit-screen.png', alt='WCMS html editing')
+		.dashboard
+			img#zoom-background--white(src='/static/img/textedit-panel.png', alt='WCMS admin panel')
+		+arrow
+		+arrow2
+
+	//- Img
+	+screenshot('screenshots-img', 'Simple Images Editing', 'IMG editing')
+		.dashboard
+			img#zoom-background--white(src='/static/img/imgedit-panel.png', alt='WCMS admin panel')
+		.code
+			img#zoom-background--black(src='/static/img/imgedit-screen.png', alt='WCMS html editing')
+		+arrow
+		+arrow
+
+	//- HTML
+	+screenshot('screenshots-html', 'Edit all HTML pages', 'HTML editing')
+		.code
+			img#zoom-background--black(src='/static/img/codeeditor.png', alt='WCMS html editing')
+
+	//- JS/CSS
+	+screenshot('screenshots-jscss', 'Edit all JS/CSS Files', 'JS/CSS editing')
+		.dashboard
+			img#zoom-background--white(src='/static/img/cssjs-panel.png', alt='WCMS admin panel')
+		.code
+			img#zoom-background--black(src='/static/img/cssjsedit-screen.png', alt='WCMS html editing')
+		+arrow
+		+arrow
+
+	//- Install
 	include ./includes/install.pug
 	+install
 		li
-			| 1. 
-			a(href='https://vedees.ru/wex/wcms.zip') Download WCMS
+			a(href='https://vedees.ru/wex/wcms.zip') 1. Download WCMS
 		li 2. Extract zip to project root
 		li 3. Change login/password in config.php
 		li 4. Go to your-website.com/wex/
+
 block script
-	//- script(src='')

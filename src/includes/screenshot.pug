@@ -1,0 +1,11 @@
+// Screenshots
+mixin screenshot(id, title, info)
+  sectionid(id=id)
+    .container
+      .center
+        h2.ui-title-2= title
+      .slider__content
+        // screenshots
+        .screenshots__wrapper.screenshots__wrapper--first
+          block
+          span.screenshots-info= info

@@ -8,26 +8,59 @@ block variables
 
 
 block content
+
+	// Promo
 	include ./includes/promo.pug
 	+promo
 		.promo-banner
 			img#zoom-background--white(src='/static/img/dashboard.png', alt='CMS админ панель')
 			span.ui-text-smaller Главная панель
 
+	// Serivce
 	include ./includes/service.pug
-	//TODO FIX screenshots
-	include ./includes/screenshots/text.pug
-	include ./includes/screenshots/img.pug
-	include ./includes/screenshots/html.pug
-	include ./includes/screenshots/cssjs.pug
+
+	// SCREENSHOTS
+	include ./includes/screenshot.pug
+
+	//- Text
+	+screenshot('screenshots-text', 'Удобное редактирование текста', 'Редактирование текста')
+		.code
+			img#zoom-background--black(src='/static/img/textedit-screen.png', alt='текстовый редактор кода')
+		.dashboard
+			img#zoom-background--white(src='/static/img/textedit-panel.png', alt='WCMS текстовый редактор')
+		+arrow
+		+arrow2
+
+	//- Img
+	+screenshot('screenshots-img', 'Удобное редактирование картинок', 'Редактирование картинок')
+		.dashboard
+			img#zoom-background--white(src='/static/img/imgedit-panel.png', alt='WCMS img редактор')
+		.code
+			img#zoom-background--black(src='/static/img/imgedit-screen.png', alt='редактор картинок')
+		+arrow
+		+arrow
+
+	//- HTML
+	+screenshot('screenshots-html', 'Редактируйте всесь HTML код из админки', 'HTML htlfrnjh')
+		.code
+			img#zoom-background--black(src='/static/img/codeeditor.png', alt='WCMS html editing')
+
+	//- JS/CSS
+	+screenshot('screenshots-jscss', 'Edit all JS/CSS Files', 'JS/CSS editing')
+		.dashboard
+			img#zoom-background--white(src='/static/img/cssjs-panel.png', alt='WCMS html редактор кода')
+		.code
+			img#zoom-background--black(src='/static/img/cssjsedit-screen.png', alt='html код')
+		+arrow
+		+arrow
+
+	// Install
 	include ./includes/install.pug
 	+install
 		li
-			| 1. 
-			a(href='https://vedees.ru/wex/wcms.zip') Скачайте WCMS
+			a(href='https://vedees.ru/wex/wcms.zip') 1. Скачайте WCMS
 		li 2. Распакуйте архив в корень с сайтов
 		li 3. Измените логин и пароль в config.php
 		li 4. Перейдте на ваш-сайт.рф/wex/
 
 block script
-	//- script(src='')

@@ -1,26 +1,26 @@
-mixin install()
+mixin install
   section#install
     .container
       .center
-        if (lang === 'en')
-          h2.ui-title-1 Install
-        else
+        if (lang === 'ru')
           h2.ui-title-1 Установка
+        else
+          h2.ui-title-1 Install
       .install__wrapper
         .install-content
-          if (lang === 'en')
-            span.ui-title-2 4 Steps for start
-          else
+          if (lang === 'ru')
             span.ui-title-2 4 Шага для старта
+          else
+            span.ui-title-2 4 Steps for start
           ul.install-steps__list
             block
           // buttons
           .button-list
             +buttonLink('GitHub', 'https://github.com/vedees/wcms', '_blank')(class="button-default")
-            if (lang === 'en')
-              +buttonLink('Download', 'https://vedees.ru/wex/wcms.zip')(class="button-primary")
-            else
+            if (lang === 'ru')
               +buttonLink('Скачать', 'https://vedees.ru/wex/wcms.zip')(class="button-primary")
+            else
+              +buttonLink('Download', 'https://vedees.ru/wex/wcms.zip')(class="button-primary")
         .install-banner
           //TODO video
           img(src='/static/img/dashboard.png', alt='WCMS Admin Dashboard')
