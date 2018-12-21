@@ -19,6 +19,7 @@
   &:last-child
     margin-bottom 0
 
+// shots
 .screenshots__wrapper
   display flex
   align-items center
@@ -26,26 +27,28 @@
   margin-bottom screenshotsMarginBottom
 // code
 .code
-  box-shadow 0 10px 20px 0 rgba(135, 113, 155, 0.5)
   img
     width auto
     max-height: 560px
 // dash
 .dashboard
-  box-shadow 0 10px 30px 0 rgba(135, 113, 155, 0.5)
   img
     width auto
-    max-height: 760px
-// Info
-.screenshots-info
-  position absolute
-  bottom: screenshotsMarginBottom - 170%
-  left: 50%
-  transform: translateX(-50%)
-  color: infoColor
+    max-height: 780px
+// code & dash
+#zoom-background--black,
+#zoom-background--white
+  box-shadow 0 20px 20px rgba(0,0,0,.09)
+  transition: mainTransition
+  &:hover
+    box-shadow: 0 40px 40px rgba(0,0,0,.14)
+    transform: translate(0,-10px)
+    transition-delay: 0s!important
+
 // nav screen
 .screen-arrow
   position absolute
+  pointer-events none
 
 #screenshots-text
   .screen-arrow
@@ -83,3 +86,11 @@
       top: 59.8%
       left: 26.3%
       transform: rotate(188.6deg)
+
+// Info
+.screenshots-info
+  position absolute
+  bottom: screenshotsMarginBottom - 170%
+  left: 50%
+  transform: translateX(-50%)
+  color: infoColor
