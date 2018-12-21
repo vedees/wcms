@@ -12,6 +12,11 @@
 .promo__wrapper
   display flex
   justify-content space-between
+  @media screen and (max-width smDesktopWidth)
+    flex-wrap: wrap
+    flex-direction: column-reverse;
+    align-items: center
+
   //TODO FIX in uimini
   .ui-title-1
     font-weight 600
@@ -25,7 +30,9 @@
   max-width: 600px
   // For span
   text-align center
+  @media screen and (max-width smDesktopWidth)
+    margin-bottom rem(26)
   img
     box-shadow 0 10px 20px 0 rgba(135, 113, 155, .1)
     // For span
-    margin-bottom 12px
+    margin-bottom rem(20)

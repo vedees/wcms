@@ -6,13 +6,16 @@
  */
 
  footer
-  padding-bottom: 24px
-  padding-top: 144px
+  padding-bottom: rem(26)
+  padding-top: rem(140)
   background-color: #0e141a
   .ui-title-1, .ui-title-2, .ui-title-3, .ui-title-4, span, a
     color: #ffffff
   .ui-title-3
-    margin-right 30px;
+    margin-right rem(30)
+    @media screen and (max-width smDesktopWidth)
+      margin-right 0
+      margin-bottom rem(30)
 
 .footer__wrapper
   display: flex
@@ -20,10 +23,19 @@
   align-items center
   justify-content space-evenly
   max-width 740px
-  margin-bottom 60px
+  margin-bottom rem(60)
+  @media screen and (max-width smDesktopWidth)
+    text-align center
+    max-width unset
+    justify-content center
+    flex-direction column
 
 .footer-nav
+  @media screen and (max-width smDesktopWidth)
+    min-width 30%
+    margin-bottom rem(30)
   span
+    font-size rem(22)
     margin-bottom 18px
   li
     margin-bottom 8px
