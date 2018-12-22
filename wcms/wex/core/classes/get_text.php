@@ -28,6 +28,7 @@ class Text {
   }
 
   private function get_text () {
+    //TODO another preg
     $content = preg_replace('/<[^>]+>/', '^', $GLOBALS['template']);
     return $text = explode('^', $content);
   }

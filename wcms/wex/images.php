@@ -27,15 +27,9 @@ if (isset($_GET['img'])) {
 }
 ?>
 
-<section>
-  <div class="container">
-    <h1 class="ui-title-1">Images</h1>
-    <images-component
-      :images='<?php echo json_encode($images) ?>'>
-    </images-component>
-  </div>
-</section>
 
-
+<images-component
+  :images='<?php echo json_encode($images) ?>'>
+</images-component>
 
 <?php include('includes/footer.php') ?>

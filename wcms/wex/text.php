@@ -39,12 +39,8 @@ $user->require_login();?>
   </div>
 </section>
 
-<section id="textEdit">
-  <div class="container">
-    <text-component
-      :text='<?php echo json_encode($text_all); ?>' >
-    </text-component>
-  </div>
-</section>
+<text-component
+  :text='<?php echo json_encode($text_all); ?>' >
+</text-component>
 
 <?php include('includes/footer.php') ?>

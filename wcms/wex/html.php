@@ -13,14 +13,14 @@ $user->require_login();?>
       $page = 'html';?>
 
 <?php include('includes/header.php');
+      //TODO -> get_page.php
       $html_from_template = htmlspecialchars(file_get_contents($GLOBALS['pagename']));
 
 // Find GET Finish editing
 if (isset($_GET['finish'])) {
   $path = $_GET['finish'];
   file_put_contents($path, $_POST['textAreaCode']);
-  // TODO func
-  echo "<meta http-equiv=\"refresh\" content=\"0;URL=html.php\">";
+  redirect_to('html.php');
 }
 ?>
 

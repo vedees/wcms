@@ -11,13 +11,17 @@
         </tr>
       </thead>
       <tbody>
-        <!-- TODO fix link -->
-        <!-- TODO fix ID -->
         <tr v-for="file in files"
             :key="file.id">
             <td><span class="ui-text-regular"> {{ file.id }} </span></td>
             <td><span class="ui-text-regular"> {{ file.type }} </span></td>
-            <a :href="'cssjs.php?path='+file.path"> <td><span class="ui-text-regular" > {{ file.title }} </span></td> </a>
+            <!-- Click TD -->
+            <a :href="'cssjs.php?path='+file.path">
+              <td class="center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="16 3 21 8 8 21 3 21 3 16 16 3"></polygon></svg>
+                <span class="ui-text-regular"> {{ file.title }} </span>
+              </td>
+            </a>
             <!-- TODO kb to mb -->
             <td><span class="ui-text-regular"> {{ file.size }} kb </span></td>
             <td><span class="ui-text-regular"> {{ file.editTime }} </span></td>
