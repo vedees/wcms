@@ -11,7 +11,9 @@
   <header>
     <div class="navbar navbar-fixed">
       <div class="container">
-        <div class="navbar-content"><a class="header-logo" href="index.php">WEX CMS</a>
+        <!-- todo add CURL github api -->
+        <div class="navbar-content">
+          <div class="header-logo__wrapper"><a class="header-logo" href="index.php">WEX CMS</a><a class="version-header" href="https://github.com/vedees/wcms/releases"> - BETA(v0.2.2)</a></div>
           <!-- <div class="button-burger"><span class="line line-1"></span><span class="line line-2"></span><span class="line line-3"></span></div> -->
           <div class="navbar-list__wrapper">
             <ul class="navbar-list">
