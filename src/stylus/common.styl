@@ -32,3 +32,17 @@
 .errors
   text-align: center
   color #fc5c65
+
+
+// animation
+.slide-fade-enter-active {
+  transition: all .1s ease;
+}
+.slide-fade-leave-active {
+  transition: all .1s cubic-bezier(.02,.01,.47,1);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active до версии 2.1.8 */ {
+  transform: translateX(40px);
+  opacity: 0;
+}

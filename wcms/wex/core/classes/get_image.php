@@ -7,13 +7,49 @@
  */
 
 class Image {
+
   public function image_filter () {
     $imgmas = $this->get_images();
-    $imgmas_all = array();
+    $img_all = $this->finder($imgmas, true, 1);
+    // All img
+    return $img_all;
+  }
 
+  public function get_img_main () {
+    $img = array();
+    foreach($GLOBALS['html']->find('img.wcms-img-main') as $element)
+      $img[] = $element->src;
+    // All img
+    return $img_all = $this->finder($img, false);
+  }
+
+  public function get_img_content () {
+    $img = array();
+    foreach($GLOBALS['html']->find('img.wcms-img-content') as $element)
+      $img[] = $element->src;
+    // All img
+    return $img_all = $this->finder($img, false);
+  }
+
+  // Search all Images
+  private function get_images () {
+    $imgreg = "/[\"|\(']((.*\\/\\/|)([\\/a-z0-9_%]+\\.(jpg|JPG|jpeg|JPEG|png|PNG|gif)))[\"|\)']/";
+    preg_match_all($imgreg, $GLOBALS['template'], $imgmas);
+    return $imgmas;
+  }
+
+  //TODO class
+  private function finder($where_find, $trim=true, $offet=0) {
+    $result = array();
+    // трим нужен только для всех файлов тк там регулярка
+    if ($trim) {
+      $where = $where_find[$offet];
+    } else {
+      $where = $where_find;
+    }
     // Find Images
-    for ($i=0; $i<count($imgmas[1]); $i++) {
-      $img_name = trim($imgmas[1][$i]);
+    for ($i=0; $i<count($where); $i++) {
+      $img_name = trim($where[$i]);
       $img_path = '../' . $img_name;
       $img_size = getimagesize($img_path);
       $img_file_size = filesize($img_path);
@@ -29,17 +65,9 @@ class Image {
       $object->sizeW = $img_size[1];
       $object->editTime = $img_edit_time;
       // Push
-      $imgmas_all[] = $object;
+      $result[] = $object;
     }
-    // All img
-    return $imgmas_all;
-  }
-
-  // Search all Images
-  private function get_images () {
-    $imgreg = "/[\"|\(']((.*\\/\\/|)([\\/a-z0-9_%]+\\.(jpg|JPG|jpeg|JPEG|png|PNG|gif)))[\"|\)']/";
-    preg_match_all($imgreg, $GLOBALS['template'], $imgmas);
-    return $imgmas;
+    return $result;
   }
 
 }

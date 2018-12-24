@@ -2,7 +2,7 @@
   <section id="textEdit">
     <div class="container">
       <!-- tags -->
-      <div class="title__wrapper">
+      <div class="title__wrapper" style="margin-bottom:10px;">
         <div class="tags__wrapper">
           <div class="ui-tag__wrapper"><div @click="text = all; type = 'all'" :class="{ active: type === 'all' }" class="ui-tag"><span class="tag-title">All</span></div></div>
           <div class="ui-tag__wrapper"><div @click="text = seo; type = 'seo'" :class="{ active: type === 'seo' }" class="ui-tag"><span class="tag-title">SEO</span></div></div>
@@ -151,19 +151,6 @@ export default {
 </script>
 
 <style scoped>
-/* Анимации появления и исчезновения могут иметь */
-/* различные продолжительности и динамику.       */
-.slide-fade-enter-active {
-  transition: all .3s ease;
-}
-.slide-fade-leave-active {
-  transition: all .3s cubic-bezier(.02,.01,.47,1);
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active до версии 2.1.8 */ {
-  transform: translateX(40px);
-  opacity: 0;
-}
 .ui-alert {
   padding: 14px 30px;
   margin: 30px 0;

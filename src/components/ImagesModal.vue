@@ -83,6 +83,10 @@ export default {
     height: {
       type: Number,
       required: true
+    },
+    type: {
+      type: String,
+      required: true
     }
   },
   data () {

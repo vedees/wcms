@@ -11,8 +11,33 @@
         </div>
       </div>
 
+      <!-- tags -->
+      <div class="title__wrapper" style="margin-bottom:10px;">
+        <div class="tags__wrapper">
+          <div class="ui-tag__wrapper"><div @click="img = images; type = 'images'" :class="{ active: type === 'images' }" class="ui-tag"><span class="tag-title">All</span></div></div>
+        </div>
+        <div class="tags__wrapper">
+          <div class="ui-tag__wrapper"><div @click="img = imgmain; type = 'imgmain'" :class="{ active: type === 'imgmain' }" class="ui-tag"><span class="tag-title">WCMS Main img</span></div></div>
+          <div class="ui-tag__wrapper"><div @click="img = imgcontent; type = 'imgcontent'" :class="{ active: type === 'imgcontent' }" class="ui-tag"><span class="tag-title">WCMS Content</span></div></div>
+        </div>
+      </div>
+
       <!-- Search input -->
       <Search placeholder="Img name" :value="search" @search="search = $event"></Search>
+
+      <!-- INFO WCMS -->
+      <!-- main -->
+      <transition name="slide-fade">
+        <div v-if="type === 'imgmain' && showInfoMain === true" class="ui-alert ui-alert--primary"><span class="alert-title">
+          Only &lt;img&gt; with class wcms-img-main. <br> Example: &lt;img class=&quot;wcms-img-main&quot; src=&quot;images/example.jpg&quot;&gt; &lt;/img&gt;
+        </span><span @click="showInfoMain = false" class="button-close"></span></div>
+      </transition>
+      <!-- content -->
+      <transition name="slide-fade">
+        <div v-if="type === 'imgcontent' && showInfoContent === true" class="ui-alert ui-alert--primary"><span class="alert-title">
+          Only &lt;img&gt; with class wcms-img-content. <br> Example: &lt;img class=&quot;wcms-img-content&quot; src=&quot;images/example.jpg&quot;&gt; &lt;/img&gt;
+        </span><span @click="showInfoContent = false" class="button-close"></span></div>
+      </transition>
 
       <!-- img list -->
       <div class="image__list">
@@ -50,10 +75,9 @@
           :path="imagePath"
           :width="imageWidth"
           :height="imageHeight"
-          >
+          :type="type">
         </Modal>
 
-        </div>
       </div>
     </div>
   </section>
@@ -72,6 +96,14 @@ export default {
     images: {
       type: Array,
       required: true
+    },
+    imgmain: {
+      type: Array,
+      required: true
+    },
+    imgcontent: {
+      type: Array,
+      required: true
     }
   },
   data () {
@@ -79,17 +111,21 @@ export default {
       search: '',
       list: false,
       showModal: false,
+      showInfoMain: true,
+      showInfoContent: true,
+      img: this.images,
+      type: 'images',
       imageId: null,
       imageTitle: null,
       imagePath: null,
       imageWidth: null,
       imageHeight: null
-      //TODO size
+      //TODO file size
     }
   },
   computed: {
     searchFilter () {
-      let array = this.images,
+      let array = this.img,
           search    = this.search
       // Not dirty
       if (!search) return array
