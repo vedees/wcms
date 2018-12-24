@@ -18,15 +18,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title><?php echo $page_title; ?></title>
 
-  <!-- Theme -->
-  <?php if ($_SESSION['theme'] == 'Black') echo '<link rel="stylesheet" href="http://localhost:8080/wcms/wex/static/css/black.css">' ?>
+  <!-- webpack css run with ?dev prefix ( http://localhost:8888/index.php?dev ) -->
+  <?php if (isset($_GET['dev'])) echo '<link rel="stylesheet" href="http://localhost:8080/wcms/wex/assets/css/main.css">';
+        else echo '<link rel="stylesheet" href="assets/css/main.css">';?>
+  <!-- black theme -->
+  <?php if ($_SESSION['theme'] == 'Black') echo '<link rel="stylesheet" href="assets/css/black.css">' ?>
 
-  <!-- Server fix -->
-  <link rel="stylesheet" href="http://localhost:8080/wcms/wex/static/css/main.css">
-
-  <!-- To deploy -->
-  <!-- WARRING '/' -->
-  <!-- <link rel="stylesheet" href="/wcms/wex/static/css/main.css"> -->
 </head>
 <body>
 

@@ -19,7 +19,7 @@ require 'core/initialize.php';
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Login - WEX CMS</title>
   <!-- dev server not working in this page -->
-  <link rel="stylesheet" href="static/css/main.css">
+  <link rel="stylesheet" href="assets/css/main.css">
 
   <!-- Common style -->
   <style>

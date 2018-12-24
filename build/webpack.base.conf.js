@@ -21,9 +21,10 @@ module.exports = {
   // Output main JS
   output: {
     filename: 'js/main.js',
-    path: path.resolve(__dirname, '../static'),
+    //TODO FIX path to wex
+    path: path.resolve(__dirname, '../assets/'),
     //! Server fix
-    publicPath: 'http://localhost:8080/wcms/wex/static'
+    publicPath: 'http://localhost:8080/wcms/wex/assets'
     //* To deploy
     // publicPath: '/wcms/wex/static/js'
   },

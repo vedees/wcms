@@ -10,7 +10,8 @@ $user = new Login;
 $user->require_login();?>
 
 <?php $page_title = 'Text Editing - WEX CMS';
-      $page = 'text';?>
+      $page = 'text';
+      ?>
 
 <?php include('includes/header.php') ?>
 

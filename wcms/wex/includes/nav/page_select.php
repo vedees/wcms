@@ -6,13 +6,13 @@
   <div class="sidebar-list">
     <select name="pagename">
       <?php
-        foreach ($GLOBALS['html_list'] as $page) {
-          echo "<option value=\"{$page}\"";
-          if ($GLOBALS['pagename'] == $page) {
+        foreach ($GLOBALS['html_list'] as $html_page) {
+          echo "<option value=\"{$html_page}\"";
+          if ($GLOBALS['pagename'] == $html_page) {
             echo " selected";
           }
           // TODO change echo to {}
-          echo ">{$page}</option>";
+          echo ">{$html_page}</option>";
         }
       ?>
     </select>
