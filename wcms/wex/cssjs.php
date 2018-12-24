@@ -1,4 +1,4 @@
-<?php
+  <?php
 /**
  * WCMS - WEX Simple CMS
  * https://github.com/vedees/wcms
@@ -22,7 +22,6 @@ if (isset($_GET['finish'])) {
   $path = $_GET['finish'];
   file_put_contents($path, $_POST['textAreaCode']);
 }
-
 
 // GET CSS & JS file
 $html_from_template = '';

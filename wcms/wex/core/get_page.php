@@ -24,3 +24,7 @@
 
   // Get HTML list
   $GLOBALS['html_list'] = glob("../*.html");
+
+  // Parser
+  // create HTML DOM
+  $GLOBALS['html'] = file_get_html($GLOBALS['pagename']);

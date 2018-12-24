@@ -18,6 +18,8 @@ require_once dirname(dirname(dirname(__FILE__))) . '/config.php';  //x3 folder
  */
 // require_once dirname((dirname(dirname(dirname(__FILE__)))) . '/config.php';  //x4 folder
 
+// Libs
+require_once 'libs/HtmlDomParser.php';
 // All Functions
 require_once 'functions.php';
 // Get Page

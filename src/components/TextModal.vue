@@ -3,19 +3,14 @@
     <span
       slot="messageBox-title"
       style="color: #333333">
-      Filed ID: {{ id }}
+      Filed ID: {{ id }} - {{ type }}
     </span>
     <div slot="body">
-      <form
-        method="POST"
-        :action="'text.php?id='+id">
-          <textarea
-            name="textareaForText"
-            v-model="titleEditing"
-            ></textarea>
-          <div class="button-list">
-            <button class="button button-success button--round" name="text_submit" type="submit">Save</button>
-          </div>
+      <form method="GET" action="text.php">
+        <input name="id" v-model="id" type="hidden">
+        <input name="type" v-model="type" type="hidden">
+        <textarea name="text" v-model="titleEditing"></textarea>
+        <div class="button-list"><button class="button button-success button--round" type="submit">Save</button></div>
       </form>
     </div>
     <div slot="footer">
@@ -38,12 +33,18 @@ export default {
     title: {
       type: String,
       required: true
+    },
+    type: {
+      type: String,
+      required: true
     }
   },
   data () {
     return {
       search: '',
       showModal: true,
+      // Fix bug with id. Get Props
+      type: this.type,
       // dont mutating prop
       titleEditing: this.title
     }
