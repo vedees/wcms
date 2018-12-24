@@ -9,7 +9,7 @@ require 'core/initialize.php';
 $user = new Login;
 $user->require_login();?>
 
-<?php $page_title = 'Image editing - WEX CMS';
+<?php $page_title = $lang['imagesTitle'];
       $page = 'images';?>
 
 <?php include('includes/header.php') ?>
@@ -20,13 +20,13 @@ $user->require_login();?>
       $img_main = $get_image->get_img_main();
       $img_content = $get_image->get_img_content();
 
-// Check get request
-if (isset($_GET['img'])) {
-  $imgname=$_GET['img'];
-  // Change image
-  move_uploaded_file($_FILES['inputForImages']['tmp_name'], $imgname);
-  redirect_to('images.php');
-}
+  // Check get request
+  if (isset($_GET['img'])) {
+    $imgname=$_GET['img'];
+    // Change image
+    move_uploaded_file($_FILES['inputForImages']['tmp_name'], $imgname);
+    redirect_to('images.php');
+  }
 ?>
 
 

@@ -9,7 +9,7 @@ require 'core/initialize.php';
 $user = new Login;
 $user->require_login();?>
 
-<?php $page_title = 'Dashboard - WEX CMS';
+<?php $page_title = $lang['dashboardTitle'];
       $page = 'dashboard';
       $counter = new Counter();?>
 
@@ -18,7 +18,7 @@ $user->require_login();?>
 <section>
   <div class="container">
     <h1 class="ui-title-1"> <?php echo $lang['dashboard'] ?> </h1>
-    <p>WCMS is an advanced cms that makes it easy to build performant, beautiful sites for the landing-page, portfolio and other websites using open web interface.</p>
+    <p> <?php echo $lang['dashboardDescr'] ?> </p>
   </div>
 </section>
 
@@ -26,7 +26,7 @@ $user->require_login();?>
   <div class="container">
     <div class="chart-pie__wrapper">
       <div class="chart-item ui-card ui-card--shadow">
-        <span class="ui-title-3"> Total Files </span>
+        <span class="ui-title-3"> <?php echo $lang['countFiles'] ?> </span>
         <chart-component
           html='<?php echo $counter->total_html(); ?>'
           img='<?php echo $counter->total_img(); ?>'

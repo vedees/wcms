@@ -9,9 +9,8 @@ require 'core/initialize.php';
 $user = new Login;
 $user->require_login();?>
 
-<?php $page_title = 'Text Editing - WEX CMS';
-      $page = 'text';
-      ?>
+<?php $page_title = $lang['textTitle'];
+      $page = 'text';?>
 
 <?php include('includes/header.php') ?>
 
@@ -45,7 +44,7 @@ $user->require_login();?>
 
 <section style="padding-bottom:0px;">
   <div class="container" >
-    <h1 class="ui-title-1"> Text Editing </h1>
+    <h1 class="ui-title-1">  <?php echo $lang['textH1'] ?> </h1>
   </div>
 </section>
 

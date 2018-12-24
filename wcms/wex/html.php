@@ -9,19 +9,19 @@ require 'core/initialize.php';
 $user = new Login;
 $user->require_login();?>
 
-<?php $page_title = 'HTML Editing - WEX CMS';
+<?php $page_title = $lang['settings'];
       $page = 'html';?>
 
 <?php include('includes/header.php');
       //TODO -> get_page.php
       $html_from_template = htmlspecialchars(file_get_contents($GLOBALS['pagename']));
 
-// Find GET Finish editing
-if (isset($_GET['finish'])) {
-  $path = $_GET['finish'];
-  file_put_contents($path, $_POST['textAreaCode']);
-  redirect_to('html.php');
-}
+  // Find GET Finish editing
+  if (isset($_GET['finish'])) {
+    $path = $_GET['finish'];
+    file_put_contents($path, $_POST['textAreaCode']);
+    redirect_to('html.php');
+  }
 ?>
 
 <section>
