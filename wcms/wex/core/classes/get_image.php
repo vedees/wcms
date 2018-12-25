@@ -9,7 +9,10 @@
 class Image {
 
   public function image_filter () {
+    $imgmas = array();
     $imgmas = $this->get_images();
+    // foreach($GLOBALS['html']->find('img') as $e)
+      // $imgmas[] = $e->src;
     $img_all = $this->finder($imgmas, true, 1);
     // All img
     return $img_all;
@@ -33,7 +36,7 @@ class Image {
 
   // Search all Images
   private function get_images () {
-    $imgreg = "/[\"|\(']((.*\\/\\/|)([\\/a-z0-9_%]+\\.(jpg|JPG|jpeg|JPEG|png|PNG|gif)))[\"|\)']/";
+    $imgreg = '/<img(?:\\s[^<>]*?)?\\bsrc\\s*=\\s*(?|"([^"]*)"|\'([^\']*)\'|([^<>\'"\\s]*))[^<>]*>/i';
     preg_match_all($imgreg, $GLOBALS['template'], $imgmas);
     return $imgmas;
   }

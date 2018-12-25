@@ -19,7 +19,7 @@ $user->require_login();?>
       $seo = $text->get_seo();
       $headline = $text->get_headlines();
       $get_p_and_span = $text->get_p_and_span();
-      $button = $text->get_button();
+      $button = $text->get_link();
       $content_main = $text->get_content_main();
       $content = $text->get_content();
       // Get data

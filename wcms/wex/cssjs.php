@@ -25,7 +25,6 @@ if (isset($_GET['finish'])) {
 }
 
 // GET CSS & JS file
-$html_from_template = '';
 if (isset($_GET['path'])) {
   $path = $_GET['path'];
   $html_from_template = htmlspecialchars(file_get_contents($path));

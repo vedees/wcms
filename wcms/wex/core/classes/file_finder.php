@@ -7,7 +7,7 @@
  */
 
 class Finder {
-  static function find ($mask, $name) {
+  static function find ($mask, $name, $id=0) {
     $files = array();
     for ($i=0; $i < count($mask[1]); $i++) {
       $file_name = trim($mask[1][$i]);
@@ -17,12 +17,13 @@ class Finder {
       $file_edit_time = date("d-m-Y", filectime($file_path));
       // Info
       $object = new stdClass();
-      $object->id = $i;
+      $object->id = $id;
       $object->type = $name;
       $object->title = $file_name;
       $object->path = $file_path;
       $object->size = formatBytes($file_size);
       $object->editTime = $file_edit_time;
+      $id++;
       // Push
       $files[] = $object;
     };

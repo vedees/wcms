@@ -7,6 +7,7 @@
  */
 ob_start();       // output buffering is turned on
 session_start();  // turn on sessions
+mb_internal_encoding('UTF-8');
 
 // Admin Config
 require_once dirname(dirname(dirname(__FILE__))) . '/config.php';  //x3 folder

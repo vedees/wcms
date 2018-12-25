@@ -9,6 +9,13 @@ node_modules
 # Dist & test
 test
 /assets
+# Templates for test
+wcms/*.html
+wcms/css
+wcms/fonts
+wcms/js
+wcms/img
+wcms/scss
 
 # BD, logs
 *.log

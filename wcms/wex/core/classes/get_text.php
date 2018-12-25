@@ -43,7 +43,6 @@ class Text {
       $text[] = $element->outertext;
     foreach($GLOBALS['html']->find('description') as $element)
       $text[] = $element->outertext;
-
     $text_all = $this->finder($text, $id, 'Headline');
     return $text_all;
   }
@@ -68,6 +67,7 @@ class Text {
     foreach($GLOBALS['html']->find('h6') as $element)
       $text[] = $element->outertext;
 
+    // print_r($text);
     $text_all = $this->finder($text, $id, 'Headline');
     return $text_all;
   }
@@ -80,10 +80,23 @@ class Text {
     $text_all = $this->finder($text, $id, 'Button');
     return $text_all;
   }
+  public function get_link ($id=0) {
+    // Text list
+    $links = array();
+    foreach($GLOBALS['html']->find('a') as $element)
+      if (count($element->outertext) > 2) {
+        $links[] = $element->outertext;
+      }
+    $text_length = count($links);
+    $button = $this->get_button($text_length);
+    $all = array_merge($links, $button);
+    return $all;
+  }
 
   public function get_p_and_span ($id=0) {
     // Text list
     $text = array();
+
     foreach($GLOBALS['html']->find('p') as $element)
       $text[] = $element->outertext;
     foreach($GLOBALS['html']->find('span') as $element)
@@ -115,14 +128,15 @@ class Text {
   //TODO class
   private function finder($where_find, $id, $type, $reg=true ) {
     $result = array();
-    for ($i=0; $i< count($where_find); $i++) {
-      // TODO rm if
-      if (strlen(trim($where_find[$i])) > 1) {
+    for ($i=0; $i < count($where_find); $i++) {
+      //TODO FIX length
+      if (mb_strlen(trim($where_find[$i]), 'utf-8') > 1) {
         $object = new stdClass();
         $object->id = $id;
-        //TODO lang if
+        //TODO lang
         $object->type = $type;
         // форич проставляет теги. регулярка удаляет все в <> + трим пробелов. по дефолту усовие срабатывает
+        //TODO из-за тегов неправильная длинна
         if ($reg) { $object->title = preg_replace('/(<([^>]+)>)/U', '', trim($where_find[$i])); }
         else { $object->title = trim($where_find[$i]); }
         $id++;
