@@ -32,3 +32,9 @@ require_once 'theme.php';
 require_once 'language.php';
 
 $errors = [];
+
+//! DEVELOPMENT
+// webpack dev server
+$dev_port = 'http://localhost:8080';
+
+//TODO example message get golobal var to component

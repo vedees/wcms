@@ -29,12 +29,14 @@
       <!-- main -->
       <transition name="slide-fade">
         <div v-if="type === 'imgmain' && showInfoMain === true" class="ui-alert ui-alert--primary"><span class="alert-title">
+          Beta <br>
           Only &lt;img&gt; with class wcms-img-main. <br> Example: &lt;img class=&quot;wcms-img-main&quot; src=&quot;images/example.jpg&quot;&gt; &lt;/img&gt;
         </span><span @click="showInfoMain = false" class="button-close"></span></div>
       </transition>
       <!-- content -->
       <transition name="slide-fade">
         <div v-if="type === 'imgcontent' && showInfoContent === true" class="ui-alert ui-alert--primary"><span class="alert-title">
+          Beta <br>
           Only &lt;img&gt; with class wcms-img-content. <br> Example: &lt;img class=&quot;wcms-img-content&quot; src=&quot;images/example.jpg&quot;&gt; &lt;/img&gt;
         </span><span @click="showInfoContent = false" class="button-close"></span></div>
       </transition>

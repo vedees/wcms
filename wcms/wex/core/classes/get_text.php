@@ -7,14 +7,34 @@
  */
 
 class Text {
+  // NEW way
   // Find all Text
   public function get_text_all () {
+    // Text list
+    $headlines = $this->get_headlines();
+    /*
+    * Каждая функция принимает айди.
+    * Чтобы небыло бага с поиском тайтла по айди
+    * нужно пересчитывать длинну каждого массива
+    * и отправлять новый счет как параметр в каждую функцию.
+    */
+    $headlines_length = count($headlines);
+    $text = $this->get_p_and_span($headlines_length);
+    $text_length = count($text) + $headlines_length;
+    $button = $this->get_button($text_length);
+    $all = array_merge($headlines, $text, $button);
+    // $text_all = $this->finder($text, 0, 'All');
+    return $all;
+  }
+  // OLD way
+  public function get_text_all_old () {
     // Text list
     $text = $this->get_text();
     $text_all = $this->finder($text, 0, 'All');
     return $text_all;
   }
-  public function get_seo () {
+
+  public function get_seo ($id=0) {
     // Text list
     $text = array();
     // Text single
@@ -24,11 +44,11 @@ class Text {
     foreach($GLOBALS['html']->find('description') as $element)
       $text[] = $element->outertext;
 
-    $text_all = $this->finder($text, 0, 'Headline');
+    $text_all = $this->finder($text, $id, 'Headline');
     return $text_all;
   }
 
-  public function get_headlines () {
+  public function get_headlines ($id=0) {
     // Text list
     $text = array();
     // Text single
@@ -48,47 +68,47 @@ class Text {
     foreach($GLOBALS['html']->find('h6') as $element)
       $text[] = $element->outertext;
 
-    $text_all = $this->finder($text, 0, 'Headline');
+    $text_all = $this->finder($text, $id, 'Headline');
     return $text_all;
   }
 
-  public function get_button () {
+  public function get_button ($id=0) {
     // Text list
     $text = array();
     foreach($GLOBALS['html']->find('button') as $element)
       $text[] = $element->outertext;
-    $text_all = $this->finder($text, 0, 'Headline');
+    $text_all = $this->finder($text, $id, 'Button');
     return $text_all;
   }
 
-  public function get_p_and_span () {
+  public function get_p_and_span ($id=0) {
     // Text list
     $text = array();
     foreach($GLOBALS['html']->find('p') as $element)
       $text[] = $element->outertext;
     foreach($GLOBALS['html']->find('span') as $element)
       $text[] = $element->outertext;
-    $text_all = $this->finder($text, 0, 'Text Only');
+    $text_all = $this->finder($text, $id, 'Text');
     return $text_all;
   }
 
-  public function get_content_main () {
+  public function get_content_main ($id=0) {
     // Text list
     $text = array();
-    foreach($GLOBALS['html']->find('span.wcms-text') as $element)
-      $text[] = $element->outertext;
     foreach($GLOBALS['html']->find('p.wcms-text') as $element)
       $text[] = $element->outertext;
-    $text_all = $this->finder($text, 0, 'Content-main');
+    foreach($GLOBALS['html']->find('span.wcms-text') as $element)
+      $text[] = $element->outertext;
+    $text_all = $this->finder($text, $id, 'Content-main');
     return $text_all;
   }
 
-  public function get_content () {
+  public function get_content ($id=0) {
     // Text list
     $text = array();
     foreach($GLOBALS['html']->find('div.wcms-textarea') as $element)
       $text[] = $element->outertext;
-    $text_all = $this->finder($text, 0, 'Content', false);
+    $text_all = $this->finder($text, $id, 'Content', false);
     return $text_all;
   }
 

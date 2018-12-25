@@ -7,7 +7,7 @@
           <div class="ui-tag__wrapper"><div @click="text = all; type = 'all'" :class="{ active: type === 'all' }" class="ui-tag"><span class="tag-title">All</span></div></div>
           <div class="ui-tag__wrapper"><div @click="text = seo; type = 'seo'" :class="{ active: type === 'seo' }" class="ui-tag"><span class="tag-title">SEO</span></div></div>
           <div class="ui-tag__wrapper"><div @click="text = headline; type = 'headline'" :class="{ active: type === 'headline' }" class="ui-tag"><span class="tag-title">Headline</span></div></div>
-          <div class="ui-tag__wrapper"><div @click="text = textonly; type = 'textonly'" :class="{ active: type === 'textonly' }" class="ui-tag"><span class="tag-title">Text Only</span></div></div>
+          <div class="ui-tag__wrapper"><div @click="text = textonly; type = 'textonly'" :class="{ active: type === 'textonly' }" class="ui-tag"><span class="tag-title">Text</span></div></div>
           <div class="ui-tag__wrapper"><div @click="text = button; type = 'button'" :class="{ active: type === 'button' }" class="ui-tag"><span class="tag-title">Button</span></div></div>
         </div>
         <div class="tags__wrapper">
@@ -28,12 +28,14 @@
       <!-- main -->
       <transition name="slide-fade">
         <div v-if="type === 'contentmain' && showInfoMain === true" class="ui-alert ui-alert--primary"><span class="alert-title">
+          Beta <br>
           Only &lt;p&gt; and &lt;span&gt; with class wcms-text. <br> Example: &lt;span class=&quot;wcms-text&quot;&gt;Example text&lt;/span&gt;
         </span><span @click="showInfoMain = false" class="button-close"></span></div>
       </transition>
       <!-- content -->
       <transition name="slide-fade">
         <div v-if="type === 'content' && showInfoContent === true" class="ui-alert ui-alert--primary"><span class="alert-title">
+          Beta <br>
           Only &lt;div&gt; with class wcms-text. <br> Example: &lt;div class=&quot;wcms-textarea&quot;&gt;Example text&lt;/div&gt;
         </span><span @click="showInfoContent = false" class="button-close"></span></div>
       </transition>
