@@ -2,7 +2,10 @@ header
   .navbar
     .container
       .navbar-content
-        a.header-logo(href='index.html') WCMS
+        if (lang === 'ru')
+          a.header-logo(href='/ru') WCMS
+        else
+          a.header-logo(href='/') WCMS
         .button-burger
           span.line.line-1
           span.line.line-2
