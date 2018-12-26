@@ -12,7 +12,7 @@ mixin promo(btnFirstTitle, btnSecondTitle)
           .button-list
             +buttonLink('GitHub', 'https://github.com/vedees/wcms', '_blank')(class="button-default" class="button--big")
             if (lang === 'en')
-              +buttonLink('Download', 'https://vedees.ru/wex/wcms.zip')(class="button-primary" class="button--big")
+              +buttonLink('Download', '/download')(class="button-primary" class="button--big")
             else
-              +buttonLink('Скачать', 'https://vedees.ru/wex/wcms.zip')(class="button-primary" class="button--big")
+              +buttonLink('Скачать', '/ru/download')(class="button-primary" class="button--big")
         block

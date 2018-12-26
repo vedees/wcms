@@ -1,0 +1,55 @@
+extends layout/main
+
+block variables
+	- var lang             = 'ru'
+	- var pageClass        = 'download-page--en';
+	- var title            = 'WCMS - Download - Simple CMS';
+	- var description      = 'WCMS - Download - Simple CMS. Best solution for landing page';
+
+block head
+	//- fb admin
+	meta(property='fb:admins', content='vedegis')
+	//- fb app
+	meta(property='fb:app_id', content='318684575414889')
+	//- vk api
+	script(src="https://vk.com/js/api/openapi.js?160")
+	//- fb api
+	#fb-root
+	script.
+		(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.2';
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+
+
+block content
+	section#download_header
+		.container.center
+			h1.ui-title-1 WCMS - Скачать
+			img.no-zoom-background(src='/static/img/dashboard.png', style="max-width:400px; margin-bottom:30px" alt='CMS admin panel')
+			p.ui-text-regular
+				a(href="https://vedees.ru/wex/wcms.zip'")
+					span(style="border-bottom: 1px solid #333333;") Нажмите здесь
+				|  Если загрузка не началась автоматически
+
+	section#download_comments
+		.container.center
+			h2.ui-title-2 Комментарии
+			p.ui-text-regular Тут вы можете написать что-то хорошее, если вы хотите написать что-то плохое напишите это 
+				a(href="#" style="border-bottom: 1px solid #333333; dispaly: inline-block;") тут
+				|  ;)
+			.comments__wrapper
+				#vk_comments
+				.fb-comments(data-href='http://wcms.space/download', data-width='500', data-numposts='5')
+
+
+block script
+	script(type='text/javascript').
+		// Initialize vk
+		VK.init({apiId: 6798445, onlyWidgets: true});
+		// Settings vk
+		VK.Widgets.Comments('vk_comments', {redesign: 1, width: 500, limit: 5, attach: 'photo,video,link'}, 321);
+

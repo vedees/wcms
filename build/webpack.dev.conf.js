@@ -21,8 +21,22 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     // index ru
     new HtmlWebpackPlugin({
       //* '../' - fix static folder for *.html files
-      filename: 'ru.html',
+      filename: 'ru/index.html',
       template: 'src/index-ru.pug',
+      inject: false
+    }),
+    // index ru
+    new HtmlWebpackPlugin({
+      //* '../' - fix static folder for *.html files
+      filename: 'download.html',
+      template: 'src/download-en.pug',
+      inject: false
+    }),
+    // index en
+    new HtmlWebpackPlugin({
+      //* '../' - fix static folder for *.html files
+      filename: 'ru/download.html',
+      template: 'src/download-ru.pug',
       inject: false
     })
   ],
