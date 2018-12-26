@@ -28,44 +28,28 @@ class Text {
   }
   // OLD way
   public function get_text_all_old () {
-    // Text list
     $text = $this->get_text();
     $text_all = $this->finder($text, 0, 'All');
     return $text_all;
   }
 
   public function get_seo ($id=0) {
-    // Text list
     $text = array();
-    // Text single
-    // TODO rm foreach
-    foreach($GLOBALS['html']->find('title') as $element)
-      $text[] = $element->outertext;
-    foreach($GLOBALS['html']->find('description') as $element)
-      $text[] = $element->outertext;
+    $text = $this->get_html_parse($text, 'title');
+    $text = $this->get_html_parse($text, 'description');
     $text_all = $this->finder($text, $id, 'Headline');
     return $text_all;
   }
 
   public function get_headlines ($id=0) {
-    // Text list
     $text = array();
-    // Text single
-    // TODO class
-    // TODO fix type to h1/h2/..
     // TODO get callback
-    foreach($GLOBALS['html']->find('h1') as $element)
-      $text[] = $element->outertext;
-    foreach($GLOBALS['html']->find('h2') as $element)
-      $text[] = $element->outertext;
-    foreach($GLOBALS['html']->find('h3') as $element)
-      $text[] = $element->outertext;
-    foreach($GLOBALS['html']->find('h4') as $element)
-      $text[] = $element->outertext;
-    foreach($GLOBALS['html']->find('h5') as $element)
-      $text[] = $element->outertext;
-    foreach($GLOBALS['html']->find('h6') as $element)
-      $text[] = $element->outertext;
+    $text = $this->get_html_parse($text, 'h1');
+    $text = $this->get_html_parse($text, 'h2');
+    $text = $this->get_html_parse($text, 'h3');
+    $text = $this->get_html_parse($text, 'h4');
+    $text = $this->get_html_parse($text, 'h5');
+    $text = $this->get_html_parse($text, 'h6');
 
     // print_r($text);
     $text_all = $this->finder($text, $id, 'Headline');
@@ -73,51 +57,31 @@ class Text {
   }
 
   public function get_button ($id=0) {
-    // Text list
     $text = array();
-    foreach($GLOBALS['html']->find('button') as $element)
-      $text[] = $element->outertext;
+    $text = $this->get_html_parse($text, 'button');
     $text_all = $this->finder($text, $id, 'Button');
     return $text_all;
   }
-  public function get_link ($id=0) {
-    // Text list
-    $links = array();
-    foreach($GLOBALS['html']->find('a') as $element)
-      if (count($element->outertext) > 2) {
-        $links[] = $element->outertext;
-      }
-    $text_length = count($links);
-    $button = $this->get_button($text_length);
-    $all = array_merge($links, $button);
-    return $all;
-  }
+
+  // TODO get links
 
   public function get_p_and_span ($id=0) {
-    // Text list
     $text = array();
-
-    foreach($GLOBALS['html']->find('p') as $element)
-      $text[] = $element->outertext;
-    foreach($GLOBALS['html']->find('span') as $element)
-      $text[] = $element->outertext;
+    $text = $this->get_html_parse($text, 'p');
+    $text = $this->get_html_parse($text, 'span');
     $text_all = $this->finder($text, $id, 'Text');
     return $text_all;
   }
 
   public function get_content_main ($id=0) {
-    // Text list
     $text = array();
-    foreach($GLOBALS['html']->find('p.wcms-text') as $element)
-      $text[] = $element->outertext;
-    foreach($GLOBALS['html']->find('span.wcms-text') as $element)
-      $text[] = $element->outertext;
+    $text = $this->get_html_parse($text, 'p.wcms-text');
+    $text = $this->get_html_parse($text, 'span.wcms-text');
     $text_all = $this->finder($text, $id, 'Content-main');
     return $text_all;
   }
 
   public function get_content ($id=0) {
-    // Text list
     $text = array();
     foreach($GLOBALS['html']->find('div.wcms-textarea') as $element)
       $text[] = $element->outertext;
@@ -125,20 +89,26 @@ class Text {
     return $text_all;
   }
 
+  private function get_html_parse ($text, $what_find) {
+    $result = array();
+    foreach($GLOBALS['html']->find($what_find) as $element)
+      $text[] = $element->innertext;
+    return $text;
+  }
+
   //TODO class
   private function finder($where_find, $id, $type, $reg=true ) {
     $result = array();
     for ($i=0; $i < count($where_find); $i++) {
-      //TODO FIX length
       if (mb_strlen(trim($where_find[$i]), 'utf-8') > 1) {
         $object = new stdClass();
         $object->id = $id;
         //TODO lang
         $object->type = $type;
         // форич проставляет теги. регулярка удаляет все в <> + трим пробелов. по дефолту усовие срабатывает
-        //TODO из-за тегов неправильная длинна
-        if ($reg) { $object->title = preg_replace('/(<([^>]+)>)/U', '', trim($where_find[$i])); }
-        else { $object->title = trim($where_find[$i]); }
+        // if ($reg) { $object->title = preg_replace('/(<([^>]+)>)/U', '', trim($where_find[$i])); }
+        // else { $object->title = trim($where_find[$i]); }
+        $object->title = trim($where_find[$i]);
         $id++;
         $result[] = $object;
       }

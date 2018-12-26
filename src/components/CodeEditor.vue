@@ -9,7 +9,10 @@
           </textarea>
 
           <div class="button-list">
-            <button class="button button--round button-primary" type="submit" name="codeEditor">Save</button>
+            <button class="button button--round button-success" type="submit" name="codeEditor">Save</button>
+          </div>
+          <div class="button-list button-list--fixed">
+            <button class="button button--round button-default" type="submit" name="codeEditor">Save</button>
           </div>
         </form>
       </div>
@@ -36,6 +39,10 @@ export default {
     theme: {
       type: String,
       required: false
+    },
+    type: {
+      type: String,
+      default: 'htmlmixed'
     }
   },
   data () {
@@ -48,7 +55,7 @@ export default {
     this.editor = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
       lineNumbers     : true,
       lineWrapping    : true,
-      mode            : "htmlmixed",
+      mode            : this.type,
       htmlMode        : true,
       theme           : this.theme,
       tabSize         : 4,

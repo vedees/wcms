@@ -51,8 +51,7 @@ class Login {
   // Check require login
   public function require_login() {
     if(!$this->is_logged_in()) {
-      redirect_to('/wex/login.php');
-      // echo "<meta http-equiv=\"refresh\" content=\"0;URL=login.php\">";
+      redirect_to('login.php');
     } else {
       // Do nothing, let the rest of the page proceed
     }

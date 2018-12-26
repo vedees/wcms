@@ -6,8 +6,20 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-//! CHANGE admin_name ang admin_password!
+//! Be sure to change your password!
 // Login
 $GLOBALS['admin_name'] = 'admin';
+
 // Password
 $GLOBALS['admin_password'] = '12345';
+
+//! Edit fields below for personal settings
+// Default language: en & ru
+$GLOBALS['default_language'] = 'en';
+
+// Default theme: white & black
+$GLOBALS['default_theme'] = 'white';
+
+//! Development settings
+// Default code theme: elegant & twilight
+$GLOBALS['default_code_theme'] = 'elegant';

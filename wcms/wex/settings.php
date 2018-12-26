@@ -17,7 +17,7 @@ $user->require_login();?>
 <section>
   <div class="container">
     <h1 class="ui-title-1"> <?php echo $lang['settings'] ?> </h1>
-    <p> <?php echo $lang['settingsDescr'] ?> </p>
+    <p class="ui-text-small"> <?php echo $lang['settingsDescr'] ?> </p>
   </div>
 </section>
 

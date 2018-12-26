@@ -22,7 +22,9 @@
   <?php if (isset($_GET['dev'])) echo '<link rel="stylesheet" href="http://localhost:8080/wcms/wex/assets/css/main.css">';
         else echo '<link rel="stylesheet" href="assets/css/main.css">';?>
   <!-- black theme -->
-  <?php if ($_SESSION['theme'] == 'Black') echo '<link rel="stylesheet" href="assets/css/black.css">' ?>
+  <?php if ($_SESSION['theme'] == 'black') {
+          if (isset($_GET['dev'])) echo '<link rel="stylesheet" href="http://localhost:8080/wcms/wex/assets/css/black.css">';
+          else echo '<link rel="stylesheet" href="assets/css/black.css">'; }?>
 
 </head>
 <body>

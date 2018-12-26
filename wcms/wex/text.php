@@ -19,7 +19,7 @@ $user->require_login();?>
       $seo = $text->get_seo();
       $headline = $text->get_headlines();
       $get_p_and_span = $text->get_p_and_span();
-      $button = $text->get_link();
+      $button = $text->get_button();
       $content_main = $text->get_content_main();
       $content = $text->get_content();
       // Get data
@@ -35,6 +35,7 @@ $user->require_login();?>
     else if ($_GET['type'] === 'contentmain') { $text_edit = $content_main[$_GET['id']]->title; }
     else if ($_GET['type'] === 'content') { $text_edit = $content[$_GET['id']]->title; }
     else { $text_edit = $all[$_GET['id']]->title; }
+    //TODO use parser
     $text_output = $text->str_replace_nth($text_edit, $_GET['text'], $subject, 0);
     // Output
     file_put_contents($pagename, $text_output);
@@ -43,8 +44,9 @@ $user->require_login();?>
 ?>
 
 <section style="padding-bottom:0px;">
-  <div class="container" >
-    <h1 class="ui-title-1">  <?php echo $lang['textH1'] ?> </h1>
+  <div class="container">
+    <h1 class="ui-title-1"> <?php echo $lang['textH1'] ?> </h1>
+    <p class="ui-text-small"> <?php echo $lang['textHelper'] ?> </p>
   </div>
 </section>
 

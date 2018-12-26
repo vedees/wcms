@@ -11,6 +11,7 @@
     // Sidebar
     "pages" => "Pages",
     "basic" => "Basic",
+    "developers" => "Developers",
     "text" => "Text",
     "images" => "Images",
     "help" => "Help",
@@ -23,6 +24,7 @@
 
     // Common
     "save" => "save",
+    "editing" => "Editing",
     "cancel" => "Cancel",
 
     //
@@ -30,24 +32,28 @@
     //
 
     // Dashboard
-    "dashboardTitle" => "Dashboard - WEX CMS",
-    "dashboardDescr" => "WCMS is an advanced cms that makes it easy to build performant, beautiful sites for the landing-page, portfolio and other websites using open web interface.",
+    "dashboardTitle" => "Dashboard - WCMS",
+    "dashboardDescr" => "WCMS is an advanced cms that makes it easy to edit sites for the landing-page, portfolio, promo sites and other websites using open web interface.",
     "countFiles" => "Total Files",
 
     // Text
-    "textTitle" => "Text Editing - WEX CMS",
+    "textTitle" => "Text Editing - WCMS",
+    "textHelper" => "Editing text that has a &lt;/br&gt; it is not yet possible.",
     "textH1" => "Text Editing",
 
     // Images
-    "imagesTitle" => "Image editing - WEX CMS",
+    "imagesTitle" => "Image editing - WCMS",
 
     // CSS/JS
+    "cssjsTitle" => "CSS/JS Editing - WCMS",
+    "cssjsHelper" => "Note: Convert all quotes to HTML entities. Example: ' -> &quоt; </br>
+                      Don`t worry. Use what you want. Convertation is automatic.",
     "cssjsH1" => "CSS and JS editing",
     "css" => "CSS files",
     "js" => "JS files",
 
     // HTML
-    "htmlTitle" => "HTML Editing - WEX CMS",
+    "htmlTitle" => "HTML Editing - WCMS",
 
     // Settings
     "settingsDescr" => "If you want to make WCMS you, like a well-worn pair of sneakers, you can set some preferences that will make you feel more at home:",

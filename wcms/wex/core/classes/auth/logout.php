@@ -11,7 +11,6 @@ class Logout {
   function logout_user(){
     unset($_SESSION['logged_user']);
     unset($_SESSION['logged_password']);
-    redirect_to('/wex/login.php');
+    redirect_to('login.php');
   }
-
 }

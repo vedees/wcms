@@ -5,7 +5,7 @@
  * Copyright (C) 2018 Evgenii Vedegis <vedegis@gmail.com>
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
-
+  //TODO class
   // POST Check pagename (in sidebar)
   if (isset($_POST['pagename'])) {
     $_SESSION['pagename'] = $_POST['pagename'];

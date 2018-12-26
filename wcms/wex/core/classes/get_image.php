@@ -10,6 +10,7 @@ class Image {
 
   public function image_filter () {
     $imgmas = array();
+    //TODO rm reg
     $imgmas = $this->get_images();
     // foreach($GLOBALS['html']->find('img') as $e)
       // $imgmas[] = $e->src;

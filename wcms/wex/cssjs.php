@@ -9,7 +9,7 @@ require 'core/initialize.php';
 $user = new Login;
 $user->require_login();?>
 
-<?php $page_title = 'CSS/JS Editing - WEX CMS';
+<?php $page_title = $lang['cssjsTitle'];
       $page = 'cssjs';?>
 
 <?php include('includes/header.php') ?>
@@ -21,7 +21,9 @@ $user->require_login();?>
 // Finish editing
 if (isset($_GET['finish'])) {
   $path = $_GET['finish'];
-  file_put_contents($path, $_POST['textAreaCode']);
+  // Преобразование кода обратно
+  // Преобразуются и двойные, и одиночные кавычки.
+  file_put_contents($path, html_entity_decode($_POST['textAreaCode'], ENT_QUOTES));
 }
 
 // GET CSS & JS file
@@ -51,11 +53,15 @@ if (isset($_GET['path'])) {
   </div>
 </section>
 <!-- Code Editor -->
+<div class="container">
+  <?php echo $lang['cssjsHelper']; ?>
+</div>
 <code-editor-component
     action='cssjs.php'
-    :code='<?php echo json_encode($html_from_template);?>'
+    :code='<?php echo htmlentities(json_encode($html_from_template, JSON_HEX_QUOT), ENT_QUOTES);?>'
     :path='<?php echo json_encode($path);?>'
-    theme='<?php echo $_SESSION['editor_theme'];?>'>
+    theme='<?php echo $_SESSION['editor_theme'];?>'
+    type='<?php echo $_GET['type'];?>'>
 </code-editor-component>
 
 <?php } else { ?>
@@ -70,16 +76,17 @@ if (isset($_GET['path'])) {
   <div class="container">
     <h2 class="ui-title-2"> <?php echo $lang['css'] ?> </h2>
     <code-list-component
-      :files='<?php echo json_encode($css) ?>'>
+      :files='<?php echo json_encode($css) ?>'
+      type='css'>
     </code-list-component>
   </div>
 </section>
-
 <section id="jsEdit">
   <div class="container">
     <h2 class="ui-title-2"> <?php echo $lang['js'] ?> </h2>
     <code-list-component
-      :files='<?php echo json_encode($js) ?>'>
+      :files='<?php echo json_encode($js) ?>'
+      type='javascript'>
     </code-list-component>
   </div>
 </section>

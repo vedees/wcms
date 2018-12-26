@@ -18,7 +18,7 @@ $user->require_login();?>
 <section>
   <div class="container">
     <h1 class="ui-title-1"> <?php echo $lang['dashboard'] ?> </h1>
-    <p> <?php echo $lang['dashboardDescr'] ?> </p>
+    <p class="ui-text-small"> <?php echo $lang['dashboardDescr'] ?> </p>
   </div>
 </section>
 

@@ -16,6 +16,6 @@
         }
       ?>
     </select>
-    <button class="button button--round button-primary" type="submit"> Editing </button>
+    <button class="button button--round button-primary" type="submit"> <?php echo $lang['editing'] ?> </button>
   </div>
 </form>

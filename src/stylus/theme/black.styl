@@ -7,22 +7,21 @@
 
  body,
  .navbar,
- .sidebar {
-   color: #fff !important;
-   background-color: #000 !important;
-   border: none !important;
- }
+ .sidebar
+    background-color: #000 !important;
+    border: none !important;
 
  .header-logo,
  .ui-text-small,
  .ui-text-regular,
  .sidebar-item,
  .sidebar-link,
- .ui-title-1,.ui-title-2, .ui-title-3, .ui-title-4,
- p, span,
+ .ui-title-1, .ui-title-2, .ui-title-3, .ui-title-4,
+ .ui-text-small, .ui-text-regular, .ui-text-smaller,
+//  p, span,
  select, input,
- .navbar-item,
- .navbar-link {
+ .navbar-item, .navbar-link, 
+ .file-name, .version-header {
    color: #fff !important;
  }
 
@@ -31,7 +30,7 @@
  }
 
  input::placeholder {
-   color: #fff;
+   color: #333333;
  }
 
  select,input {
@@ -63,3 +62,15 @@
    background-color: #000 !important;
    border-color: rgba(255,255,255,0.3) !important;
  }
+
+ .wrapper__search
+  input
+    color: #333333!important;
+
+.ui-table
+  color #ffffff!important
+  td
+    border-bottom: unset
+
+.ui-alert--primary
+  background-color: #777bd4;

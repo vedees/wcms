@@ -15,6 +15,8 @@
 window.CodeMirror = require('codemirror/lib/codemirror.js');
 // Mode:
 import 'codemirror/mode/htmlmixed/htmlmixed.js'
+import 'codemirror/mode/css/css.js'
+import 'codemirror/mode/javascript/javascript.js'
 // Theme css in libs.styl
 
 // Vue

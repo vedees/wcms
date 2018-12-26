@@ -17,24 +17,30 @@
     width 100%
     display: flex
     align-items: center
-    img
-      width: 400px
-      height auto
-      max-height: 500px
+    .img__wrapper
+      min-width: 400px
+      img
+        max-width: 400px
+        height auto
+        max-height: 500px
     .button-list
       text-align left
 
 .img__wrapper
   // width 100%
-  // height auto
   padding: 18px
+  min-height: 276px
+  display flex
+  align-items center
   // overflow hidden
   img
     // FIX resize
     display flex
+    align-items center
     margin: 0 auto
     width auto
-    height: 240px
+    min-height: 30px
+    max-height: 240px
     // Common style
     cursor pointer
     border-radius 8px

@@ -7,18 +7,18 @@
  */
 
   //! WCMS Theme
-  $theme_choices = ['White', 'Black'];
+  $theme_choices = ['white', 'black'];
   // Default
   if (!isset($_SESSION['theme'])) {
-    $_SESSION['theme'] = 'White';
+    $_SESSION['theme'] = $GLOBALS['default_theme'];
   // GET
   } else if (isset($_GET['theme']) && $_SESSION['theme'] != $_GET['theme'] && !empty($_GET['theme'])) {
       //* Black
-      if ($_GET['theme'] == 'Black') {
-        $_SESSION['theme'] = 'Black';
+      if ($_GET['theme'] == 'black') {
+        $_SESSION['theme'] = 'black';
       //* White
-      } else if ($_GET['theme'] == 'White') {
-        $_SESSION['theme'] = 'White';
+      } else if ($_GET['theme'] == 'white') {
+        $_SESSION['theme'] = 'white';
       }
   }
 
@@ -26,7 +26,7 @@
   $editor_theme_choices = ['elegant', 'twilight'];
   // Default
   if (!isset($_SESSION['editor_theme'])) {
-    $_SESSION['editor_theme'] = 'elegant';
+    $_SESSION['editor_theme'] = $GLOBALS['default_code_theme'];
   // GET
   } else if (isset($_GET['editor_theme']) && $_SESSION['editor_theme'] != $_GET['editor_theme'] && !empty($_GET['editor_theme'])) {
       // Dark
