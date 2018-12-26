@@ -48,8 +48,12 @@ block content
 
 block script
 	script(type='text/javascript').
+		// auto download
+		setTimeout('document.location.href="https://vedees.ru/wex/wcms.zip"; 2000')
+	script(type='text/javascript').
 		// Initialize vk
 		VK.init({apiId: 6798445, onlyWidgets: true});
 		// Settings vk
 		VK.Widgets.Comments('vk_comments', {redesign: 1, width: 500, limit: 5, attach: 'photo,video,link'}, 321);
+
 

@@ -18,9 +18,9 @@ mixin install
           .button-list
             +buttonLink('GitHub', 'https://github.com/vedees/wcms', '_blank')(class="button-default")
             if (lang === 'ru')
-              +buttonLink('Скачать', 'https://vedees.ru/wex/wcms.zip')(class="button-primary")
+              +buttonLink('Скачать', '/ru/download')(class="button-primary")
             else
-              +buttonLink('Download', 'https://vedees.ru/wex/wcms.zip')(class="button-primary")
+              +buttonLink('Download', '/download')(class="button-primary")
         .install-banner
           //TODO video
           img(src='/static/img/dashboard.png', alt='WCMS Admin Dashboard')
