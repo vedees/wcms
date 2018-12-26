@@ -4,10 +4,12 @@ mixin promo(btnFirstTitle, btnSecondTitle)
       .promo__wrapper
         .promo-content
           if (lang === 'ru')
-            span.ui-title-1 WCMS - Простая CMS
+            p.ui-title-1 WCMS - Простая CMS
+            a(href="https://github.com/vedees/wcms/releases").ui-text-small Beta (0.2.3)
             span.ui-title-4 Лучшее решение для лендинг-пейдж
           else
-            span.ui-title-1 WCMS - Simle CMS
+            p.ui-title-1 WCMS - Simle CMS
+            a(href="https://github.com/vedees/wcms/releases").ui-text-small Beta (0.2.3)
             span.ui-title-4 Best solution for landing page
           .button-list
             +buttonLink('GitHub', 'https://github.com/vedees/wcms', '_blank')(class="button-default" class="button--big")
