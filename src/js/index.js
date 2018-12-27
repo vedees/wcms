@@ -5,3 +5,7 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
+// Finder
+import './finder'
+// console.log(html_entity_decode('hello'))
+import './decoder'

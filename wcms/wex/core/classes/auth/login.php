@@ -32,7 +32,7 @@ class Login {
 
           //TODO - если не прошел редирект месседж о переходе
           echo 'hi ';
-          redirect_to('/wex/index.php');
+          redirect_to('index.php');
           // echo "<meta http-equiv=\"refresh\" content=\"0;URL=index.php\">";
         // Error pass
         } else {

@@ -1,11 +1,11 @@
 <template>
   <section id="codeEditing">
     <div class="container">
-      <div class="code__wrapper">
+      <div class="code__wrapper" >
         <form method="POST"
           :action="action + '?finish=' + path">
           <!-- The code editor -->
-          <textarea v-model="code" name="textAreaCode" id="codeEditor">
+          <textarea v-model="get_decode" name="textAreaCode" id="codeEditor">
           </textarea>
 
           <div class="button-list">
@@ -22,6 +22,7 @@
 
 <script>
 // TODO codemirror-vue
+import htmlD from 'locutus/php/strings/html_entity_decode'
 export default {
   props: {
     code: {
@@ -47,7 +48,8 @@ export default {
   },
   data () {
     return {
-      editor: null
+      editor: null,
+      get_decode: htmlD(this.code)
       // getOutput: '',
     }
   },

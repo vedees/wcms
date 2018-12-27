@@ -54,7 +54,7 @@ if (isset($_GET['path'])) {
 </section>
 <!-- Code Editor -->
 <div class="container">
-  <?php echo $lang['cssjsHelper']; ?>
+  <?php // echo $lang['cssjsHelper']; - done ?>
 </div>
 <code-editor-component
     action='cssjs.php'

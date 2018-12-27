@@ -48,7 +48,7 @@ $user->require_login();?>
 
 <code-editor-component
     action='html.php'
-    code='<?php echo print_r($html_from_template); ?>'
+    :code='<?php echo htmlentities(json_encode($html_from_template, JSON_HEX_QUOT), ENT_QUOTES);?>'
     path='<?php echo $GLOBALS['pagename']; ?>'
     theme='<?php echo $_SESSION['editor_theme']?> '>
 </code-editor-component>

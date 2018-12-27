@@ -37,5 +37,6 @@ $errors = [];
 //! DEVELOPMENT
 // webpack dev server
 $dev_port = 'http://localhost:8080';
+$use_dev = false;
 
 //TODO example message get golobal var to component

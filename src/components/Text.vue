@@ -74,6 +74,7 @@
 </template>
 
 <script>
+import htmlD from 'locutus/php/strings/html_entity_decode'
 import Search from './UI/Search.vue'
 import Modal from './TextModal.vue'
 export default {

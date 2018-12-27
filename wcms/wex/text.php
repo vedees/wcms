@@ -51,13 +51,13 @@ $user->require_login();?>
 </section>
 
 <text-component
-  :all='<?php echo json_encode($all);?>'
-  :seo='<?php echo json_encode($seo);?>'
-  :headline='<?php echo json_encode($headline);?>'
-  :textonly='<?php echo json_encode($get_p_and_span);?>'
-  :button='<?php echo json_encode($button);?>'
-  :contentmain='<?php echo json_encode($content_main);?>'
-  :content='<?php echo json_encode($content);?>'>
+  :all='<?php echo htmlentities(json_encode($all, JSON_HEX_QUOT), ENT_QUOTES);?>'
+  :seo='<?php echo htmlentities(json_encode($seo, JSON_HEX_QUOT), ENT_QUOTES);?>'
+  :headline='<?php echo htmlentities(json_encode($headline, JSON_HEX_QUOT), ENT_QUOTES);?>'
+  :textonly='<?php echo htmlentities(json_encode($get_p_and_span, JSON_HEX_QUOT), ENT_QUOTES);?>'
+  :button='<?php echo htmlentities(json_encode($button, JSON_HEX_QUOT), ENT_QUOTES);?>'
+  :contentmain='<?php echo htmlentities(json_encode($content_main, JSON_HEX_QUOT), ENT_QUOTES);?>'
+  :content='<?php echo htmlentities(json_encode($content, JSON_HEX_QUOT), ENT_QUOTES);?>'>
 </text-component>
 
 <?php include('includes/footer.php') ?>

@@ -17,6 +17,7 @@
     "help" => "Help",
     "docs" => "Docs",
     "logout" => "Logout",
+    "finder" => "Finder",
     "toSite" => "To site",
     "settings" => "Settings",
     "dashboard" => "Dashboard",

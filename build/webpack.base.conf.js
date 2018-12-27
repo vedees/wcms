@@ -24,7 +24,7 @@ module.exports = {
     //TODO FIX path to wex
     path: path.resolve(__dirname, '../assets/'),
     //! Server fix
-    publicPath: 'http://localhost:8080/wcms/wex/assets'
+    publicPath: '/wcms/wex/assets'
     //* To deploy
     // publicPath: '/wcms/wex/static/js'
   },
@@ -49,6 +49,17 @@ module.exports = {
         loader: 'babel-loader',
         exclude: '/node_modules/'
       }, {
+        // use single png sprite
+        // test: /\.png$/,
+        test: /\.(png|jpg|svg)$/,
+        loader: "file-loader?name=[path][name].[ext]",
+        options: {
+          name: 'img/[name].[ext]',
+          publicPath: function(url) {
+            return url.replace(/src/, '..')
+          },
+        },
+      },{
         //! MAIN stylus
         test: /main\.styl$/,
         use: mainSTYL.extract({
