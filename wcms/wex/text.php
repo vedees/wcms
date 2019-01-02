@@ -14,28 +14,43 @@ $user->require_login();?>
 
 <?php include('includes/header.php') ?>
 
-<?php $text = new Text();
+<?php // Text Class
+      $text = new Text();
+      // Text Replace Class
       $text_replace = new TextReplace();
+      // all
       $all = $text->get_text_all();
+      // seo
       $seo = $text->get_seo();
+      // headline
       $headline = $text->get_headlines();
-      $get_p_and_span = $text->get_p_and_span();
+      // p_and_span
+      $p_and_span = $text->get_p_and_span();
+      // buttons
       $button = $text->get_button();
+      // links
+      $link = $text->get_link();
+      // text main
       $content_main = $text->get_content_main();
+      // text content
       $content = $text->get_content();
+
       // Get data
     	$subject = file_get_contents($pagename);
+
   // Find GET request
   if (isset($_GET['id'])) {
     //TODO Refing + swich
     if ($_GET['type'] === 'all') { $text_edit = $all[$_GET['id']]->title; }
     else if ($_GET['type'] === 'seo') { $text_edit = $seo[$_GET['id']]->title; }
     else if ($_GET['type'] === 'headline') { $text_edit = $headline[$_GET['id']]->title; }
-    else if ($_GET['type'] === 'textonly') { $text_edit = $get_p_and_span[$_GET['id']]->title; }
+    else if ($_GET['type'] === 'textonly') { $text_edit = $p_and_span[$_GET['id']]->title; }
     else if ($_GET['type'] === 'button') { $text_edit = $button[$_GET['id']]->title; }
+    else if ($_GET['type'] === 'link') { $text_edit = $link[$_GET['id']]->title; }
     else if ($_GET['type'] === 'contentmain') { $text_edit = $content_main[$_GET['id']]->title; }
     else if ($_GET['type'] === 'content') { $text_edit = $content[$_GET['id']]->title; }
     else { $text_edit = $all[$_GET['id']]->title; }
+
     //TODO use parser
     $text_output = $text_replace->str_replace_nth($text_edit, $_GET['text'], $subject, 0);
     // Output
@@ -55,8 +70,9 @@ $user->require_login();?>
   :all='<?php echo htmlentities(json_encode($all, JSON_HEX_QUOT), ENT_QUOTES);?>'
   :seo='<?php echo htmlentities(json_encode($seo, JSON_HEX_QUOT), ENT_QUOTES);?>'
   :headline='<?php echo htmlentities(json_encode($headline, JSON_HEX_QUOT), ENT_QUOTES);?>'
-  :textonly='<?php echo htmlentities(json_encode($get_p_and_span, JSON_HEX_QUOT), ENT_QUOTES);?>'
+  :textonly='<?php echo htmlentities(json_encode($p_and_span, JSON_HEX_QUOT), ENT_QUOTES);?>'
   :button='<?php echo htmlentities(json_encode($button, JSON_HEX_QUOT), ENT_QUOTES);?>'
+  :link='<?php echo htmlentities(json_encode($link, JSON_HEX_QUOT), ENT_QUOTES);?>'
   :contentmain='<?php echo htmlentities(json_encode($content_main, JSON_HEX_QUOT), ENT_QUOTES);?>'
   :content='<?php echo htmlentities(json_encode($content, JSON_HEX_QUOT), ENT_QUOTES);?>'>
 </text-component>

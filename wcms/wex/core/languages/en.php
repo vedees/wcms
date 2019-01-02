@@ -29,6 +29,7 @@
     "archive" => "Archive",
     "copy" => "Copy",
     "editing" => "Editing",
+    "editingPageSelect" => "Editing",
     "cancel" => "Cancel",
     "uploadFiles" => "Upload Files",
     "newFolder" => "New Folder",

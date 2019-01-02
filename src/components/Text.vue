@@ -8,7 +8,8 @@
           <div class="ui-tag__wrapper"><div @click="text = seo; type = 'seo'" :class="{ active: type === 'seo' }" class="ui-tag"><span class="tag-title">SEO</span></div></div>
           <div class="ui-tag__wrapper"><div @click="text = headline; type = 'headline'" :class="{ active: type === 'headline' }" class="ui-tag"><span class="tag-title">Headline</span></div></div>
           <div class="ui-tag__wrapper"><div @click="text = textonly; type = 'textonly'" :class="{ active: type === 'textonly' }" class="ui-tag"><span class="tag-title">Text</span></div></div>
-          <div class="ui-tag__wrapper"><div @click="text = button; type = 'button'" :class="{ active: type === 'button' }" class="ui-tag"><span class="tag-title">Button</span></div></div>
+          <div class="ui-tag__wrapper"><div @click="text = link; type = 'link'" :class="{ active: type === 'link' }" class="ui-tag"><span class="tag-title">Links</span></div></div>
+          <div class="ui-tag__wrapper"><div @click="text = button; type = 'button'" :class="{ active: type === 'button' }" class="ui-tag"><span class="tag-title">Buttons</span></div></div>
         </div>
         <div class="tags__wrapper">
           <div class="ui-tag__wrapper"><div @click="text = contentmain; type = 'contentmain'" :class="{ active: type === 'contentmain' }" class="ui-tag"><span class="tag-title">Main</span></div></div>
@@ -102,6 +103,10 @@ export default {
       required: true
     },
     button: {
+      type: Array,
+      required: true
+    },
+    link: {
       type: Array,
       required: true
     },

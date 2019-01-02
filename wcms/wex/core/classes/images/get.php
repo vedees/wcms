@@ -43,6 +43,15 @@ class Image {
     return $img_all = $this->finder->find($img, false);
   }
 
+  // Only Icons img
+  public function get_img_icon () {
+    $img = array();
+    foreach($GLOBALS['html']->find('img.wcms-img-icon') as $element)
+      $img[] = $element->src;
+    // All img
+    return $img_all = $this->finder->find($img, false);
+  }
+
   // Filter for search all img
   // TODO rm reg. to parse
   private function get_images () {

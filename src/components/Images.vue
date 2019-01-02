@@ -21,6 +21,7 @@
         <div class="tags__wrapper">
           <div class="ui-tag__wrapper"><div @click="img = imgmain; type = 'imgmain'" :class="{ active: type === 'imgmain' }" class="ui-tag"><span class="tag-title">Main</span></div></div>
           <div class="ui-tag__wrapper"><div @click="img = imgcontent; type = 'imgcontent'" :class="{ active: type === 'imgcontent' }" class="ui-tag"><span class="tag-title">Content</span></div></div>
+          <div class="ui-tag__wrapper"><div @click="img = imgicon; type = 'imgicon'" :class="{ active: type === 'imgicon' }" class="ui-tag"><span class="tag-title">Icons</span></div></div>
         </div>
       </div>
 
@@ -31,15 +32,19 @@
       <!-- tag - main -->
       <Alert v-if="type === 'imgmain' && message.tagMain === true" @close="message.tagMain = !message.tagMain">
         <span slot="title" class="alert-title">
-          Beta <br>
-          Only &lt;img&gt; with class wcms-img-main. <br> Example: &lt;img class=&quot;wcms-img-main&quot; src=&quot;images/example.jpg&quot;&gt; &lt;/img&gt;
+          Only &lt;img&gt; with class wcms-img-main. <br> Example: &lt;img class=&quot;wcms-img-main&quot; src=&quot;images/example.jpg&quot;&gt;
         </span>
       </Alert>
       <!-- tag - content -->
       <Alert v-if="type === 'imgcontent' && message.tagContent === true" @close="message.tagContent = !message.tagContent">
         <span slot="title" class="alert-title">
-          Beta <br>
-          Only &lt;img&gt; with class wcms-img-content. <br> Example: &lt;img class=&quot;wcms-img-content&quot; src=&quot;images/example.jpg&quot;&gt; &lt;/img&gt;
+          Only &lt;img&gt; with class wcms-img-content. <br> Example: &lt;img class=&quot;wcms-img-content&quot; src=&quot;images/example.jpg&quot;&gt;
+        </span>
+      </Alert>
+      <!-- tag - content -->
+      <Alert v-if="type === 'imgicon' && message.tagIcon === true" @close="message.tagIcon = !message.tagIcon">
+        <span slot="title" class="alert-title">
+          Only &lt;img&gt; for icons. With class wcms-img-icon. <br> Example: &lt;img class=&quot;wcms-img-icon&quot; src=&quot;images/example.jpg&quot;&gt;
         </span>
       </Alert>
 
@@ -110,6 +115,10 @@ export default {
     imgcontent: {
       type: Array,
       required: true
+    },
+    imgicon: {
+      type: Array,
+      required: true
     }
   },
   data () {
@@ -119,7 +128,8 @@ export default {
       showModal: false,
       message: {
         tagMain: true,
-        tagContent: true
+        tagContent: true,
+        tagIcon: true
       },
       img: this.images,
       type: 'images',

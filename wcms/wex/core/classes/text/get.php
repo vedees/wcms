@@ -44,7 +44,7 @@ class Text {
 
   public function get_headlines ($id=0) {
     $text = array();
-    // TODO get callback
+    // TODO to callback
     $text = $this->text->get_html_parse($text, 'h1');
     $text = $this->text->get_html_parse($text, 'h2');
     $text = $this->text->get_html_parse($text, 'h3');
@@ -64,7 +64,13 @@ class Text {
     return $text_all;
   }
 
-  // TODO get links
+  public function get_link ($id=0) {
+    $text = array();
+    $text = $this->text->get_html_parse($text, 'a');
+    $text_all = $this->find->find_text($text, $id, 'Link');
+    return $text_all;
+  }
+
 
   public function get_p_and_span ($id=0) {
     $text = array();

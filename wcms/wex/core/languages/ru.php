@@ -29,6 +29,7 @@
     "archive" => "Архивировать",
     "copy" => "Скопировать",
     "editing" => "Рердактировать",
+    "editingPageSelect" => "Применить",
     "cancel" => "Отмена",
     "uploadFiles" => "Загрузить файлы",
     "newFolder" => "Новая папка",

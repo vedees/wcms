@@ -19,6 +19,7 @@ $user->require_login();?>
       $images = $get_image->image_filter();
       $img_main = $get_image->get_img_main();
       $img_content = $get_image->get_img_content();
+      $img_icon = $get_image->get_img_icon();
 
   // Check get request
   if (isset($_GET['img'])) {
@@ -33,7 +34,8 @@ $user->require_login();?>
 <images-component
   :images='<?php echo json_encode($images) ?>'
   :imgmain='<?php echo json_encode($img_main) ?>'
-  :imgcontent='<?php echo json_encode($img_content) ?>'>
+  :imgcontent='<?php echo json_encode($img_content) ?>'
+  :imgicon='<?php echo json_encode($img_icon) ?>'>
 </images-component>
 
 <?php include('includes/footer.php') ?>
