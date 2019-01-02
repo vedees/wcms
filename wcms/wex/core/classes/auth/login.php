@@ -10,6 +10,7 @@ class Login {
 
   public function check_login () {
     if (isset($_POST['login_submit'])) {
+      $errors = [];
       $name = $_POST['login'];
       $pass = $_POST['password'];
 
@@ -33,11 +34,13 @@ class Login {
           //TODO - если не прошел редирект месседж о переходе
           echo 'hi ';
           redirect_to('index.php');
-          // echo "<meta http-equiv=\"refresh\" content=\"0;URL=index.php\">";
         // Error pass
         } else {
           $errors[] = 'Username or Password is not correct';
         }
+      }
+      if (!empty($errors)) {
+        echo '<div class="error-login">' . array_shift($errors) . '</div> <br>';
       }
     }
   }

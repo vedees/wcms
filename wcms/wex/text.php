@@ -15,6 +15,7 @@ $user->require_login();?>
 <?php include('includes/header.php') ?>
 
 <?php $text = new Text();
+      $text_replace = new TextReplace();
       $all = $text->get_text_all();
       $seo = $text->get_seo();
       $headline = $text->get_headlines();
@@ -36,7 +37,7 @@ $user->require_login();?>
     else if ($_GET['type'] === 'content') { $text_edit = $content[$_GET['id']]->title; }
     else { $text_edit = $all[$_GET['id']]->title; }
     //TODO use parser
-    $text_output = $text->str_replace_nth($text_edit, $_GET['text'], $subject, 0);
+    $text_output = $text_replace->str_replace_nth($text_edit, $_GET['text'], $subject, 0);
     // Output
     file_put_contents($pagename, $text_output);
     redirect_to('text.php');

@@ -1,6 +1,4 @@
 
-.ui-alert[data-v-cb76da46]{padding:14px 30px;margin:30px 0
-}
 svg[data-v-d1e9a6b0]:first-child{margin-right:12px
 }
 svg[data-v-d1e9a6b0]{color:#adaeb0
@@ -22,6 +20,8 @@ input[data-v-ab89cf7a]{padding:16px 16px 16px 56px!important;margin-bottom:0;bor
 .center[data-v-08c191fa]{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;cursor:pointer
 }
 .center svg[data-v-08c191fa]{width:18px;margin-right:8px
+}
+.ui-alert[data-v-1afb0d91]{padding:14px 30px;margin:30px 0
 }
 .ui-messageBox__wrapper[data-v-190b233c]{display:-webkit-box!important;display:-ms-flexbox!important;display:flex!important;position:relative
 }

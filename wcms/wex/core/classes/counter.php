@@ -10,10 +10,6 @@
 
 class Counter {
 
-  // Get Files
-  protected $files;
-  // Get Images
-  protected $images;
   // Constructor
   public function __construct() {
     $this->files = new Files();

@@ -6,44 +6,8 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-class Image {
-
-  public function image_filter () {
-    $imgmas = array();
-    //TODO rm reg
-    $imgmas = $this->get_images();
-    // foreach($GLOBALS['html']->find('img') as $e)
-      // $imgmas[] = $e->src;
-    $img_all = $this->finder($imgmas, true, 1);
-    // All img
-    return $img_all;
-  }
-
-  public function get_img_main () {
-    $img = array();
-    foreach($GLOBALS['html']->find('img.wcms-img-main') as $element)
-      $img[] = $element->src;
-    // All img
-    return $img_all = $this->finder($img, false);
-  }
-
-  public function get_img_content () {
-    $img = array();
-    foreach($GLOBALS['html']->find('img.wcms-img-content') as $element)
-      $img[] = $element->src;
-    // All img
-    return $img_all = $this->finder($img, false);
-  }
-
-  // Search all Images
-  private function get_images () {
-    $imgreg = '/<img(?:\\s[^<>]*?)?\\bsrc\\s*=\\s*(?|"([^"]*)"|\'([^\']*)\'|([^<>\'"\\s]*))[^<>]*>/i';
-    preg_match_all($imgreg, $GLOBALS['template'], $imgmas);
-    return $imgmas;
-  }
-
-  //TODO class
-  private function finder($where_find, $trim=true, $offet=0) {
+class FindImages {
+  static function find($where_find, $trim=true, $offet=0) {
     $result = array();
     // трим нужен только для всех файлов тк там регулярка
     if ($trim) {
@@ -73,5 +37,4 @@ class Image {
     }
     return $result;
   }
-
 }

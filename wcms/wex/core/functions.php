@@ -17,21 +17,6 @@ function is_blank($value) {
 	return !isset($value) || trim($value) === '';
 }
 
-// Show Errors
-function display_errors ($errors=array()) {
-  $output = '';
-  if(!empty($errors)) {
-    $output .= "<div class=\"errors\">";
-    $output .= "<ul>";
-    foreach($errors as $error) {
-      $output .= "<li>" . $error . "</li>";
-    }
-    $output .= "</ul>";
-    $output .= "</div>";
-  }
-  return $output;
-}
-
 // Sidebar active class
 function nav_is_active ($page, $name) {
   if ($page == $name) return true;

@@ -32,8 +32,6 @@ require_once 'theme.php';
 // Language choice
 require_once 'language.php';
 
-$errors = [];
-
 //! DEVELOPMENT
 // webpack dev server
 $dev_port = 'http://localhost:8081';

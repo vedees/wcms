@@ -7,18 +7,13 @@
  */
 
 // CSS & JS files
-require_once 'classes/get_file.php';
-// CSS & JS FINDER
-require_once 'classes/file_finder.php';
+require_once 'classes/css_js.php';
 // Text
-require_once 'classes/get_text.php';
+require_once 'classes/text.php';
 // Images
-require_once 'classes/get_image.php';
+require_once 'classes/images.php';
 // Counter
 require_once 'classes/counter.php';
 
 // Auth
-// Log in
-require_once 'classes/auth/login.php';
-// Log out
-require_once 'classes/auth/logout.php';
+require_once 'classes/auth.php';

@@ -7,6 +7,14 @@
  */
 
 class Files {
+
+  // Consctruct
+  public function __construct() {
+    // Finder
+    $this->finder = new FindCssJs();
+  }
+
+  // CSS
   public function all_css () {
     // Name - js or css
     $css_name = 'css';
@@ -19,11 +27,13 @@ class Files {
     preg_match_all($cssreg, $GLOBALS['template'], $mask);
     preg_match_all($cssreg_min, $GLOBALS['template'], $mask_min);
     // Get css array
-    $css = Finder::find($mask, $css_name, 0);
-    $css_min = Finder::find($mask_min, $css_min_name, count($css));
+    $css = $this->finder->find($mask, $css_name, 0);
+    $css_min = $this->finder->find($mask_min, $css_min_name, count($css));
     $all = array_merge($css, $css_min);
     return $all;
   }
+
+  // JS
   public function all_js () {
     // Name - js or css
     $js_name = 'js';
@@ -35,9 +45,9 @@ class Files {
     // Template search
     preg_match_all($jsreg, $GLOBALS['template'], $mask);
     preg_match_all($jsreg_min, $GLOBALS['template'], $mask_min);
-    // Get css array
-    $js = Finder::find($mask, $js_name, 0);
-    $js_min = Finder::find($mask_min, $js_min_name, count($js));
+    // Get js array
+    $js = $this->finder->find($mask, $js_name, 0);
+    $js_min = $this->finder->find($mask_min, $js_min_name, count($js));
     $all = array_merge($js, $js_min);
     return $all;
   }

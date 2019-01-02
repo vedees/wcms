@@ -6,7 +6,9 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-class Finder {
+class FindCssJs {
+
+  // CSS/JS
   static function find ($mask, $name, $id=0) {
     $files = array();
     for ($i=0; $i < count($mask[1]); $i++) {
