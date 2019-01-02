@@ -25,8 +25,28 @@
 
     // Common
     "save" => "save",
+    "delete" => "Delete",
+    "archive" => "Archive",
+    "copy" => "Copy",
     "editing" => "Editing",
     "cancel" => "Cancel",
+    "uploadFiles" => "Upload Files",
+    "newFolder" => "New Folder",
+
+    "selectAll" => "Select all",
+    "unselectAll" => "Unselect all",
+    "invertSelection" => "Invert selection",
+
+    // Table
+    "name" => "Name",
+    "size" => "Size",
+    "modified" =>"Modified",
+    "perms" => "Perms",
+    "owner" => "Owner",
+    "folder" => "Folder",
+    "fullsize" => "Full size",
+    "files" => "Files",
+    "folders" => "Folders",
 
     //
     // Pages

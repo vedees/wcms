@@ -36,18 +36,19 @@ $all_files_size = 0;
   <input type="hidden" name="group" value="1">
   <!-- table start -->
   <table class="ui-table ui-table--finder ui-table--hover">
+    <!-- table head -->
     <thead>
       <tr>
         <th>
           <!-- Input All -->
           <div class="ui-checkbox-wrapper">
-            <input class="ui-checkbox" id="exampleCheckbox" class="ui-checkbox" type="checkbox" onclick="checkbox_toggle()">
+            <input class="ui-checkbox" type="checkbox" onclick="checkbox_toggle()">
           </div>
         </th>
-        <th>Name</th>
-        <th>Size</th>
-        <th>Modified</th>
-        <?php if (!FM_IS_WIN): ?><th>Perms</th> <th>Owner</th><?php endif; ?>
+        <th><?php echo $lang['name'] ?></th>
+        <th><?php echo $lang['size'] ?></th>
+        <th><?php echo $lang['modified'] ?></th>
+        <?php if (!FM_IS_WIN): ?><th><?php echo $lang['perms'] ?></th><th><?php echo $lang['owner'] ?></th><?php endif; ?>
         <!-- for icons -->
         <th style="width:13%"></th>
       </tr>
@@ -82,10 +83,11 @@ foreach ($folders as $f) {
     <td>
       <div class="filename icon__wrapper"><a href="?p=<?php echo urlencode(trim(FM_PATH . '/' . $f, '/')) ?>"><i class="<?php echo $img ?>"></i> <?php echo fm_enc(fm_convert_win($f)) ?></a><?php echo ($is_link ? ' &rarr; <i>' . fm_enc(readlink($path . '/' . $f)) . '</i>' : '') ?></div>
     </td>
-    <td>Folder</td><td><?php echo $modif ?></td>
+    <td><span class="ui-text-regular"><?php echo $lang['folder'] ?></span></td>
+    <td><span class="ui-text-small"><?php echo $modif ?></span></td>
     <?php if (!FM_IS_WIN): ?>
-    <td><a title="Change Permissions" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;chmod=<?php echo urlencode($f) ?>"><?php echo $perms ?></a></td>
-    <td><?php echo fm_enc($owner['name'] . ':' . $group['name']) ?></td>
+    <td><a class="ui-text-small" title="Change Permissions" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;chmod=<?php echo urlencode($f) ?>"><?php echo $perms ?></a></td>
+    <td><span class="ui-text-small"><?php echo fm_enc($owner['name'] . ':' . $group['name']) ?></span></td>
     <?php endif; ?>
     <td>
       <a title="Delete" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;del=<?php echo urlencode($f) ?>" onclick="return confirm('Delete folder?');"><i class="finder-icon__wrapper icon-cross"></i></a>
@@ -117,20 +119,20 @@ foreach ($files as $f) {
     }
     ?>
     <tr>
-        <td><label><input type="checkbox" name="file[]" value="<?php echo fm_enc($f) ?>"></label></td>
+        <td><label><input class="ui-checkbox" type="checkbox" name="file[]" value="<?php echo fm_enc($f) ?>"></label></td>
         <td><div class="filename"><a href="<?php echo fm_enc($filelink) ?>" title="File info"><i class="<?php echo $img ?>"></i> <?php echo fm_enc(fm_convert_win($f)) ?></a><?php echo ($is_link ? ' &rarr; <i>' . fm_enc(readlink($path . '/' . $f)) . '</i>' : '') ?></div></td>
         <td><span class="gray" title="<?php printf('%s bytes', $filesize_raw) ?>"><?php echo $filesize ?></span></td>
-        <td><?php echo $modif ?></td>
+        <td><span class="ui-text-small"><?php echo $modif ?></span></td>
         <?php if (!FM_IS_WIN): ?>
-        <td><a title="Change Permissions" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;chmod=<?php echo urlencode($f) ?>"><?php echo $perms ?></a></td>
-        <td><?php echo fm_enc($owner['name'] . ':' . $group['name']) ?></td>
+        <td><a class="ui-text-small" title="Change Permissions" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;chmod=<?php echo urlencode($f) ?>"><?php echo $perms ?></a></td>
+        <td><span class="ui-text-smaller"><?php echo fm_enc($owner['name'] . ':' . $group['name']) ?></span></td>
         <?php endif; ?>
         <td>
-        <a title="Delete" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;del=<?php echo urlencode($f) ?>" onclick="return confirm('Delete file?');"><i class="icon-cross"></i></a>
-        <a title="Rename" href="#" onclick="rename('<?php echo fm_enc(FM_PATH) ?>', '<?php echo fm_enc($f) ?>');return false;"><i class="icon-rename"></i></a>
-        <a title="Copy to..." href="?p=<?php echo urlencode(FM_PATH) ?>&amp;copy=<?php echo urlencode(trim(FM_PATH . '/' . $f, '/')) ?>"><i class="icon-copy"></i></a>
-        <a title="Direct link" href="<?php echo fm_enc(FM_ROOT_URL . (FM_PATH != '' ? '/' . FM_PATH : '') . '/' . $f) ?>" target="_blank"><i class="icon-chain"></i></a>
-        <a title="Download" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;dl=<?php echo urlencode($f) ?>"><i class="icon-download"></i></a>
+        <a title="Delete" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;del=<?php echo urlencode($f) ?>" onclick="return confirm('Delete file?');"> <i class="icon-cross"></i></a>
+        <a title="Rename" href="#" onclick="rename('<?php echo fm_enc(FM_PATH) ?>', '<?php echo fm_enc($f) ?>');return false;"> <i class="icon-rename"></i></a>
+        <a title="Copy to..." href="?p=<?php echo urlencode(FM_PATH) ?>&amp;copy=<?php echo urlencode(trim(FM_PATH . '/' . $f, '/')) ?>"> <i class="icon-copy"></i></a>
+        <a title="Direct link" href="<?php echo fm_enc(FM_ROOT_URL . (FM_PATH != '' ? '/' . FM_PATH : '') . '/' . $f) ?>" target="_blank"> <i class="icon-chain"></i></a>
+        <a title="Download" href="?p=<?php echo urlencode(FM_PATH) ?>&amp;dl=<?php echo urlencode($f) ?>"> <i class="icon-download"></i></a>
     </td>
 </tr>
     <?php
@@ -144,9 +146,10 @@ if (empty($folders) && empty($files)) {
 } else {
     ?>
 <tr><td class="gray"></td><td class="gray" colspan="<?php echo !FM_IS_WIN ? '6' : '4' ?>">
-Full size: <span title="<?php printf('%s bytes', $all_files_size) ?>"><?php echo fm_get_filesize($all_files_size) ?></span>,
-files: <?php echo $num_files ?>,
-folders: <?php echo $num_folders ?>
+
+    <?php echo $lang['fullsize'] ?>: <span title="<?php printf('%s bytes', $all_files_size) ?>"><?php echo fm_get_filesize($all_files_size) ?></span>,
+    <?php echo $lang['files'] ?>: <?php echo $num_files ?>,
+    <?php echo $lang['folders'] ?>: <?php echo $num_folders ?>
 </td></tr>
 <?php
 }
@@ -155,9 +158,9 @@ folders: <?php echo $num_folders ?>
     </table>
     <!-- inputs info -->
     <div class="finder-info__link">
-      <a href="#" onclick="select_all();return false;"><i class="finder-icon__wrapper icon-checkbox"></i> Select all</a> &nbsp;
-      <a href="#" onclick="unselect_all();return false;"><i class="finder-icon__wrapper icon-checkbox_uncheck"></i> Unselect all</a> &nbsp;
-      <a href="#" onclick="invert_all();return false;"><i class="finder-icon__wrapper icon-checkbox_invert"></i> Invert selection</a></p>
+      <a href="#" onclick="select_all();return false;"><i class="finder-icon__wrapper icon-checkbox"></i> <?php echo $lang['selectAll'] ?></a> &nbsp;
+      <a href="#" onclick="unselect_all();return false;"><i class="finder-icon__wrapper icon-checkbox_uncheck"></i> <?php echo $lang['unselectAll'] ?></a> &nbsp;
+      <a href="#" onclick="invert_all();return false;"><i class="finder-icon__wrapper icon-checkbox_invert"></i> <?php echo $lang['invertSelection'] ?></a></p>
     </div>
     <!-- info wrapper -->
     <div class="finder-info__wrapper">
@@ -166,13 +169,13 @@ folders: <?php echo $num_folders ?>
         <a class="button button--round button-default" title="Upload files" href="?p=&amp;upload">
           <div class="button-icon__wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
-            <span>Upload Files</span>
+            <span><?php echo $lang['uploadFiles'] ?></span>
           </div>
         </a>
         <a class="button button--round button-default" title="New folder" href="#" onclick="newfolder('');return false;">
           <div class="button-icon__wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
-            <span>New folder</span>
+            <span><?php echo $lang['newFolder'] ?></span>
           </div>
         </a>
       </div>
@@ -181,19 +184,19 @@ folders: <?php echo $num_folders ?>
         <button class="button--round button-default" type="submit" name="delete" value="Delete" onclick="return confirm('Delete selected files and folders?')">
           <div class="button-icon__wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
-            <span>Delete</span>
+            <span><?php echo $lang['delete'] ?></span>
           </div>
         </button>
         <button class="button--round button-default" type="submit" name="zip" value="Pack" onclick="return confirm('Create archive?')">
           <div class="button-icon__wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 8 21 21 3 21 3 8"></polyline><rect x="1" y="3" width="22" height="5"></rect><line x1="10" y1="12" x2="14" y2="12"></line></svg>
-            <span>Archive</span>
+            <span><?php echo $lang['archive'] ?></span>
           </div>
         </button>
         <button class="button--round button-default" type="submit" name="copy" value="Copy">
           <div class="button-icon__wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            <span>Copy</span>
+            <span><?php echo $lang['copy'] ?></span>
           </div>
         </button>
       </div>
@@ -433,13 +436,13 @@ function fm_get_filesize($size)
     if ($size < 1000) {
         return sprintf('%s B', $size);
     } elseif (($size / 1024) < 1000) {
-        return sprintf('%s KiB', round(($size / 1024), 2));
+        return sprintf('%s Kb', round(($size / 1024), 2));
     } elseif (($size / 1024 / 1024) < 1000) {
-        return sprintf('%s MiB', round(($size / 1024 / 1024), 2));
+        return sprintf('%s Mb', round(($size / 1024 / 1024), 2));
     } elseif (($size / 1024 / 1024 / 1024) < 1000) {
-        return sprintf('%s GiB', round(($size / 1024 / 1024 / 1024), 2));
+        return sprintf('%s Gb', round(($size / 1024 / 1024 / 1024), 2));
     } else {
-        return sprintf('%s TiB', round(($size / 1024 / 1024 / 1024 / 1024), 2));
+        return sprintf('%s Tb', round(($size / 1024 / 1024 / 1024 / 1024), 2));
     }
 }
 

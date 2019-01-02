@@ -7,5 +7,3 @@
 
 // Finder
 import './finder'
-// console.log(html_entity_decode('hello'))
-import './decoder'
