@@ -41,15 +41,8 @@
       </transition>
 
       <!-- Table  -->
-      <table class="ui-table ui-table--hover">
-        <thead>
-          <tr>
-            <th><span>ID</span></th>
-            <th><span>Type</span></th>
-            <th><span>Field</span></th>
-          </tr>
-        </thead>
-        <tbody>
+      <Table :thead="['ID','Type', 'Field']">
+        <tbody slot="tbody">
           <tr v-for="text in textFilter"
             :key="text.id">
             <td><span class="ui-text-regular"> {{ text.id }} </span></td>
@@ -60,7 +53,9 @@
             </td>
           </tr>
         </tbody>
-      </table>
+      </Table>
+
+      <!-- Modal -->
       <Modal
         v-if="showModal"
         @close="showModal = false"
@@ -69,6 +64,7 @@
         :type="type"
         >
       </Modal>
+
     </div>
   </section>
 </template>
@@ -76,9 +72,11 @@
 <script>
 import htmlD from 'locutus/php/strings/html_entity_decode'
 import Search from './UI/Search.vue'
+import Table from './UI/Table.vue'
 import Modal from './TextModal.vue'
 export default {
   components: {
+    Table,
     Modal,
     Search
   },

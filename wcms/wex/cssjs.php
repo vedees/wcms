@@ -72,22 +72,24 @@ if (isset($_GET['path'])) {
   </div>
 </section> -->
 
+<!-- css -->
 <section id="cssEdit">
   <div class="container">
     <h2 class="ui-title-2"> <?php echo $lang['css'] ?> </h2>
-    <code-list-component
+    <files-table-component
       :files='<?php echo json_encode($css) ?>'
       type='css'>
-    </code-list-component>
+    </files-table-component>
   </div>
 </section>
+<!-- js -->
 <section id="jsEdit">
   <div class="container">
     <h2 class="ui-title-2"> <?php echo $lang['js'] ?> </h2>
-    <code-list-component
+    <files-table-component
       :files='<?php echo json_encode($js) ?>'
       type='javascript'>
-    </code-list-component>
+    </files-table-component>
   </div>
 </section>
 

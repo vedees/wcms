@@ -1,6 +1,8 @@
 <template>
   <section>
     <div class="container">
+
+      <!-- title wrapper -->
       <div class="title__wrapper">
         <div class="title">
           <h1 class="ui-title-1">Images</h1>
