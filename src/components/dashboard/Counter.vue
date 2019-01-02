@@ -1,23 +1,23 @@
 <template>
   <div class="charts__wrapper">
     <div class="chart-pie">
-      <line-chart
+      <pie-chart
         :height='300'
         :html='html'
         :img='img'
         :css='css'
         :js='js'>
-      </line-chart>
+      </pie-chart>
     </div>
   </div>
 </template>
 
 <script>
-import LineChart from './LineChart'
+import Pie from './CounterPie'
 
 export default {
   components: {
-    'line-chart': LineChart
+    'pie-chart': Pie
   },
   props: {
     html: {

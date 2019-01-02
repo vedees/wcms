@@ -23,11 +23,11 @@
 	<title><?php echo $page_title; ?></title>
 
   <!-- webpack css run with ?dev prefix ( http://localhost:8888/index.php?dev ) -->
-  <?php if ($use_dev) echo '<link rel="stylesheet" href="http://localhost:8080/wcms/wex/assets/css/main.css">';
+  <?php if ($use_dev) echo '<link rel="stylesheet" href="' . $dev_port . '/wcms/wex/assets/css/main.css">';
         else echo '<link rel="stylesheet" href="assets/css/main.css">';?>
   <!-- black theme -->
   <?php if ($_SESSION['theme'] == 'black') {
-          if ($use_dev) echo '<link rel="stylesheet" href="http://localhost:8080/wcms/wex/assets/css/black.css">';
+          if ($use_dev) echo '<link rel="stylesheet" href="' . $dev_port . '/wcms/wex/assets/css/black.css">';
           else echo '<link rel="stylesheet" href="assets/css/black.css">'; }?>
 
 </head>

@@ -33,7 +33,7 @@ Vue.component('modal-component', require('./components/UI/Modal.vue').default);
 Vue.component('images-component', require('./components/Images.vue').default);
 Vue.component('code-list-component', require('./components/CodeList.vue').default);
 Vue.component('code-editor-component', require('./components/CodeEditor.vue').default);
-Vue.component('chart-component', require('./components/dashboard/Chart.vue').default);
+Vue.component('counter-component', require('./components/dashboard/Counter.vue').default);
 
 // Vue initial data
 const app = new Vue({

@@ -27,12 +27,12 @@ $user->require_login();?>
     <div class="chart-pie__wrapper">
       <div class="chart-item ui-card ui-card--shadow">
         <span class="ui-title-3"> <?php echo $lang['countFiles'] ?> </span>
-        <chart-component
+        <counter-component
           html='<?php echo $counter->total_html(); ?>'
           img='<?php echo $counter->total_img(); ?>'
           css='<?php echo $counter->total_css(); ?>'
           js='<?php echo $counter->total_js(); ?>'>
-        </chart-component>
+        </counter-component>
       </div>
       <div class="file-list">
         <div class="file-item ui-card ui-card--shadow">
