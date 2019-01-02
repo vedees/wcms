@@ -27,21 +27,21 @@
       <!-- Search input -->
       <Search placeholder="Img name" :value="search" @search="search = $event"></Search>
 
-      <!-- INFO WCMS -->
-      <!-- main -->
-      <transition name="slide-fade">
-        <div v-if="type === 'imgmain' && showInfoMain === true" class="ui-alert ui-alert--primary"><span class="alert-title">
+      <!-- Alerts - info WCMS -->
+      <!-- tag - main -->
+      <Alert v-if="type === 'imgmain' && message.tagMain === true" @close="message.tagMain = !message.tagMain">
+        <span slot="title" class="alert-title">
           Beta <br>
           Only &lt;img&gt; with class wcms-img-main. <br> Example: &lt;img class=&quot;wcms-img-main&quot; src=&quot;images/example.jpg&quot;&gt; &lt;/img&gt;
-        </span><span @click="showInfoMain = false" class="button-close"></span></div>
-      </transition>
-      <!-- content -->
-      <transition name="slide-fade">
-        <div v-if="type === 'imgcontent' && showInfoContent === true" class="ui-alert ui-alert--primary"><span class="alert-title">
+        </span>
+      </Alert>
+      <!-- tag - content -->
+      <Alert v-if="type === 'imgcontent' && message.tagContent === true" @close="message.tagContent = !message.tagContent">
+        <span slot="title" class="alert-title">
           Beta <br>
           Only &lt;img&gt; with class wcms-img-content. <br> Example: &lt;img class=&quot;wcms-img-content&quot; src=&quot;images/example.jpg&quot;&gt; &lt;/img&gt;
-        </span><span @click="showInfoContent = false" class="button-close"></span></div>
-      </transition>
+        </span>
+      </Alert>
 
       <!-- img list -->
       <div class="image__list">
@@ -90,11 +90,13 @@
 <script>
 //TODO VUELIDATE
 import Search from './UI/Search.vue'
+import Alert from './UI/Alert.vue'
 import Modal from './ImagesModal.vue'
 export default {
   components: {
-    Modal,
-    Search
+    Search,
+    Alert,
+    Modal
   },
   props: {
     images: {
@@ -115,8 +117,10 @@ export default {
       search: '',
       list: false,
       showModal: false,
-      showInfoMain: true,
-      showInfoContent: true,
+      message: {
+        tagMain: true,
+        tagContent: true
+      },
       img: this.images,
       type: 'images',
       imageId: null,

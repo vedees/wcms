@@ -18,27 +18,29 @@
       <!-- Search input -->
       <Search placeholder="Text fragment" :value="search" @search="search = $event"></Search>
 
-      <!-- INFO WCMS -->
+      <!-- Alerts - info WCMS -->
       <!-- seo -->
-      <transition name="slide-fade">
-        <div v-if="type === 'seo' && showInfoSeo === true" class="ui-alert ui-alert--primary"><span class="alert-title">
+      <Alert v-if="type === 'seo' && message.seo === true" @close="message.seo = !message.seo">
+        <span slot="title" class="alert-title">
           SEO Settings. <br> Like &lt;title&gt;&lt;/title&gt; or &lt;description&gt;&lt;/description&gt; ...
-        </span><span @click="showInfoSeo = false" class="button-close"></span></div>
-      </transition>
-      <!-- main -->
-      <transition name="slide-fade">
-        <div v-if="type === 'contentmain' && showInfoMain === true" class="ui-alert ui-alert--primary"><span class="alert-title">
+        </span>
+      </Alert>
+
+      <!-- tag - main -->
+      <Alert v-if="type === 'contentmain' && message.tagMain === true" @close="message.tagMain = !message.tagMain">
+        <span slot="title" class="alert-title">
           Beta <br>
           Only &lt;p&gt; and &lt;span&gt; with class wcms-text. <br> Example: &lt;span class=&quot;wcms-text&quot;&gt;Example text&lt;/span&gt;
-        </span><span @click="showInfoMain = false" class="button-close"></span></div>
-      </transition>
-      <!-- content -->
-      <transition name="slide-fade">
-        <div v-if="type === 'content' && showInfoContent === true" class="ui-alert ui-alert--primary"><span class="alert-title">
+        </span>
+      </Alert>
+
+      <!-- tag - main -->
+      <Alert v-if="type === 'content' && message.tagContent === true" @close="message.tagContent = !message.tagContent">
+        <span slot="title" class="alert-title">
           Beta <br>
           Only &lt;div&gt; with class wcms-text. <br> Example: &lt;div class=&quot;wcms-textarea&quot;&gt;Example text&lt;/div&gt;
-        </span><span @click="showInfoContent = false" class="button-close"></span></div>
-      </transition>
+        </span>
+      </Alert>
 
       <!-- Table  -->
       <Table :thead="['ID','Type', 'Field']">
@@ -73,12 +75,14 @@
 import htmlD from 'locutus/php/strings/html_entity_decode'
 import Search from './UI/Search.vue'
 import Table from './UI/Table.vue'
+import Alert from './UI/Alert.vue'
 import Modal from './TextModal.vue'
 export default {
   components: {
+    Search,
     Table,
-    Modal,
-    Search
+    Alert,
+    Modal
   },
   props: {
     all: {
@@ -114,9 +118,11 @@ export default {
     return {
       search: '',
       showModal: false,
-      showInfoMain: true,
-      showInfoContent: true,
-      showInfoSeo: true,
+      message: {
+        seo: true,
+        tagMain: true,
+        tagContent: true
+      },
       text: this.all,
       type: 'all',
       textId: null,
@@ -152,9 +158,5 @@ export default {
 </script>
 
 <style scoped>
-.ui-alert {
-  padding: 14px 30px;
-  margin: 30px 0;
-}
 </style>
 
