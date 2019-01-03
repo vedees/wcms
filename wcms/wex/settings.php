@@ -24,6 +24,10 @@ $user->require_login();?>
 <section>
   <div class="container container--small">
     <form class="settings__form" action='settings.php' method="GET">
+
+      <!-- Uset settings -->
+      <h2 class="ui-title-2">User settings:</h2>
+
       <!-- Language -->
       <div class="setting__wrapper">
         <span class="ui-text-regular"> <?php echo $lang['settingsLanguage'] ?>:</span>
@@ -56,6 +60,9 @@ $user->require_login();?>
         </select>
       </div>
 
+      <!-- dev settings -->
+      <h2 class="ui-title-2">Developers:</h2>
+
       <!-- Code Theme -->
       <div class="setting__wrapper">
         <span class="ui-text-regular"> <?php echo $lang['settingsThemeCode'] ?>:</span>
@@ -71,6 +78,28 @@ $user->require_login();?>
           ?>
         </select>
       </div>
+
+      <!-- Show Tags -->
+      <div class="setting__wrapper" style="margin-bottom: 10px;">
+        <span class="ui-text-regular">Show Tags:</span>
+        <select name="tags_show">
+          <?php
+            foreach ($tags_show_choices as $tags_show_choice) {
+              echo "<option value=\"{$tags_show_choice}\"";
+              if ($_SESSION['tags_show'] == $tags_show_choice) {
+                echo " selected";
+              }
+              echo ">{$tags_show_choice}</option>";
+            }
+          ?>
+        </select>
+      </div>
+      <div class="center" style="margin-bottom: 20px;">
+        <p class="ui-text-small">If yes: &lt;h1 class="my-title"&gt;Titleastronomy&lt;h1&gt;</p>
+        <p class="ui-text-small">If no: Title astronomy</p>
+      </div>
+
+
       <div class="button-list">
         <button class="button button-primary button--round" type="submit"> <?php echo $lang['save'] ?></button>
       </div>

@@ -9,7 +9,7 @@ $use_auth = false;
 
 // Users: array('Username' => 'Password', 'Username2' => 'Password2', ...)
 $auth_users = array(
-    'fm_admin' => 'fm_admin',
+  'fm_admin' => 'fm_admin',
 );
 
 // Enable highlight.js (https://highlightjs.org/) on view's page
@@ -41,38 +41,38 @@ $datetime_format = 'd.m.y H:i';
 //!--- EDIT BELOW CAREFULLY OR DO NOT EDIT AT ALL
 // if fm included
 if (defined('FM_EMBED')) {
-    $use_auth = false;
+  $use_auth = false;
 } else {
-    @set_time_limit(600);
+  @set_time_limit(600);
 
-    date_default_timezone_set($default_timezone);
+  date_default_timezone_set($default_timezone);
 
-    ini_set('default_charset', 'UTF-8');
-    if (version_compare(PHP_VERSION, '5.6.0', '<') && function_exists('mb_internal_encoding')) {
-        mb_internal_encoding('UTF-8');
-    }
-    if (function_exists('mb_regex_encoding')) {
-        mb_regex_encoding('UTF-8');
-    }
+  ini_set('default_charset', 'UTF-8');
+  if (version_compare(PHP_VERSION, '5.6.0', '<') && function_exists('mb_internal_encoding')) {
+    mb_internal_encoding('UTF-8');
+  }
+  if (function_exists('mb_regex_encoding')) {
+    mb_regex_encoding('UTF-8');
+  }
 
-    // session_cache_limiter('');
-    // session_name('filemanager');
-    // session_start();
+  // session_cache_limiter('');
+  // session_name('filemanager');
+  // session_start();
 }
 
 if (empty($auth_users)) {
-    $use_auth = false;
+  $use_auth = false;
 }
 
 $is_https = isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1)
-    || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https';
+  || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https';
 
 // clean and check $root_path
 $root_path = rtrim($root_path, '\\/');
 $root_path = str_replace('\\', '/', $root_path);
 if (!@is_dir($root_path)) {
-    echo sprintf('<h1>Root path "%s" not found!</h1>', fm_enc($root_path));
-    exit;
+  echo sprintf('<h1>Root path "%s" not found!</h1>', fm_enc($root_path));
+  exit;
 }
 
 // clean $root_url
@@ -85,55 +85,55 @@ defined('FM_SELF_URL') || define('FM_SELF_URL', ($is_https ? 'https' : 'http') .
 
 // logout
 if (isset($_GET['logout'])) {
-    unset($_SESSION['logged']);
-    fm_redirect(FM_SELF_URL);
+  unset($_SESSION['logged']);
+  fm_redirect(FM_SELF_URL);
 }
 
 // Show image here
 if (isset($_GET['img'])) {
-    fm_show_image($_GET['img']);
+  fm_show_image($_GET['img']);
 }
 
 // Auth
 if ($use_auth) {
-    if (isset($_SESSION['logged'], $auth_users[$_SESSION['logged']])) {
-        // Logged
-    } elseif (isset($_POST['fm_usr'], $_POST['fm_pwd'])) {
-        // Logging In
-        sleep(1);
-        if (isset($auth_users[$_POST['fm_usr']]) && $_POST['fm_pwd'] === $auth_users[$_POST['fm_usr']]) {
-            $_SESSION['logged'] = $_POST['fm_usr'];
-            fm_set_msg('You are logged in');
-            fm_redirect(FM_SELF_URL . '?p=');
-        } else {
-            unset($_SESSION['logged']);
-            fm_set_msg('Wrong password', 'error');
-            fm_redirect(FM_SELF_URL);
-        }
+  if (isset($_SESSION['logged'], $auth_users[$_SESSION['logged']])) {
+    // Logged
+  } elseif (isset($_POST['fm_usr'], $_POST['fm_pwd'])) {
+    // Logging In
+    sleep(1);
+    if (isset($auth_users[$_POST['fm_usr']]) && $_POST['fm_pwd'] === $auth_users[$_POST['fm_usr']]) {
+      $_SESSION['logged'] = $_POST['fm_usr'];
+      fm_set_msg('You are logged in');
+      fm_redirect(FM_SELF_URL . '?p=');
     } else {
-        // Form
-        unset($_SESSION['logged']);
-        fm_show_header();
-        fm_show_message();
-        ?>
-        <div class="path">
-            <form action="" method="post" style="margin:10px;text-align:center">
-                <input name="fm_usr" value="" placeholder="Username" required>
-                <input type="password" name="fm_pwd" value="" placeholder="Password" required>
-                <input type="submit" value="Login">
-            </form>
-        </div>
-        <?php
-        fm_show_footer();
-        exit;
+      unset($_SESSION['logged']);
+      fm_set_msg('Wrong password', 'error');
+      fm_redirect(FM_SELF_URL);
     }
+  } else {
+    // Form
+    unset($_SESSION['logged']);
+    fm_show_header();
+    fm_show_message();
+    ?>
+    <div class="path">
+      <form action="" method="post" style="margin:10px;text-align:center">
+        <input name="fm_usr" value="" placeholder="Username" required>
+        <input type="password" name="fm_pwd" value="" placeholder="Password" required>
+        <input type="submit" value="Login">
+      </form>
+    </div>
+    <?php
+    fm_show_footer();
+    exit;
+  }
 }
 
 define('FM_IS_WIN', DIRECTORY_SEPARATOR == '\\');
 
 // always use ?p=
 if (!isset($_GET['p'])) {
-    fm_redirect(FM_SELF_URL . '?p=');
+  fm_redirect(FM_SELF_URL . '?p=');
 }
 
 // get path

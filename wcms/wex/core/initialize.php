@@ -27,14 +27,14 @@ require_once 'functions.php';
 require_once 'get_page.php';
 // All Classes
 require_once 'class.php';
-// Theme choice
-require_once 'theme.php';
-// Language choice
-require_once 'language.php';
+// All Settings
+require_once 'setting.php';
 
 //! DEVELOPMENT
 // webpack dev server
+// default: http://localhost:8080
 $dev_port = 'http://localhost:8081';
-$use_dev = true;
+// true if dev
+$use_dev = false;
 
 //TODO example message get golobal var to component

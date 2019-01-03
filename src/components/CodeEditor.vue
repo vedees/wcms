@@ -9,10 +9,10 @@
           </textarea>
 
           <div class="button-list">
-            <button class="button button--round button-success" type="submit" name="codeEditor">Save</button>
+            <button class="button button--round button-primary" type="submit" name="codeEditor">Save</button>
           </div>
           <div class="button-list button-list--fixed">
-            <button class="button button--round button-default" type="submit" name="codeEditor">Save</button>
+            <button class="button button--round button-success" type="submit" name="codeEditor">Save</button>
           </div>
         </form>
       </div>

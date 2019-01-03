@@ -23,3 +23,7 @@ $GLOBALS['default_theme'] = 'white';
 //! Development settings
 // Default code theme: elegant & twilight
 $GLOBALS['default_code_theme'] = 'elegant';
+
+// Show tags? <h1> </h1> ... .
+// Default: no & yes
+$GLOBALS['default_tags_show'] = 'no';

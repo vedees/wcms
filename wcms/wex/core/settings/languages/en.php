@@ -78,7 +78,7 @@
     "htmlTitle" => "HTML Editing - WCMS",
 
     // Settings
-    "settingsDescr" => "If you want to make WCMS you, like a well-worn pair of sneakers, you can set some preferences that will make you feel more at home:",
+    "settingsDescr" => "If you want to make <a href='http://wcms.space/'> WCMS </a>  you, like a well-worn pair of sneakers, you can set some preferences that will make you feel more at home:",
     "settingsLanguage" => "Language",
     "settingsTheme" => "Theme",
     "settingsThemeCode" => "Code Editor Theme",

@@ -9,7 +9,9 @@
  class ParseText {
   static function get_html_parse ($text, $what_find) {
     foreach($GLOBALS['html']->find($what_find) as $element)
-      $text[] = $element->innertext;
+      if ($_SESSION['tags_show'] === 'yes') $text[] = $element->outertext;
+      else $text[] = $element->innertext;
+
     return $text;
   }
  }
