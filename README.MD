@@ -5,8 +5,7 @@
 
 > Your best friend when it comes to managment in your sites
 
-## Show more
-[Wcms.space](http://wcms.space/)
+
 
 ## Install
 1. Download Files [Click Here](https://vedees.ru/wex/wcms.zip)
@@ -28,11 +27,8 @@
 ## Simple editing all text
 [![wcms banner](https://vedees.ru/wcms/text.jpg)](http://wcms.space.ru/)
 
-## Edit all html files
-[![wcms banner](https://vedees.ru/wcms/html.jpg)](http://wcms.space.ru/)
-
-## Edit all JS and CSS files
-[![wcms banner](https://vedees.ru/wcms/jscss.jpg)](http://wcms.space.ru/)
+## Show more
+Site - [wcms.space](http://wcms.space/)
 
 ## Documentation
 Browse the [online documentation here.](http://wcms.space)
@@ -47,5 +43,5 @@ Browse the [online documentation here.](http://wcms.space)
 ## Meta
 Evgenii Vedegis – [github](https://github.com/vedees) / vedegis@gmail.com
 
-### License
+## License
 WCMS is [Apache-2.0](./LICENSE).
