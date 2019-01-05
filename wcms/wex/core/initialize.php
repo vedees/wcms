@@ -12,11 +12,8 @@ mb_internal_encoding('UTF-8');
 // Admin Config
 require_once dirname(dirname(dirname(__FILE__))) . '/config.php';  //x3 folder
 
-/**
- *! Security rules
- * place config.php one level up
- * and uncomment the line below
- */
+//! Security rules
+//  Place config.php one level up and uncomment the line below
 // require_once dirname((dirname(dirname(dirname(__FILE__)))) . '/config.php';  //x4 folder
 
 // Libs

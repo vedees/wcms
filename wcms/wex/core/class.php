@@ -6,6 +6,10 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
+// Archive
+require_once 'classes/zipper.php';
+// Becup
+require_once 'classes/backup.php';
 // CSS & JS files
 require_once 'classes/css_js.php';
 // Text

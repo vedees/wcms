@@ -55,4 +55,16 @@ $user->require_login();?>
     </div>
   </div>
 </section>
+
+<?php $backup = new Backup;
+      $backup->create(); ?>
+<section id="becup">
+  <div class="container">
+    <h2 class="ui-title-2">Backups</h2>
+    <form action="index.php" method="POST">
+      <button class="button-primary" type="submit" name="backup_create">New Backup</button>
+    </form>
+  </div>
+</section>
+
 <?php include('includes/footer.php') ?>

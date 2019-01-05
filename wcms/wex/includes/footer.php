@@ -15,10 +15,9 @@
 <!-- Close .wrapper -->
 </div>
 
-<!-- webpack js run with ?dev prefix ( http://localhost:8888/index.php?dev ) -->
+<!-- webpack js run with use_dev var-->
 <?php if ($use_dev) echo '<script src="' . $dev_port . '/wcms/wex/assets/js/main.js"></script>';
       else echo '<script src="assets/js/main.js"></script>';?>
-
 
 </body>
 </html>

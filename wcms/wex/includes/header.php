@@ -8,9 +8,9 @@
   //???
   header("Content-Type: text/html; charset=utf-8");
   header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
-  header("Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0");
-  header("Pragma: no-cache");
-//  //! Page Name ($template)
+  // header("Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0");
+  // header("Pragma: no-cache");
+//  Page Name ($template)
 //  $template = get_html_name();
 //  $pagename = $_SESSION['pagename']; ?>
 
@@ -22,7 +22,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title><?php echo $page_title; ?></title>
 
-  <!-- webpack css run with ?dev prefix ( http://localhost:8888/index.php?dev ) -->
+  <!-- webpack css run with use_dev var -->
   <?php if ($use_dev) echo '<link rel="stylesheet" href="' . $dev_port . '/wcms/wex/assets/css/main.css">';
         else echo '<link rel="stylesheet" href="assets/css/main.css">';?>
   <!-- black theme -->
