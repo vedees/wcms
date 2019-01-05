@@ -18,26 +18,30 @@ class Counter {
 
   // HTML
   public function total_html () {
-    $html_count = count($GLOBALS['html_list']);
-    return $html_count;
+    return $html_count = count($GLOBALS['html_list']);
   }
 
   // CSS
   public function total_css () {
-    $css_count = count($this->files->all_css());
-    return $css_count;
+    return $css_count = count($this->files->all_css());
   }
 
   // JS
   public function total_js () {
-    $js_count = count($this->files->all_js());
-    return $js_count;
+    return $js_count = count($this->files->all_js());
   }
 
   // Images
   public function total_img () {
-    $img_count = count($this->images->image_filter());
-    return $img_count;
+    return $img_count = count($this->images->image_filter());
+  }
+
+  public function total_backup () {
+    $count = count(scandir(BACKUP_DIR));
+    //? 3? - 1
+    $count = $count - 4;
+    if ($count === 0) return '<span class="ui-label ui-label--danger"> WARRING! - <b>0</b></span>';
+    return $count;
   }
 
 }

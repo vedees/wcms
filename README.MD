@@ -5,7 +5,7 @@
 
 > Your best friend when it comes to managment in your sites
 
-
+###### Site - [wcms.space](http://wcms.space/)  Russian guide - [Youtube](https://youtu.be/8tDucFFLC1U)
 
 ## Install
 1. Download Files [Click Here](https://vedees.ru/wex/wcms.zip)
@@ -17,9 +17,11 @@
 - No database required
 - Add/Remove/Update all images
 - Add/Remove/Update all text
-- Edit All html/css/js files
+- Add/Remove/Update all html/css/js files
+- Html/css/js online editor
 - File manager
-- i18n (Russian and engish by default)
+- One click backup
+- i18n (Russian and Engish by default)
 
 ## Simple editing all images
 [![wcms banner](https://vedees.ru/wcms/img.jpg)](http://wcms.space.ru/)
@@ -28,7 +30,7 @@
 [![wcms banner](https://vedees.ru/wcms/text.jpg)](http://wcms.space.ru/)
 
 ## Show more
-Site - [wcms.space](http://wcms.space/)
+Click Here - [wcms.space](http://wcms.space/)
 
 ## Documentation
 Browse the [online documentation here.](http://wcms.space)

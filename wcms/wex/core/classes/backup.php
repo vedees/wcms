@@ -13,9 +13,6 @@ class Backup {
     $root_path = $_SERVER['DOCUMENT_ROOT'];
     //TODO FIX abs path
     $wex_path = dirname(dirname(dirname(__FILE__)));
-    define('DS', '/');
-    define('WEX_ROOT', str_replace(DIRECTORY_SEPARATOR, DS, getcwd()));
-
 
     // Pack files
     if (isset($_POST['backup_create'])) {
@@ -33,21 +30,23 @@ class Backup {
         chdir($root_path);
 
         // 1 folder (feature)
+        //TODO rm
         if (count($files) == 1) {
           $one_file = reset($files);
           $one_file = basename($one_file);
-          $zipname = $one_file . '_' . date('ymd_His') . '.zip';
+          $zipname = date('d-m-Y_H:i:s') . '.zip';
         // > 1 folder
         } else {
           //TODO fix same name
-          $zipname = WEX_ROOT . '/backups/bacup' . '_' . date('d-m-Y_His') . '.zip';
+          $zipname = BACKUP_DIR . date('d-m-Y_H:i:s') . '.zip';
         }
 
         $zipper = new FM_Zipper();
         $res = $zipper->create($zipname, $files);
 
         if ($res) {
-          echo 'Backup created! ' . $zipname;
+          // echo 'Backup created! <br> In: ' . $zipname;
+          echo 'Backup created!';
         } else {
           echo 'Archive not created';
         }
