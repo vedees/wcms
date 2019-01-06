@@ -6,6 +6,7 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 require 'core/initialize.php';
+
 $user = new Login;
 $user->require_login();?>
 
@@ -69,6 +70,15 @@ $user->require_login();?>
           </form>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="message__wrapper">
+      <notify-component></notify-component>
+      <news-component></news-component>
     </div>
   </div>
 </section>
