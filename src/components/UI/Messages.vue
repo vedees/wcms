@@ -61,4 +61,7 @@ td {
 .time {
   color: #a5a6a8;
 }
+.ui-table td {
+  min-height: unset;
+}
 </style>

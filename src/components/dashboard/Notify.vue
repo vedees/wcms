@@ -24,19 +24,14 @@ export default {
       }
     };
   },
-  filters: {
-    currencydecimal(value) {
-      return value.toFixed(2);
-    }
-  },
   mounted() {
     axios
-      .get('https://vedees.ru/wcms/api/notify.php', {})
+      .get('https://vedees.ru/wcms/api.php', {})
       .then(response => {
         this.notify = response.data.notify
       })
       .catch(error => {
-        this.errored = true
+        this.error.error = true
         this.error.message = error
         console.log(error)
       })

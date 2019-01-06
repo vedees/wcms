@@ -74,11 +74,19 @@ $user->require_login();?>
   </div>
 </section>
 
-<section>
+<section id="message" style="padding: 30px 0;">
   <div class="container">
     <div class="message__wrapper">
       <notify-component></notify-component>
       <news-component></news-component>
+    </div>
+  </div>
+</section>
+
+<section id="info" style="padding: 30px 0;">
+  <div class="container">
+    <div class="wcms-info__wrapper">
+      <version-component currentver='<?php echo WCMS_VERSION; ?>'></version-component>
     </div>
   </div>
 </section>

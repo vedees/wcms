@@ -34,6 +34,7 @@ Vue.component('images-component', require('./components/Images.vue').default);
 Vue.component('files-table-component', require('./components/FilesTable.vue').default);
 Vue.component('code-editor-component', require('./components/CodeEditor.vue').default);
 Vue.component('counter-component', require('./components/dashboard/Counter.vue').default);
+Vue.component('version-component', require('./components/dashboard/Version.vue').default);
 Vue.component('notify-component', require('./components/dashboard/Notify.vue').default);
 Vue.component('news-component', require('./components/dashboard/News.vue').default);
 

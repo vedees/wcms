@@ -34,6 +34,6 @@ require_once 'setting.php';
 // default: http://localhost:8080
 $dev_port = 'http://localhost:8081';
 // true if dev
-$use_dev = false;
+$use_dev = true;
 
 //TODO example message get golobal var to component
