@@ -8,7 +8,8 @@
         <a :href="message.link" :class="{ link : message.link}">
           <span v-if="message.label === 'note'" class="ui-label ui-label--purple"> {{ message.label }}</span>
           <span v-if="message.label === 'info'" class="ui-label ui-label--primary">{{ message.label }}</span>
-          <span>{{ message.title }}</span>
+          <span v-if="message.titleRu && lang === 'ru' ">{{ message.titleRu }}</span>
+          <span v-else>{{ message.title }}</span>
         </a>
           <span class="time" v-if="message.time">{{ message.time }}</span>
       </td>
@@ -23,6 +24,10 @@ export default {
     messages: {
       type: Object,
       required: true
+    },
+    lang: {
+      type: String,
+      default: 'en'
     }
   },
   data () {

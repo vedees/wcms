@@ -1,10 +1,11 @@
 <template>
   <div class="notify__wrapper ui-card ui-card--shadow">
-    <h3 class="ui-title-3">Notifications</h3>
+    <h3 v-if="lang === 'ru'" class="ui-title-3">Уведомления</h3>
+    <h3 v-else class="ui-title-3">Notifications</h3>
     <div class="notify__content" :class="{ loading: loading }">
       <p v-if="error.error">Error: {{ error.message }}</p>
       <div v-if="loading">Loading...</div>
-      <messages v-else :messages="notify"></messages>
+      <messages v-else :messages="notify" :lang="lang"></messages>
     </div>
   </div>
 </template>
@@ -14,6 +15,12 @@ import axios from 'axios'
 import messages from '../UI/Messages.vue'
 export default {
   components: { messages },
+  props: {
+    lang: {
+      type: String,
+      default: 'en'
+    }
+  },
   data() {
     return {
       notify: null,

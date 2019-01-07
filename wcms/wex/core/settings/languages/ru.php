@@ -22,6 +22,13 @@
     "finder" => "Проводник",
     "dashboard" => "Дашборд",
     "codeEditor" => "Редктор кода",
+    "notifications" => "Уведомления",
+    "newsFeed" => "Новостная лента",
+    "info" => "Инфо",
+    "version" => "Версия",
+    "backups" => "Бекапы",
+    "createBackup" => "Создать бекап",
+
 
     // Common
     "save" => "Сохранить",
@@ -78,6 +85,9 @@
     "htmlTitle" => "HTML Редактирование - WCMS",
 
     // Settings
+    "userSettings" => "Пользовательские настройки",
+    "developers" => "Разработчикам",
+
     "settingsDescr" => "Если вы хотите настроить <a href='http://wcms.space/'> WCMS </a>  под себя, как надетую пару кроссовок, вы можете установить некоторые предпочтения, которые заставят вас чувствовать себя как дома:",
     "settingsLanguage" => "Язык",
     "settingsTheme" => "Тема",

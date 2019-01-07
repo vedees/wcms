@@ -31,12 +31,4 @@ require_once 'settings/language.php';
 require_once 'settings/tags.php';
 require_once 'settings/theme.php';
 
-//TODO to def
-//! DEVELOPMENT
-// webpack dev server
-// default: http://localhost:8080
-$dev_port = 'http://localhost:8081';
-// true if dev
-$use_dev = false;
-
 //TODO example message get golobal var to component
