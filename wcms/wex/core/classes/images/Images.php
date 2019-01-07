@@ -6,12 +6,16 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-class Image {
+namespace wcms\classes\images;
+
+use wcms\classes\images\Find;
+
+class Images {
 
   // Construct
   public function __construct() {
     // Finder
-    $this->finder = new FindImages();
+    $this->finder = new Find();
   }
 
   // ALL images

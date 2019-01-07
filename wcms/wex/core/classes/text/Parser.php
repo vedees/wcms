@@ -6,7 +6,9 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
- class ParseText {
+namespace wcms\classes\text;
+
+class Parser {
   static function get_html_parse ($text, $what_find) {
     foreach($GLOBALS['html']->find($what_find) as $element)
       if ($_SESSION['tags_show'] === 'yes') $text[] = $element->outertext;

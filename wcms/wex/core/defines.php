@@ -9,7 +9,7 @@
 define('DS', '/');
 define('WCMS', true);
 define('WCMS_TESTING', false);
-define('WCMS_VERSION', '0.2.9');
+define('WCMS_VERSION', '0.3.0');
 
 //! Directories and Paths
 define('WCMS_ROOT', str_replace(DIRECTORY_SEPARATOR, DS, getcwd()));

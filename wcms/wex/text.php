@@ -6,7 +6,7 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 require 'core/initialize.php';
-$user = new Login;
+$user = new wcms\classes\auth\Login;
 $user->require_login();?>
 
 <?php $page_title = $lang['textTitle'];
@@ -15,9 +15,9 @@ $user->require_login();?>
 <?php include('includes/header.php') ?>
 
 <?php // Text Class
-      $text = new Text();
+      $text = new wcms\classes\text\Text();
       // Text Replace Class
-      $text_replace = new TextReplace();
+      $text_replace = new wcms\classes\text\Replace();
       // all
       $all = $text->get_text_all();
       // seo

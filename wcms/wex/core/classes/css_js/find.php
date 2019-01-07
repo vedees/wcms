@@ -6,7 +6,9 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-class FindCssJs {
+namespace wcms\classes\css_js;
+
+class Find {
 
   // CSS/JS
   static function find ($mask, $name, $id=0) {
@@ -18,7 +20,7 @@ class FindCssJs {
       $file_size = filesize($file_path);
       $file_edit_time = date("d-m-Y", filectime($file_path));
       // Info
-      $object = new stdClass();
+      $object = new \stdClass();
       $object->id = $id;
       $object->type = $name;
       $object->title = $file_name;

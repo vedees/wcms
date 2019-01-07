@@ -7,12 +7,12 @@
  */
 require 'core/initialize.php';
 
-$user = new Login;
+$user = new wcms\classes\auth\Login;
 $user->require_login();?>
 
 <?php $page_title = $lang['dashboardTitle'];
       $page = 'dashboard';
-      $counter = new Counter();?>
+      $counter = new wcms\classes\Counter();?>
 
 <?php include('includes/header.php') ?>
 
@@ -63,7 +63,7 @@ $user->require_login();?>
         </div>
         <!-- backups creater -->
         <div class="file-item ui-card ui-card--shadow">
-          <?php $backup = new Backup;
+          <?php $backup = new wcms\classes\Backup;
                 $backup->create(); ?>
           <form action="index.php" method="POST">
             <button class="button-primary" type="submit" name="backup_create">Create Backup</button>

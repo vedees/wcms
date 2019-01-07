@@ -9,6 +9,13 @@ ob_start();       // output buffering is turned on
 session_start();  // turn on sessions
 mb_internal_encoding('UTF-8');
 
+// Show Error messages
+error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);
+ini_set('display_errors', 1);
+
+// Autoloader
+require_once dirname(dirname(__FILE__)) . '/vendor/autoload.php';
+
 // Admin Config
 require_once dirname(dirname(dirname(__FILE__))) . '/config.php';  //x3 folder
 
@@ -16,24 +23,20 @@ require_once dirname(dirname(dirname(__FILE__))) . '/config.php';  //x3 folder
 //  Place config.php one level up and uncomment the line below
 // require_once dirname((dirname(dirname(dirname(__FILE__)))) . '/config.php';  //x4 folder
 
-// Defindes
-require_once 'defindes.php';
-// Libs
+//todo Parser upd class
 require_once 'libs/HtmlDomParser.php';
-// All Functions
-require_once 'functions.php';
-// Get Page
-require_once 'get_page.php';
-// All Classes
-require_once 'class.php';
-// All Settings
-require_once 'setting.php';
 
+//TODO to classes
+require_once 'settings/language.php';
+require_once 'settings/tags.php';
+require_once 'settings/theme.php';
+
+//TODO to def
 //! DEVELOPMENT
 // webpack dev server
 // default: http://localhost:8080
 $dev_port = 'http://localhost:8081';
 // true if dev
-$use_dev = true;
+$use_dev = false;
 
 //TODO example message get golobal var to component

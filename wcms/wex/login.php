@@ -8,7 +8,7 @@
 require 'core/initialize.php';
 ?>
 
-<?php $user = new Login();
+<?php $user = new wcms\classes\auth\Login;
       $user->check_login();?>
 
 <!DOCTYPE html>

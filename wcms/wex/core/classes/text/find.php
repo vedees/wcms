@@ -6,12 +6,14 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-class FindText {
+namespace wcms\classes\text;
+
+class Find {
   static function find_text($where_find, $id, $type, $reg=true ) {
     $result = array();
     for ($i=0; $i < count($where_find); $i++) {
       if (mb_strlen(trim($where_find[$i]), 'utf-8') > 1) {
-        $object = new stdClass();
+        $object = new \stdClass();
         $object->id = $id;
         //TODO lang
         $object->type = $type;

@@ -7,12 +7,12 @@
  */
 require 'core/initialize.php';
 
-$user = new Login;
+$user = new wcms\classes\auth\Login;
 $user->require_login(); ?>
 
 <?php $page_title = 'Logout - WEX CMS';
       $page = 'logout';
-      $user = new Logout();
+      $user = new cwcms\lasses\auth\Logout();
       $user->logout_user(); ?>
 
 <?php include('includes/header.php') ?>

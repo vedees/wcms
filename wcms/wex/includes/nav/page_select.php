@@ -1,6 +1,13 @@
 <?php
+/**
+ * WCMS - WEX Simple CMS
+ * https://github.com/vedees/wcms
+ * Copyright (C) 2018 Evgenii Vedegis <vedegis@gmail.com>
+ * https://github.com/vedees/wcms/blob/master/LICENSE
+ */
 
-?>
+$page = new wcms\classes\Pagename();
+$page->set_page();?>
 
 <form id="htmlLinkMenu" method="POST">
   <div class="sidebar-list">
@@ -11,7 +18,6 @@
           if ($GLOBALS['pagename'] == $html_page) {
             echo " selected";
           }
-          // TODO change echo to {}
           echo ">{$html_page}</option>";
         }
       ?>

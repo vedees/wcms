@@ -6,6 +6,8 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
+namespace wcms\classes\auth;
+
 class Login {
 
   public function check_login () {

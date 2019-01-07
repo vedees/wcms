@@ -6,7 +6,7 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 require 'core/initialize.php';
-$user = new Login;
+$user = new wcms\classes\auth\Login;
 $user->require_login();?>
 
 <?php $page_title = $lang['imagesTitle'];
@@ -15,7 +15,7 @@ $user->require_login();?>
 <?php include('includes/header.php') ?>
 
 <?php //! TODO ADD CSS IMAGES (css)
-      $get_image = new Image();
+      $get_image = new wcms\classes\images\Images();
       $images = $get_image->image_filter();
       $img_main = $get_image->get_img_main();
       $img_content = $get_image->get_img_content();

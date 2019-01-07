@@ -6,7 +6,7 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 require 'core/initialize.php';
-$user = new Login;
+$user = new wcms\classes\auth\Login;
 $user->require_login();?>
 
 <?php $page_title = $lang['cssjsTitle'];
@@ -14,7 +14,7 @@ $user->require_login();?>
 
 <?php include('includes/header.php') ?>
 
-<?php $get_file = new Files();
+<?php $get_file = new wcms\classes\css_js\Files();
       $css = $get_file->all_css();
       $js = $get_file->all_js();
 

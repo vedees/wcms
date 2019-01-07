@@ -6,16 +6,16 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 require 'core/initialize.php';
-require 'core/file_finder.php';
-$user = new Login;
+require 'core/FileFinder.php';
+$user = new wcms\classes\auth\Login;
 $user->require_login();?>
 
 <?php $page_title = 'Finder - WCMS';
-    $page = 'finder'; ?>
+      $page = 'finder'; ?>
 
 <?php include('includes/header.php');
-    include('core/file_finder/actions.php');
-    include('core/file_finder/modals.php'); ?>
+      include('includes/finder/actions.php');
+      include('includes/finder/modals.php'); ?>
 
 <?php
 //--- FILEMANAGER MAIN

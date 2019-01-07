@@ -54,10 +54,6 @@ if (defined('FM_EMBED')) {
   if (function_exists('mb_regex_encoding')) {
     mb_regex_encoding('UTF-8');
   }
-
-  // session_cache_limiter('');
-  // session_name('filemanager');
-  // session_start();
 }
 
 if (empty($auth_users)) {

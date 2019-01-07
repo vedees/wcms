@@ -6,7 +6,7 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 require 'core/initialize.php';
-$user = new Login;
+$user = new wcms\classes\auth\Login;
 $user->require_login();?>
 
 <?php $page_title = 'WEX CMS - Dashboard';

@@ -6,12 +6,16 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
+namespace wcms\classes\css_js;
+
+use wcms\classes\css_js\Find;
+
 class Files {
 
   // Consctruct
   public function __construct() {
     // Finder
-    $this->finder = new FindCssJs();
+    $this->finder = new Find();
   }
 
   // CSS

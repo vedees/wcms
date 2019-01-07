@@ -6,6 +6,10 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
+namespace wcms\classes;
+
+use wcms\classes\Zipper;
+
 class Backup {
 
   public function create () {
@@ -41,7 +45,7 @@ class Backup {
           $zipname = BACKUP_DIR . date('d-m-Y_H:i:s') . '.zip';
         }
 
-        $zipper = new FM_Zipper();
+        $zipper = new Zipper();
         $res = $zipper->create($zipname, $files);
 
         if ($res) {

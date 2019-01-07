@@ -6,14 +6,17 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-// $files = new Files();
+namespace wcms\classes;
+
+use wcms\classes\css_js\Files;
+use wcms\classes\images\Images;
 
 class Counter {
 
   // Constructor
   public function __construct() {
     $this->files = new Files();
-    $this->images = new Image();
+    $this->images = new Images();
   }
 
   // HTML

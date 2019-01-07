@@ -298,7 +298,7 @@ if (isset($_POST['group'], $_POST['zip'])) {
       $zipname = 'archive_' . date('ymd_His') . '.zip';
     }
 
-    $zipper = new FM_Zipper();
+    $zipper = new wcms\classes\Zipper();
     $res = $zipper->create($zipname, $files);
 
     if ($res) {
@@ -341,7 +341,7 @@ if (isset($_GET['unzip'])) {
       }
     }
 
-    $zipper = new FM_Zipper();
+    $zipper = new wcms\classes\Zipper();
     $res = $zipper->unzip($zip_path, $path);
 
     if ($res) {

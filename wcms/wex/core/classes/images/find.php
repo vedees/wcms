@@ -6,7 +6,9 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-class FindImages {
+namespace wcms\classes\images;
+
+class Find {
   static function find($where_find, $trim=true, $offet=0) {
     $result = array();
     // трим нужен только для всех файлов тк там регулярка
@@ -24,7 +26,7 @@ class FindImages {
       $img_edit_time = date("d-m-Y", filectime($img_path));
 
       // Create object
-      $object = new stdClass();
+      $object = new \stdClass();
       $object->id = $i;
       $object->title = $img_name;
       $object->path = $img_path;

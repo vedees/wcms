@@ -5,14 +5,19 @@
  * Copyright (C) 2018 Evgenii Vedegis <vedegis@gmail.com>
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
-class Text {
 
+namespace wcms\classes\text;
+
+use wcms\classes\text\Parser;
+use wcms\classes\text\Find;
+
+class Text {
   // Consctruct
   public function __construct() {
     // Text Parser
-    $this->text = new ParseText();
+    $this->text = new Parser();
     // Text Finder
-    $this->find = new FindText();
+    $this->find = new Find();
   }
 
   // Find all Text

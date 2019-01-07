@@ -1,16 +1,22 @@
 <?php
-
 /**
+ * WCMS - WEX Simple CMS
+ * https://github.com/vedees/wcms
+ * Copyright (C) 2018 Evgenii Vedegis <vedegis@gmail.com>
+ * https://github.com/vedees/wcms/blob/master/LICENSE
+ *
  * Class to work with zip files (using ZipArchive)
  */
 
-class FM_Zipper
+namespace wcms\classes;
+
+class Zipper
 {
   private $zip;
 
   public function __construct()
   {
-    $this->zip = new ZipArchive();
+    $this->zip = new \ZipArchive;
   }
 
   /**
@@ -21,7 +27,7 @@ class FM_Zipper
    */
   public function create($filename, $files)
   {
-    $res = $this->zip->open($filename, ZipArchive::CREATE);
+    $res = $this->zip->open($filename, \ZipArchive::CREATE);
     if ($res !== true) {
       return false;
     }
