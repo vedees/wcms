@@ -16,6 +16,9 @@ wcms/fonts
 wcms/js
 wcms/img
 wcms/scss
+# Archive files
+wcms/*.zip
+wcms/wex/backups/*.zip
 
 # BD, logs
 *.log
