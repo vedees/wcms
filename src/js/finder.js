@@ -26,7 +26,7 @@ window.change_checkboxes = function (l,v) {
 window.get_checkboxes = function () {
   let i = document.getElementsByName('file[]')
       a = []
-  for (let j = i.length-1;j>=0;j--) { 
+  for (let j = i.length-1;j>=0;j--) {
     if(i[j].type='checkbox') {
       a.push(i[j])
     }
