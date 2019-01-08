@@ -8,7 +8,7 @@
 
 define('DS', '/');
 define('WCMS', true);
-define('WCMS_VERSION', '0.3.1');
+define('WCMS_VERSION', '0.3.2');
 
 // Webpack
 define('WCMS_DEV', false);

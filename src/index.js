@@ -11,15 +11,17 @@
  * point when building robust, powerful web applications using Vue and WCMS.
  */
 
-// CodeMirror
+//! CodeMirror
 window.CodeMirror = require('codemirror/lib/codemirror.js');
-// Mode:
+//* Mode:
 import 'codemirror/mode/htmlmixed/htmlmixed.js'
 import 'codemirror/mode/css/css.js'
 import 'codemirror/mode/javascript/javascript.js'
 // Theme css in libs.styl
 
-// Vue
+//! Store
+import store from './store'
+//! Vue
 window.Vue = require('vue');
 
 /**
@@ -38,8 +40,9 @@ Vue.component('version-component', require('./components/dashboard/Version.vue')
 Vue.component('notify-component', require('./components/dashboard/Notify.vue').default);
 Vue.component('news-component', require('./components/dashboard/News.vue').default);
 
-// Vue initial data
+//! Vue initial data
 const app = new Vue({
+    store,
     el: '#app',
 });
 
