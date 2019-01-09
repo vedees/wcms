@@ -13,7 +13,8 @@
 </template>
 
 <script>
-import Pie from './CounterPie'
+//TODO to plug ~ / @
+import Pie from '../../js/charts/CounterPie'
 
 export default {
   components: {

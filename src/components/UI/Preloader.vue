@@ -1,5 +1,10 @@
 <template>
-  <div class="preloader">
+  <div class="preloader"
+    :style="{
+      width : width + 'px',
+      height: height + 'px',
+    }"
+  >
     <!-- todo =) -->
     <div class="wBall" id="wBall_1"><div class="wInnerBall"></div></div>
     <div class="wBall" id="wBall_2"><div class="wInnerBall"></div></div>
@@ -9,19 +14,35 @@
   </div>
 </template>
 
+<script>
+export default {
+  props: {
+    // ? string
+    width: {
+      type: Number,
+      default: 16
+    },
+    height: {
+      type: Number,
+      default: 16
+    }
+
+
+  }
+}
+</script>
+
 <style scoped>
 .preloader {
   position: relative;
   display: inline-block;
-  width: 19px;
-  height: 19px;
   margin:auto;
 }
 
 .wBall {
   position: absolute;
-  width: 16px;
-  height: 16px;
+  width: 100%;
+  height: 100%;
   opacity: 0;
   transform: rotate(225deg);
   animation: orbit 3.6325s infinite;
@@ -29,8 +50,8 @@
 
 .wInnerBall{
   position: absolute;
-  width: 2px;
-  height: 2px;
+  width: 5%;
+  height: 5%;
   background: #444ce0;
   left:0px;
   top:0px;
