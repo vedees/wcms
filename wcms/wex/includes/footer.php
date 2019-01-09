@@ -17,7 +17,7 @@
 
 <!-- webpack js run with use_dev var-->
 <?php if (WCMS_DEV) echo '<script src="' . WCMS_DEV_PORT . '/wcms/wex/assets/js/main.js"></script>';
-      else echo '<script src="assets/js/main.js"></script>';?>
+      else echo '<script src="assets/js/main.js?ver=todofixit13241"></script>';?>
 
 </body>
 </html>

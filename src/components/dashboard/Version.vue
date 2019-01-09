@@ -71,7 +71,7 @@ export default {
       })
       .catch(error => {
         this.error.error = true
-        this.error.message = error
+        this.error.message = 'API rate limit exceeded  =( Update page later.'
         console.log(error)
       })
       .finally(() => {
