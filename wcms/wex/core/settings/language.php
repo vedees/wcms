@@ -6,7 +6,7 @@
  * https://github.com/vedees/wcms/blob/master/LICENSE
  */
 
-  $lang_choices = ['en', 'ru'];
+  $lang_choices = ['en', 'ru', 'uk'];
    // Default
   if (!isset($_SESSION['lang'])) {
     $_SESSION['lang'] = $GLOBALS['default_language'];
@@ -18,6 +18,9 @@
       //* RU
       } else if ($_GET['lang'] == 'ru') {
         $_SESSION['lang'] = 'ru';
+      //* UK
+      } else if ($_GET['lang'] == 'uk') {
+        $_SESSION['lang'] = 'uk';
       }
   }
 
